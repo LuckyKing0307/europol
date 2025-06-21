@@ -1,0 +1,189 @@
+/* ----------------------------------------------------------
+   product-extra.css
+   Стилевые штрихи поверх Tailwind, чтобы выглядеть «точь-в-точь»
+   ---------------------------------------------------------- */
+
+/* === переменные проекта === */
+:root {
+    --accent      : #dbb875;  /* золотистый */
+    --bg-soft     : #fff9ee;  /* карточка цен */
+    --border      : #e6e1d5;
+    --text        : #1c1e21;
+    --radius      : 12px;
+    --font-main   : "Montserrat", system-ui, sans-serif;
+}
+
+/* базовая типографика (Tailwind генерит – мы просто уточняем) */
+body { font-family: var(--font-main); color: var(--text); }
+h1, h2, h3, h4 { font-weight: 700; color: var(--text); }
+
+/* ————— ОБЩАЯ СЕТКА ————— */
+.product-grid {                           /* <div class="product-grid"> */
+    display: grid;
+    gap: 2.5rem;                          /* 40px */
+    grid-template-columns: 60px 460px 1fr;
+}
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: 60px 1fr; /* убираем фикс-ширину картинке */
+    }
+}
+@media (max-width: 768px) {
+    .product-grid {
+        display: block;
+    }
+}
+
+/* ——— вертикальный «слайдер» превью ——— */
+.preview-list button {
+    width: 56px; height: 56px;
+    overflow: hidden;
+    border-radius: var(--radius);
+    border: 2px solid transparent;
+    transition: border-color .25s;
+}
+.preview-list button.active,
+.preview-list button:hover {
+    border-color: var(--accent);
+}
+.preview-scroll-btn {
+    width: 24px; height: 24px;
+    color: #9ca3af;                       /* gray-400 */
+    transition: color .2s;
+}
+.preview-scroll-btn:hover { color: #4b5563; } /* gray-600 */
+
+/* ——— главное изображение ——— */
+.main-img {
+    width: 100%;
+    aspect-ratio: 1/1;                    /* квадрат */
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+/* ————— КАРТОЧКА ЦЕН ————— */
+.price-card {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+.price-card__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.price-card__row + hr {
+    border-color: var(--border);
+    margin: 16px -24px;                   /* растянуть до краёв */
+}
+.price-card h4 { font-weight: 600; }
+
+/* переключатель единиц */
+.unit-tabs {
+    display: flex;
+    gap: 6px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+.unit-btn {
+    padding: 4px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background .2s, color .2s;
+}
+.unit-btn.active {
+    background: var(--accent);
+    color: #fff;
+}
+.unit-btn:not(.active):hover {
+    background: #f3f4f6;                 /* gray-100 */
+}
+
+/* счётчик */
+.counter {
+    display: flex;
+    overflow: hidden;
+    border-radius: var(--radius);
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: var(--text);
+}
+.counter__btn {
+    flex: 0 0 58px;
+    height: 48px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 26px;
+    line-height: 48px;
+    text-align: center;
+    user-select: none;
+}
+.counter__btn:hover { background: #d4b674; }
+.counter__value {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+/* итоговая сумма */
+.total-block small { color: #6b7280; }    /* gray-500 */
+.total-price {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 4px 0 18px;
+}
+
+/* кнопка корзины */
+.btn-cart {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border-radius: var(--radius);
+    transition: background .25s;
+}
+.btn-cart:hover { background: #d4b674; }
+
+/* маленькие икон-строчки */
+.info-list {
+    font-size: 13px;
+    color: #424242;
+    margin-top: 12px;
+}
+.info-list li {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    line-height: 1.4;
+}
+
+/* ————— ТАБЛИЦА ХАРАКТЕРИСТИК ————— */
+.chars-table dl { border: 1px solid #e5e7eb; border-radius: var(--radius); }
+.chars-table dt,
+.chars-table dd { padding: 12px 16px; font-size: 14px; }
+.chars-table dt {
+    width: 50%;
+    color: #6b7280;                       /* gray-500 */
+}
+.chars-table div { display: flex; }
+.chars-table div:nth-child(odd) { background: #f9fafb; } /* gray-50 */
+.chars-table div + div { border-top: 1px solid #e5e7eb; }
+
+/* ————— адаптив ————— */
+@media (max-width: 1024px) {
+    .price-card { padding: 20px; }
+    .total-price { font-size: 24px; }
+}
+@media (max-width: 768px) {
+    .preview-list { flex-direction: row; overflow-x: auto; }
+    .preview-list button { flex: 0 0 48px; height: 48px; }
+    .product-grid { gap: 1.5rem; }
+    .chars-table dt, .chars-table dd { font-size: 13px; }
+}

@@ -1,0 +1,1165 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif !important;
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	all: unset;
+	cursor: pointer;
+	display: inline-block;
+}
+
+input,
+textarea,
+select {
+	all: unset;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	font: inherit;
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+:focus {
+	outline: none;
+}
+
+.container {
+	max-width: 1540px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.basket {
+	background-color: #fff;
+	width: 100%;
+}
+
+.basket__wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 110px 0;
+}
+
+.basket__img {
+	margin-bottom: 25px;
+}
+
+.basket__title {
+	margin-bottom: 50px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #1c1e21;
+}
+
+.basket__btn {
+	display: block;
+	padding: 13px 112px;
+	margin-bottom: 70px;
+	border-radius: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #dbb875;
+	text-decoration: none;
+}
+
+.basket__subtitle {
+	font-size: 18px;
+	font-weight: 500;
+	color: #1c1e21;
+}
+
+.basket__phone {
+	display: block;
+	margin-top: 25px;
+	font-size: 32px;
+	font-weight: 500;
+	text-decoration: none;
+	color: #1c1e21;
+}
+
+/* ===================== Избранное ===================== */
+
+.favorites {
+	background-color: #fff;
+	width: 100%;
+}
+
+.favorites__wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	padding: 110px 0;
+}
+
+.favorites__img {
+	margin-bottom: 25px;
+}
+
+.favorites__title {
+	margin: 0;
+	margin-bottom: 50px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #1c1e21;
+}
+
+.favorites__btn {
+	display: block;
+	padding: 13px 112px;
+	margin-bottom: 70px;
+	border-radius: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #dbb875;
+	text-decoration: none;
+}
+
+/* ===================== Блоги ===================== */
+
+.blogs {
+	padding: 90px 0;
+	font-family: "Montserrat", sans-serif;
+}
+
+.blogs__title {
+	text-align: center;
+	font-weight: 700;
+	font-size: 32px;
+	margin-bottom: 25px;
+}
+
+.blogs__descr {
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 60px;
+	color: #1c1e21;
+}
+
+.blogs__search {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	max-width: 740px;
+	padding: 12px 40px 12px 12px;
+	border: 2px solid #eadec7;
+	border-radius: 10px;
+	font-size: 16px;
+	background: url("../img/search.svg") no-repeat right 12px center / 20px 20px;
+}
+
+.blogs-tabs__list {
+	display: flex;
+	gap: 50px;
+	justify-content: center;
+	margin-bottom: 60px;
+}
+
+.blogs-tabs__btn {
+	position: relative;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	color: #1c1e21;
+	cursor: pointer;
+}
+
+.blogs-tabs__btn--active {
+	color: #dbb875;
+}
+
+.blogs-tabs__btn--active::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 100%;
+	height: 2px;
+	background-color: #dbb875;
+}
+
+.blogs__list {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+	margin-bottom: 48px;
+}
+
+.blogs-list__article {
+	overflow: hidden;
+	background: #fff9ee;
+	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.12);
+	border-radius: 20px;
+}
+
+.blogs-list__article img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.blogs-article__txt {
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+}
+
+.blogs-article__title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #1c1e21;
+	margin-bottom: 10px;
+}
+
+.blogs-article__descr {
+	font-size: 18px;
+	font-weight: 500;
+	color: #1c1e21;
+	margin-bottom: 40px;
+}
+
+.blogs-article__date {
+	display: block;
+	font-size: 18px;
+	align-self: flex-end;
+	color: #1c1e21;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+	margin-top: 40px;
+}
+
+.pagination__arrow {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	object-fit: contain;
+}
+
+.pagination__numbers {
+	display: flex;
+	gap: 20px;
+}
+
+.pagination__number {
+	font-weight: 700;
+	font-size: 18px;
+	color: #1c1e21;
+	cursor: pointer;
+}
+
+.pagination__number--active {
+	color: #dbb875;
+}
+
+/* ===================== Блог (полноценный) ===================== */
+
+.blog {
+	padding: 75px 0;
+}
+
+.block-list__title {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.5;
+	margin-top: 50px;
+	margin-bottom: 15px;
+}
+
+.block-list__text {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 150%;
+	margin-bottom: 50px;
+}
+
+.block-list__list {
+	margin-bottom: 50px;
+	padding-left: 10px;
+}
+
+.block-list__item {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+.blog__content {
+	width: 100%;
+}
+
+.blog__date {
+	display: block;
+	text-align: right;
+	margin-bottom: 100px;
+}
+
+.blog__next {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 10px;
+	position: relative;
+	font-size: 18px;
+	font-weight: 500;
+	color: #1c1e21;
+	text-align: right;
+}
+
+.blog__next::after {
+	content: "";
+	width: 7px;
+	height: 12px;
+	display: inline-block;
+	background: url("../img/arrow-next.svg") center/contain no-repeat;
+}
+
+.blog__next::before {
+	content: "";
+	position: absolute;
+	height: 2px;
+	width: 100%;
+	bottom: -5px;
+	right: 0;
+	background-color: #1c1e21;
+	max-width: 190px;
+}
+
+.blog__breadcrumbs {
+	display: block;
+	margin-bottom: 45px;
+	font-weight: 500;
+	font-size: 18px;
+	color: #949494;
+}
+
+.blog__title {
+	text-align: center;
+	font-size: 24px;
+	color: #1c1e21;
+	margin-bottom: 55px;
+}
+
+.blog__img {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 35px;
+}
+
+.blog__container {
+	max-width: 1000px;
+	margin: 0 auto;
+	margin-bottom: 65px;
+}
+
+/* ===================== Наши работы ===================== */
+
+.works {
+	padding: 55px 0;
+}
+
+.works__title {
+	margin-bottom: 34px;
+	font-size: 48px;
+	font-weight: 700;
+	color: #1c1e21;
+	text-align: center;
+}
+
+.works__descr {
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 65px;
+	color: #1c1e21;
+}
+
+.works__gallery {
+	display: flex;
+	gap: 40px;
+	margin-bottom: 125px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.works__project {
+	display: flex;
+	gap: 40px;
+	margin-bottom: 150px;
+}
+
+.works-project__title {
+	margin-bottom: 42px;
+	font-size: 32px;
+	font-weight: 700;
+	color: #1c1e21;
+}
+
+.works-project__descr p {
+	font-size: 18px;
+	margin-bottom: 20px;
+	color: #1c1e21;
+	line-height: 150%;
+}
+
+.works__list {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+
+.works__card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.works-card__img {
+	margin-bottom: 25px;
+}
+
+.works-card__title {
+	font-size: 24px;
+}
+
+/* ===================== О нас ===================== */
+/* ======================= + ======================= */
+/* ====================== B2B ====================== */
+
+.about__content,
+.b2b__content {
+	position: relative;
+	padding: 200px 0 200px 130px;
+	background: linear-gradient(90.6deg, #e0c490 0.7%, #dbb875 100%);
+	margin-bottom: 60px;
+}
+
+.about__title,
+.b2b__title,
+.warranty__title {
+	font-weight: 700;
+	font-size: 32px;
+	margin-bottom: 45px;
+	color: #fff;
+}
+
+.about .container,
+.b2b__content {
+	position: relative;
+	z-index: 2;
+}
+
+.about__descr p,
+.b2b__descr,
+.warranty__descr {
+	font-size: 24px;
+	margin-bottom: 35px;
+	color: #fff;
+	max-width: 650px;
+	line-height: 150%;
+}
+
+.about__img,
+.b2b__img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.b2b__content img {
+	z-index: -1;
+}
+
+.about__services,
+.b2b__services,
+.warranty__services {
+	margin-bottom: 20px;
+}
+
+.about-services .container,
+.b2b-services .container,
+.warranty-services .container {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+	flex-wrap: wrap;
+}
+
+.about-services__card,
+.b2b-services__card,
+.warranty-services__card {
+	display: flex;
+	align-items: center;
+	max-width: 700px;
+	background: #fff9ee;
+	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.12);
+	border-radius: 20px;
+	padding: 40px;
+}
+
+.about-services__card img,
+.b2b-services__card img,
+.warranty-services__card img {
+	margin-right: 40px;
+}
+
+.about-services__title {
+	text-align: center;
+	font-size: 32px;
+	margin-bottom: 35px;
+	color: #1c1e21;
+}
+
+.about-services__subtitle,
+.b2b-services__subtitle,
+.warranty-services__subtitle {
+	font-size: 24px;
+	margin-bottom: 25px;
+	color: #1c1e21;
+}
+
+.about-services__descr,
+.b2b-services__descr,
+.warranty-services__descr {
+	font-size: 18px;
+	color: #1c1e21;
+	line-height: 150%;
+}
+
+.about__aim {
+	padding: 40px 0;
+	background-color: #fff9ee;
+}
+
+.about-aim__title {
+	text-align: center;
+	font-size: 32px;
+	margin-bottom: 35px;
+	color: #1c1e21;
+}
+
+.about-aim__descr {
+	text-align: center;
+	font-size: 18px;
+	color: #1c1e21;
+	line-height: 150%;
+}
+
+.b2b {
+	position: relative;
+	height: 100%;
+}
+
+.b2b__content {
+	background: #f9ecd3;
+}
+
+.b2b__img {
+	right: 300px;
+}
+
+.b2b__title,
+.b2b__descr {
+	color: #1c1e21;
+}
+
+.b2b__services {
+	background-color: #fff;
+}
+
+.b2b-contact__title,
+.warranty-contact__title {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 60px;
+	text-align: center;
+	font-size: 32px;
+	margin-bottom: 60px;
+	color: #1c1e21;
+	max-width: 680px;
+    margin-top: 150px;
+}
+
+.b2b-form__wrapper,
+.warranty-form__wrapper {
+	width: 100%;
+	border-radius: 20px;
+	background-color: #fff;
+	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.12);
+	padding: 80px 20px 20px 20px;
+}
+
+.b2b__form,
+.warranty__form {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.b2b-form__input,
+.b2b-form__textarea,
+.warranty-form__input,
+.warranty-form__textarea {
+	border: none;
+	border-bottom: 1px solid #e0c490;
+	padding-bottom: 6px;
+	font-size: 16px;
+	outline: none;
+	width: 100%;
+	background-color: transparent;
+}
+
+.b2b-form__input::placeholder,
+.b2b-form__textarea::placeholder,
+.warranty-form__input::placeholder,
+.warranty-form__textarea::placeholder {
+	color: #070505;
+}
+
+.b2b-form__textarea,
+.warranty-form__textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+.b2b-form__button,
+.warranty-form__button {
+	background-color: #dbb875;
+	color: #fff;
+	border: none;
+	padding: 12px 24px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.b2b-form__button:hover,
+.warranty-form__button:hover {
+	background-color: #d4b674;
+}
+
+.b2b-contact .container,
+.warranty-contact .container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 150px;
+}
+
+.b2b-contact {
+	padding: 180px 20px;
+	background: url("../img/b2b-form-bg.png") no-repeat center center / cover;
+}
+
+/* ====================== Гарантия ====================== */
+
+.warranty__content {
+	background-color: #fff;
+	padding: 120px 0;
+}
+
+.warranty__descr,
+.warranty__title {
+	color: #1c1e21;
+}
+
+.warranty__content .container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 170px;
+}
+.faq {
+	padding: 250px 0px;
+	background: url("../img/b2b-form-bg.png") no-repeat center center / cover;
+}
+
+.faq .container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.faq__title {
+	font-size: 32px;
+	text-align: center;
+	margin-bottom: 40px;
+	color: #070505;
+}
+
+.faq-item {
+	border-bottom: 1px solid #e0c490;
+	padding: 20px 0;
+}
+
+.faq-item__question {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	font-size: 18px;
+	font-weight: bold;
+	color: #070505;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.faq-item__text {
+	text-align: left;
+	flex: 1;
+}
+
+.faq-item__icon {
+	position: relative;
+	width: 36px;
+	height: 36px;
+	flex-shrink: 0;
+}
+
+.faq-item__icon .line {
+	position: absolute;
+	background-color: #e0c490;
+	transition: transform 0.3s ease;
+}
+
+.faq-item__icon .horizontal {
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	transform: translateY(-50%);
+}
+
+.faq-item__icon .vertical {
+	top: 0;
+	left: 50%;
+	width: 2px;
+	height: 100%;
+	transform: translateX(-50%);
+}
+
+.faq-item.active .faq-item__icon .vertical {
+	transform: translateX(-50%) scaleY(0);
+}
+
+.faq-item__answer {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.4s ease, padding-top 0.3s ease;
+	font-size: 18px;
+	font-weight: 500;
+	color: #070505;
+	line-height: 1.5;
+	padding-top: 0;
+}
+
+.faq-item.active .faq-item__answer {
+	padding-top: 16px;
+}
+
+.warranty-contact .container {
+	flex-direction: column;
+	gap: 10px;
+}
+
+.warranty-form__txt {
+	font-size: 18px;
+	color: #070505;
+}
+
+.warranty-contact {
+	padding: 100px 0;
+}
+
+.page-404 {
+	padding: 100px 0;
+}
+
+.page-404 .container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.page-404__img {
+	margin-bottom: 100px;
+}
+
+.page-404__title {
+	font-size: 32px;
+	color: #1c1e21;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.page-404__descr {
+	font-size: 18px;
+	color: #1c1e21;
+}
+
+@media screen and (max-width: 1024px) {
+	.blogs__list {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+
+	.blogs-tabs__list {
+		gap: 24px;
+	}
+
+	.blogs__title {
+		font-size: 28px;
+	}
+
+	.blogs__descr {
+		font-size: 15px;
+		margin-bottom: 40px;
+	}
+
+	.blogs__search {
+		max-width: 90%;
+	}
+
+	.works__gallery {
+		gap: 20px;
+	}
+
+	.works__gallery img {
+		width: calc(50% - 10px);
+	}
+
+	.works__gallery img:nth-child(3),
+	.works-project img {
+		display: none;
+	}
+
+	.works__project {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.works-project__title {
+		text-align: center;
+	}
+
+	.works__list {
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	.works__card {
+		max-width: 90%;
+	}
+
+	.warranty__content .container {
+		flex-direction: column-reverse;
+		gap: 45px;
+		text-align: center;
+	}
+
+	.warranty__content {
+		padding: 0px 0;
+	}
+
+	.warranty__title {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	.warranty__descr {
+		font-size: 18px;
+	}
+
+	.faq-item__question {
+		font-size: 18px;
+	}
+
+	.faq-item__answer {
+		font-weight: 300;
+		font-size: 16px;
+	}
+
+	.faq-item__icon {
+		width: 20px;
+		height: 20px;
+	}
+
+	.faq__title {
+		font-size: 24px;
+	}
+
+	.faq {
+		padding: 50px 0;
+		background: none;
+	}
+
+	.warranty-contact {
+		padding: 0px 0 50px 0;
+	}
+
+	.warranty-contact__title,
+	.b2b-contact__title,
+	.warranty-contact__title {
+		margin-bottom: 10px;
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.basket__title {
+		font-size: 18px;
+		margin-bottom: 75px;
+	}
+
+	.basket__btn {
+		padding: 13px 10px;
+		max-width: 450px;
+		margin-bottom: 50px;
+	}
+
+	.basket__phone {
+		margin-bottom: 10px;
+		font-size: 24px;
+	}
+
+	.basket__subtitle {
+		font-size: 14px;
+	}
+
+	.favorites__title {
+		font-size: 18px;
+		margin-bottom: 75px;
+	}
+
+	.favorites__btn {
+		padding: 13px 10px;
+		max-width: 450px;
+	}
+
+	.blogs__list {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.blogs-tabs__list {
+		display: none;
+	}
+
+	.blogs__title {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	.blogs__descr {
+		font-size: 16px;
+		margin-bottom: 25px;
+	}
+
+	.blogs__search {
+		max-width: 100%;
+		padding: 10px 36px 10px 12px;
+		font-size: 14px;
+		background-size: 18px 18px;
+	}
+
+	.blogs-article__title {
+		font-size: 18px;
+		margin-bottom: 6px;
+	}
+
+	.blogs-article__descr {
+		font-size: 18px;
+		margin-bottom: 25px;
+	}
+
+	.blogs-article__date {
+		font-size: 18px;
+		align-self: center;
+	}
+
+	.pagination {
+		gap: 12px;
+		margin-top: 30px;
+	}
+
+	.pagination__number {
+		font-size: 16px;
+	}
+
+	.pagination__arrow {
+		width: 20px;
+		height: 20px;
+	}
+
+	.works__title {
+		font-size: 18px;
+		margin-bottom: 25px;
+	}
+
+	.works__descr {
+		font-size: 16px;
+		margin-bottom: 40px;
+	}
+
+	.works__gallery {
+		gap: 20px;
+		margin-bottom: 35px;
+	}
+
+	.works__project {
+		gap: 25px;
+		margin-bottom: 30px;
+	}
+
+	.works-project__title {
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+
+	.works-project__descr p {
+		font-size: 16px;
+	}
+
+	.works__list {
+		flex-direction: column;
+		gap: 35px;
+		align-items: center;
+	}
+
+	.works-card__title {
+		font-size: 18px;
+		text-align: center;
+	}
+
+	.about-services .container,
+	.b2b-services .container {
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+	}
+
+	.about-services__card,
+	.b2b-services__card,
+	.warranty-services__card {
+		flex-direction: column;
+		text-align: center;
+		padding: 30px 20px;
+	}
+
+	.about-services__card img,
+	.b2b-services__card img,
+	.warranty-services img {
+		margin: 0 0 20px 0;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.about-services__title,
+	.b2b-services__title {
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+
+	.about-services__subtitle,
+	.b2b-services__subtitle,
+	.warranty-services__subtitle {
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+
+	.about-services img,
+	.b2b-services img,
+	.warranty-services img {
+		max-width: 180px;
+	}
+
+	.about-services__descr,
+	.b2b-services__descr,
+	.warranty-services__descr {
+		font-size: 18px;
+	}
+
+	.about-aim__title {
+		font-size: 24px;
+		margin-bottom: 25px;
+	}
+
+	.about-aim__descr {
+		font-size: 16px;
+	}
+
+	.about__content,
+	.b2b__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 50px 0 300px 0px;
+		margin-bottom: 30px;
+	}
+
+	.b2b__img {
+		right: -40px;
+	}
+
+	.b2b-contact {
+		padding: 100px 0 75px 0;
+		background: none;
+	}
+
+	.b2b-contact__title {
+		font-size: 24px;
+		margin: 0 auto 20px;
+		text-align: center;
+	}
+
+	.b2b-contact__img {
+		display: none;
+	}
+
+	.page-404__img {
+		margin-bottom: 50px;
+	}
+
+	.page-404__title {
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+
+	.page-404__descr {
+		font-size: 16px;
+	}
+}
