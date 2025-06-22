@@ -53,18 +53,15 @@ class ImportCatalogJob implements ShouldQueue
         foreach ($groupsXml as $groupXml) {
             $guid = (string)$groupXml->Ид;
             $name = (string)$groupXml->Наименование;
-            info(1);
-            info($guid);
             $parent = $parentId ? Collection::find($parentId) : null;
-            if ($parentId ) {
-
-
+            if ($parentId) {
                 $collection = Collection::updateOrCreate(
                     ['external_id' => $guid],
                     [
                         'attribute_data' => [
                             'name' => new \Lunar\FieldTypes\Text($name),
                         ],
+                        'collection_group_id' => $parent->getScopeAttributes(),
                     ]
                 );
             } else {
@@ -89,7 +86,6 @@ class ImportCatalogJob implements ShouldQueue
             if ($parent){
                 $parent->appendNode($collection);
             }
-            info($collection->id);
             $index[$guid] = $collection->id;
 
             // рекурсия для под-групп
