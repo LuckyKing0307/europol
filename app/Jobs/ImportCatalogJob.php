@@ -63,7 +63,7 @@ class ImportCatalogJob implements ShouldQueue
                         'attribute_data' => [
                             'name' => new \Lunar\FieldTypes\Text($name),
                         ],
-                        'collection_group_id' => $parentId,
+                        'parent_id' => $parentId,
                     ]
                 );
             } else {
@@ -74,15 +74,13 @@ class ImportCatalogJob implements ShouldQueue
                         'handle' => Str::slug($name, '-')
                     ]
                 );
-
-
                 $collection = Collection::updateOrCreate(
                     ['external_id' => $guid],
                     [
                         'attribute_data' => [
                             'name' => new \Lunar\FieldTypes\Text($name),
                         ],
-                        'collection_group_id' => $collectionGroup->id,
+                        'collection_group_id' => $collectionGroup->id ?? '',
                     ]
                 );
             }
