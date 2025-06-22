@@ -84,7 +84,7 @@ class ImportCatalogJob implements ShouldQueue
                     ]
                 );
             }
-
+            info($collection->id);
             $index[$guid] = $collection->id;
 
             // рекурсия для под-групп
