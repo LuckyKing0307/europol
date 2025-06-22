@@ -71,7 +71,7 @@ class CollectionPage extends Component
         )->withPivot([
             'position',
         ])->wherePivotIn('collection_id', $childIds)->withTimestamps()->orderByPivot('position');;
-
+        info($query->toSql());
         if (!empty($this->activeFilters)) {
             $query->whereHas('variants.productOptionValues', function ($q) {
                 $q->whereIn('lunar_product_option_values.id', $this->activeFilters);
