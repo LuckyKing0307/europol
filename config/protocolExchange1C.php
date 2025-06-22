@@ -124,7 +124,7 @@ return [
      * кука - имя куки сессии и ИД сессии
      */
     'middleware'         => [
-        \Illuminate\Session\Middleware\StartSession::class,
+//        \Illuminate\Session\Middleware\StartSession::class,
     ],
 
     /*
