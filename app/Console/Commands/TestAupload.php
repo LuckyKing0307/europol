@@ -34,7 +34,7 @@ class TestAupload extends Command
         $firstDir = $subDirs[0] ?? null;// массив путей
         $importPath = $firstDir . DIRECTORY_SEPARATOR . 'import.xml';
         $offersPath = $firstDir . DIRECTORY_SEPARATOR . 'offers.xml';
-        ImportCatalogJob::dispatch($importPath);
+//        ImportCatalogJob::dispatch($importPath);
         ImportOffersJob::dispatch($offersPath);
     }
 }
