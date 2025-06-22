@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Product;
 use App\Traits\FetchesUrls;
+use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
 use Livewire\WithPagination;
 use Illuminate\Support\Collection;
