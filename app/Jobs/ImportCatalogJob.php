@@ -55,15 +55,16 @@ class ImportCatalogJob implements ShouldQueue
             $name = (string)$groupXml->Наименование;
             info(1);
             info($guid);
+            $parent = $parentId ? Collection::find($parentId) : null;
+            if ($parentId ) {
 
-            if ($parentId) {
+
                 $collection = Collection::updateOrCreate(
                     ['external_id' => $guid],
                     [
                         'attribute_data' => [
                             'name' => new \Lunar\FieldTypes\Text($name),
                         ],
-                        'parent_id' => $parentId,
                     ]
                 );
             } else {
@@ -83,6 +84,10 @@ class ImportCatalogJob implements ShouldQueue
                         'collection_group_id' => $collectionGroup->id,
                     ]
                 );
+            }
+
+            if ($parent){
+                $parent->appendNode($collection);
             }
             info($collection->id);
             $index[$guid] = $collection->id;
