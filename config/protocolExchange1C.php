@@ -123,9 +123,7 @@ return [
      * стандартной группы middleware web), т.к. ничего работать не будет, передается единственная
      * кука - имя куки сессии и ИД сессии
      */
-    'middleware'         => [
-//        \Illuminate\Session\Middleware\StartSession::class,
-    ],
+    'middleware'         => ['web'],
 
     /*
      * Тип работы по-умолчанию, может быть catalog или sale, исключительно для
