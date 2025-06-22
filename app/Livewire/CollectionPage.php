@@ -65,6 +65,7 @@ class CollectionPage extends Component
     public function getProductsProperty(): mixed
     {
         $query = $this->url?->element->childProducts();
+        $child = $this->url?->element->children()->select('id');
 
         if (!empty($this->activeFilters)) {
             $query->whereHas('variants.productOptionValues', function ($q) {
