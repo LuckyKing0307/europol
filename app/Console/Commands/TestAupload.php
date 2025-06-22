@@ -28,7 +28,7 @@ class TestAupload extends Command
      */
     public function handle()
     {
-        $exchangeRoot = storage_path('app/1cExchange');
+        $exchangeRoot = storage_path('1cExchange');
         $subDirs = File::directories($exchangeRoot);
         sort($subDirs);
         $firstDir = $subDirs[0] ?? null;// массив путей
