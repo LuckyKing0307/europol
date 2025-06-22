@@ -62,26 +62,46 @@ class CollectionPage extends Component
     /**
      * Computed property to return the collection.
      */
-    public function getProductsProperty(): mixed
+    public function getProductsProperty()
     {
-        $query = $this->url?->element->products();
+        // 1) Текущая коллекция (или null, если url не привязан)
+        /** @var Collection|null $collection */
+        $collection = $this->url?->element;
 
-        if (!empty($this->activeFilters)) {
+        if (!$collection) {
+            return collect();    // или Product::query()->paginate(0);
+        }
+
+        // 2) ID всех нужных коллекций: текущая + все дочерние уровни
+        $collectionIds = $collection
+            ->descendantsAndSelf()   // Nested Set scope
+            ->pluck('id');
+
+        // 3) Базовый запрос по товарам, у которых есть связка с этими коллекциями
+        $query = Product::whereHas('collections', function ($q) use ($collectionIds) {
+            $q->whereIn('lunar_collections.id', $collectionIds);
+        });
+
+        // 4) Опционные фильтры (ваш прежний код)
+        if ($this->activeFilters) {
             $query->whereHas('variants.productOptionValues', function ($q) {
                 $q->whereIn('lunar_product_option_values.id', $this->activeFilters);
             });
         }
-        if (!is_null($this->minPrice)) {
-            $query->whereHas('variants.basePrices', function ($q) {
-                $q->where('price', '>=', $this->minPrice);
-            });
+
+        if ($this->minPrice !== null) {
+            $query->whereHas('variants.basePrices', fn ($q) =>
+            $q->where('price', '>=', $this->minPrice)
+            );
         }
 
-        if (!is_null($this->maxPrice)) {
-            $query->whereHas('variants.basePrices', function ($q) {
-                $q->where('price', '<=', $this->maxPrice);
-            });
+        if ($this->maxPrice !== null) {
+            $query->whereHas('variants.basePrices', fn ($q) =>
+            $q->where('price', '<=', $this->maxPrice)
+            );
         }
+
+        // 5) Пагинация
         return $query->paginate(16);
     }
     public function getCollectionsProperty()
