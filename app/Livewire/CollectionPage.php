@@ -66,9 +66,29 @@ class CollectionPage extends Component
     {
         $childIds = $this->url?->element->children()->pluck('id')->all();
         $query = Product::query()
-            ->whereHas('collections', fn ($q) =>
-            $q->whereIn('lunar_collections.id', $childIds)
-            );
+        ->whereExists(function ($q) use ($childIds) {
+            $q->select(DB::raw(1))
+                ->from('lunar_collection_product as cp')
+                ->whereColumn('cp.product_id', 'lunar_products.id')
+                ->whereIn('cp.collection_id', $childIds);
+        });
+        info($query->toSql());
+        if (!empty($this->activeFilters)) {
+            $query->whereHas('variants.productOptionValues', function ($q) {
+                $q->whereIn('lunar_product_option_values.id', $this->activeFilters);
+            });
+        }
+        if (!is_null($this->minPrice)) {
+            $query->whereHas('variants.basePrices', function ($q) {
+                $q->where('price', '>=', $this->minPrice);
+            });
+        }
+
+        if (!is_null($this->maxPrice)) {
+            $query->whereHas('variants.basePrices', function ($q) {
+                $q->where('price', '<=', $this->maxPrice);
+            });
+        }
         return $query->paginate(16);
     }
     public function getCollectionsProperty()
