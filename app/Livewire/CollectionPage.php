@@ -64,7 +64,7 @@ class CollectionPage extends Component
      */
     public function getProductsProperty(): mixed
     {
-        $query = $this->url?->element->childProducts();
+        $query = $this->url?->element->products();
         $child = $this->url?->element->children()->select('id');
 
 
