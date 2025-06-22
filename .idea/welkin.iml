@@ -436,6 +436,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/sodium_compat" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/pusher/pusher-php-server" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/lunarphp/lunar" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/arsengoian/commerce-ml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mavsan/laravel-1c-protocol" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
