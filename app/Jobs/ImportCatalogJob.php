@@ -67,11 +67,22 @@ class ImportCatalogJob implements ShouldQueue
                     ]
                 );
             } else {
-                $collection = \Lunar\Models\CollectionGroup::updateOrCreate(
+                $collectionGroup = \Lunar\Models\CollectionGroup::updateOrCreate(
                     ['external_id' => $guid],
                     [
                         'name' => $name,
                         'handle' => Str::slug($name, '-')
+                    ]
+                );
+
+
+                $collection = Collection::updateOrCreate(
+                    ['external_id' => $guid],
+                    [
+                        'attribute_data' => [
+                            'name' => new \Lunar\FieldTypes\Text($name),
+                        ],
+                        'collection_group_id' => $collectionGroup->id,
                     ]
                 );
             }
