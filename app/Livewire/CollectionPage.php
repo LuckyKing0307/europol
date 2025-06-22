@@ -64,9 +64,13 @@ class CollectionPage extends Component
      */
     public function getProductsProperty(): mixed
     {
-        $query = $this->url?->element->products();
-        $child = $this->url?->element->children()->select('id');
-
+        $childIds = $this->url?->element->children()->pluck('id')->all();
+        $query = $this->url?->element->belongsToMany(
+            \Lunar\Models\Product::modelClass(),
+            "lunar_collection_product"
+        )->withPivot([
+            'position',
+        ])->wherePivotIn('collection_id', $childIds)->withTimestamps()->orderByPivot('position');;
 
         if (!empty($this->activeFilters)) {
             $query->whereHas('variants.productOptionValues', function ($q) {
