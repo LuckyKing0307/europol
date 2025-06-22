@@ -80,7 +80,7 @@ class ImportCatalogJob implements ShouldQueue
                         'attribute_data' => [
                             'name' => new \Lunar\FieldTypes\Text($name),
                         ],
-                        'collection_group_id' => $collectionGroup->id ?? '',
+                        'collection_group_id' => $collectionGroup->id,
                     ]
                 );
             }
