@@ -67,6 +67,7 @@ class CollectionPage extends Component
         $query = $this->url?->element->childProducts();
         $child = $this->url?->element->children()->select('id');
 
+
         if (!empty($this->activeFilters)) {
             $query->whereHas('variants.productOptionValues', function ($q) {
                 $q->whereIn('lunar_product_option_values.id', $this->activeFilters);
