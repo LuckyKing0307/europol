@@ -5,9 +5,9 @@
     .address-card.active {box-shadow:0 0 0 2px #e2c591 inset;}
     .show-btn       {margin-top:10px; display:block; width:100%; padding:8px 0;
         background:#e2c591; border:none; border-radius:6px; cursor:pointer;}
-    #map            {flex:1 1 0; height:70vh; min-width:400px; border-radius:8px; margin-top: 0; margin-left: 30px}
+    #map            {flex:1 1 0; height:70vh; min-width:400px; max-width: 80%; border-radius:8px; margin-top: 0; margin-left: 30px}
 </style>
-<div class="max-w-screen-2xl mx-auto flex justify-between">
+<div class="max-w-screen-2xl mx-auto flex justify-between p-4">
     <div class="addresses" id="addressList">
         <!-- Карточки генерируем шаблонно (ниже покажу как) -->
         <!-- Пример одной карточки: -->
