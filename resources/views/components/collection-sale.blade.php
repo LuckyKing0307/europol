@@ -1,4 +1,4 @@
-<div class="myCatalog" style="height: 70vh;">
+<div class="myCatalog">
     <div class="flex max-w-screen-2xl mx-auto justify-between h-full">
         <div class="content">
             <h1 class="title">Напольные решения для вашего интерьера</h1>

@@ -225,6 +225,7 @@ input:checked + .switch>.slider:before {
 }
 .myCatalog{
     background-color: #FFF9EE;
+    height: 70vh;
 }
 .content{
     width: 50%;
