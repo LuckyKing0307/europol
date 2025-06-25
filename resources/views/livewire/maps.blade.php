@@ -25,7 +25,7 @@
     <div id="map"></div>
 </div>
 
-<script>
+<script defer>
     /* 1) Подгружаем список адресов в массив (можно хранить в JSON или прямо в PHP) */
     const branches = [
         {
