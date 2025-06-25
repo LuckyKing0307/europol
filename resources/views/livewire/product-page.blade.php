@@ -138,7 +138,7 @@
             <div class="max-w-screen-2xl">
                 <div class="product-specs">
                     <h2 class="product-specs__title">О товаре</h2>
-                    <div class="prose">
+                    <div class="prose content">
                         {!! $this->product->translateAttribute('description') !!}
                     </div>
                 </div>
