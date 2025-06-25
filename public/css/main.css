@@ -1695,6 +1695,7 @@ article{
         width: 100%;
     }
     .myCatalog{
+        height: auto;
         padding: 50px 30px 60px;
     }
     .myCatalog>div{
