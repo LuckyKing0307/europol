@@ -3,12 +3,12 @@
     .container      {display:flex; gap:24px; max-width:1200px; margin:0 auto;}
     .addresses      {width:300px; overflow-y:auto; max-height:90vh;}
     .address-card   {background:#fafafa; border-radius:8px; padding:12px 14px; margin-bottom:12px;}
-    .address-card.active {box-shadow:0 0 0 2px #ffcc00 inset;}
+    .address-card.active {box-shadow:0 0 0 2px #e2c591 inset;}
     .show-btn       {margin-top:10px; display:block; width:100%; padding:8px 0;
-        background:#ffcc00; border:none; border-radius:6px; cursor:pointer;}
+        background:#e2c591; border:none; border-radius:6px; cursor:pointer;}
     #map            {flex:1 1 0; height:90vh; min-width:400px; border-radius:8px;}
 </style>
-<div class="container">
+<div class="max-w-screen-2xl mx-auto">
     <div class="addresses" id="addressList">
         <!-- Карточки генерируем шаблонно (ниже покажу как) -->
         <!-- Пример одной карточки: -->
