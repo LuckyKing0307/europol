@@ -9,6 +9,12 @@
                                  src="{{ $this->image->getUrl('large') }}"
                                  alt="{{ $this->product->translateAttribute('name') }}" />
                         </div>
+                    @else
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img class="object-cover main_img"
+                                 src="{{asset('img/empty.png') }}"
+                                 alt="empty"/>
+                        </div>
                     @endif
 
                     <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">

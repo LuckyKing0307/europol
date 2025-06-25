@@ -29,8 +29,12 @@ $info = [
        wire:navigate>
         @if ($product->thumbnail)
             <img class="object-cover transition-transform duration-300 group-hover:scale-105"
-                 src="{{ $product->thumbnail->getUrl('medium') }}"
+                 src="{{ $product->thumbnail->getUrl('medium')}}"
                  alt="{{ $product->translateAttribute('name') }}"/>
+        @else
+            <img class="object-cover transition-transform duration-300 group-hover:scale-105"
+                 src="{{asset('img/empty.png') }}"
+                 alt="empty"/>
         @endif
     </a>
     <div class="product_details">

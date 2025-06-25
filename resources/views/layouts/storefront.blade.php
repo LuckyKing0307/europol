@@ -47,8 +47,34 @@
 <x-footer/>
 
 @livewireScripts
-<script>(function(a,m,o,c,r,m){a[m]={id:"430467",hash:"7462463ff36f16ac96d963c482521d04374a712c44e99cbb71f0e91dd62bdcd3",locale:"ru",inline:false,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script>
+{{----}}
+<script>(function(a,m,o,c,r,m){a[m]={id:"430467",hash:"7462463ff36f16ac96d963c482521d04374a712c44e99cbb71f0e91dd62bdcd3",locale:"ru",inline:true,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+<script>
+    /**
+     * 1. Каждые 5000 мс пытаемся найти iframe с нужным селектором.
+     * 2. Как только нашли — прекращаем поиск (clearInterval),
+     *    подписываемся на его загрузку (или сразу работаем, если уже загружен).
+     * 3. Через 5 секунд после загрузки фрейма начинаем искать
+     *    элемент с динамическим классом `styles_messages_inner__…`
+     *    и повторяем проверку каждые 300 мс, пока не найдём.
+     */
+
+    const IFRAME_SELECTOR = 'iframe';   // ← поставь свой селектор
+    const IFRAME_SCAN_DELAY = 5000;               // 5 cек — интервал, чтобы искать iframe
+    const INNER_FIRST_DELAY = 5000;               // 5 cек — пауза до первого поиска внутри
+    const INNER_SCAN_DELAY = 300;                 // 0.3 cек — интервал, чтобы искать элемент
+
+    const iframeScanner = setInterval(() => {
+        let iframe = document.querySelector(IFRAME_SELECTOR);
+        if (!iframe) return;           // ещё не появился — ждём следующий цикл
+        console.log(iframe)
+        let inner = document.querySelector(
+            '[class^="styles_messages_inner__"],[class*="styles_messages_inner__"]'
+        );
+        console.log(inner)
+    }, IFRAME_SCAN_DELAY);
+</script>
 </body>
 
 </html>

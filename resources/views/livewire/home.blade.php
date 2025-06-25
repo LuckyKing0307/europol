@@ -69,6 +69,5 @@
 {{--        </div>--}}
 {{--    </section>--}}
 
-    <livewire:components.chat-component :visitor-id="session()->getId()" />
 </div>
 

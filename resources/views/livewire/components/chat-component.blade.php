@@ -57,8 +57,18 @@
     </div>
     <button
         @click="open = !open"
-        class="bg-blue-600  text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none main_color"
+        class="bg-blue-600 breathing  text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none main_color"
     >
+
+        <div id="contactBanner"
+             style="display:none; position:fixed; bottom:1rem; right:1rem;
+            background:#DBB875; color:#000; padding:1rem 1.25rem;
+            border-radius:0.5rem; box-shadow:0 4px 12px rgba(0,0,0,.15);">
+            Свяжитесь с нами
+            <div id="closeBanner"
+                    style="margin-left:0.75rem; background:transparent; border:none;
+                 color:#000; font-weight:bold; cursor:pointer;">×</div>
+        </div>
         <template x-if="!open">
             {{-- Иконка чата --}}
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -78,6 +88,17 @@
         </template>
     </button>
 
+    <script>
+            // показываем баннер только если его раньше не закрывали
+            setTimeout(() => {
+                document.getElementById('contactBanner').style.display = 'flex';
+            }, 5000); // 5 секунд
+
+            document.getElementById('closeBanner')?.addEventListener('click', () => {
+            document.getElementById('contactBanner').style.display = 'none';
+            localStorage.setItem('bannerDismissed', '1'); // запоминаем закрытие
+        });
+    </script>
     {{-- Окно чата (absolutely positioned над кнопкой) --}}
 
 </div>

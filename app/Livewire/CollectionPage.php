@@ -66,14 +66,18 @@ class CollectionPage extends Component
     public function getProductsProperty(): mixed
     {
         $childIds = $this->url?->element->children()->pluck('id')->all();
-        $query = Product::query()
-        ->whereExists(function ($q) use ($childIds) {
-            $q->select(DB::raw(1))
-                ->from('lunar_collection_product as cp')
-                ->whereColumn('cp.product_id', 'lunar_products.id')
-                ->whereIn('cp.collection_id', $childIds);
-        });
-        info($query->toSql());
+        if (count($childIds)>0){
+
+            $query = Product::query()
+                ->whereExists(function ($q) use ($childIds) {
+                    $q->select(DB::raw(1))
+                        ->from('lunar_collection_product as cp')
+                        ->whereColumn('cp.product_id', 'lunar_products.id')
+                        ->whereIn('cp.collection_id', $childIds);
+                });
+        }else{
+            $query = $this->url?->element->products();
+        }
         if (!empty($this->activeFilters)) {
             $query->whereHas('variants.productOptionValues', function ($q) {
                 $q->whereIn('lunar_product_option_values.id', $this->activeFilters);
