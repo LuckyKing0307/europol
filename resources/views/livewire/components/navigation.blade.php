@@ -4,7 +4,7 @@
             <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl ">
                 <div class="flex header-info">
                     <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span><span id="tashkent">Ташкент</span></div>
-                    <a href="tel:+998723049843" class="shops">Магазины</a>
+                    <a href="{{route('maps')}}" class="shops">Магазины</a>
                 </div>
                 <div class="lang flex header-info">
                     {{--                @livewire('language-switcher')--}}

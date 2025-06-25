@@ -34,7 +34,7 @@
     <link rel="stylesheet"
           href="https://unpkg.com/beerslider/dist/BeerSlider.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ad99ba7e-6736-4900-9db3-b2f246c8b1a8&lang=ru_RU" defer></script>
 </head>
 
 <body class="antialiased text-gray-900">

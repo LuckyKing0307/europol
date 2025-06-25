@@ -6,6 +6,7 @@ use App\Livewire\CheckoutPage;
 use App\Livewire\CheckoutSuccessPage;
 use App\Livewire\CollectionPage;
 use App\Livewire\Home;
+use App\Livewire\Maps;
 use App\Livewire\ProductPage;
 use App\Livewire\SearchPage;
 use App\Models\ChatMessage;
@@ -57,6 +58,8 @@ Route::get('/collections', CollectionPage::class)->name('collection.view.all');
 Route::get('/products/{slug}', ProductPage::class)->name('product.view');
 
 Route::get('search', SearchPage::class)->name('search.view');
+
+Route::get('/maps', Maps::class)->name('maps');
 
 Route::get('checkout', CheckoutPage::class)->name('checkout.view');
 
