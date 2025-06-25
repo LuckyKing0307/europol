@@ -68,11 +68,7 @@
     const iframeScanner = setInterval(() => {
         let iframe = document.querySelector(IFRAME_SELECTOR);
         if (!iframe) return;           // ещё не появился — ждём следующий цикл
-        console.log(iframe)
-        let inner = document.querySelector(
-            '[class^="styles_messages_inner__"],[class*="styles_messages_inner__"]'
-        );
-        console.log(inner)
+        document.querySelector('.amo-button__link').click()
     }, IFRAME_SCAN_DELAY);
 </script>
 </body>
