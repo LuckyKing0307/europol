@@ -59,7 +59,7 @@ body{
     width: 100%;
     margin-bottom: 20px;
 }
-.header-info>*{
+.header-info *{
     display: flex;
     align-items: center;
     color: #DBB875;

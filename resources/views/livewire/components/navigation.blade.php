@@ -3,7 +3,7 @@
         <div class="max-w-screen-2xl mx-auto flex justify-end">
             <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl ">
                 <div class="flex header-info">
-                    <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span>Ташкент</div>
+                    <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span><span id="tashkent">Ташкент</span></div>
                     <a href="tel:+998723049843" class="shops">Магазины</a>
                 </div>
                 <div class="lang flex header-info">
@@ -161,5 +161,13 @@
                 toggleCatalog();
             }
         });
+        fetch('https://ipapi.co/json/')
+            .then(r => r.json())
+            .then(data => {
+            const location =
+            `${data.city}, ${data.country_name}`;
+                document.querySelector('#tashkent').innerText = location;
+        })
+        .catch(() => console.log('не смогли найти'));
     </script>
 </header>
