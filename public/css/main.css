@@ -227,6 +227,9 @@ input:checked + .switch>.slider:before {
     background-color: #FFF9EE;
     height: 70vh;
 }
+.mapping{
+    width:50%;height:800px;overflow:hidden;position:relative;
+}
 .content{
     width: 50%;
     display: flex;
@@ -1698,6 +1701,12 @@ article{
     .myCatalog{
         height: auto;
         padding: 50px 30px 60px;
+    }
+    .review_text{
+        display: none;
+    }
+    .mapping{
+        width: 100%;
     }
     .myCatalog>div{
         flex-direction: column-reverse;
