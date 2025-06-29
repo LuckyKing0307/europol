@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use App\Jobs\ImportCatalogJob;
 use App\Jobs\ImportOffersJob;
+use App\Jobs\ImportProductsFromExcel;
+use App\Models\ExcelImport;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
@@ -28,13 +30,8 @@ class TestAupload extends Command
      */
     public function handle()
     {
-        $exchangeRoot = storage_path('1cExchange');
-        $subDirs = File::directories($exchangeRoot);
-        sort($subDirs);
-        $firstDir = $subDirs[0] ?? null;// массив путей
-        $importPath = $firstDir . DIRECTORY_SEPARATOR . 'import.xml';
-        $offersPath = $firstDir . DIRECTORY_SEPARATOR . 'offers.xml';
-//        ImportCatalogJob::dispatch($importPath);
-        ImportOffersJob::dispatch($offersPath);
+        $import = ExcelImport::find(2);
+
+        ImportProductsFromExcel::dispatch($import);
     }
 }
