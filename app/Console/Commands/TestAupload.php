@@ -36,9 +36,8 @@ class TestAupload extends Command
         $products = Product::where('created_at', '<', now()->subDays(2))->get();
         if (!$products->isEmpty()) {
             foreach ($products as $product) {
-                $variant = $product->variants();
-                if ($variant->exists()){
-                    $variant->first();
+                $variant = $product->variants()->first();
+                if ($variant){
                     Price::updateOrCreate(
                         ['priceable_id' => $variant->id],
                         [
