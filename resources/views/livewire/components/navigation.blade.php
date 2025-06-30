@@ -106,6 +106,7 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
 
             <div class="flex items-center justify-between flex-1 ml-4 lg:justify-end search_input_wrapper">
