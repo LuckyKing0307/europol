@@ -96,6 +96,16 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
                     'stock' => 0,
                 ]
             );
+            $price = Price::updateOrCreate(
+                ['priceable_id' => $variant->id],
+                [
+                    'price' => 0,
+                    'compare_price' => 0,
+                    'customer_group_id' => 1,
+                    'currency_id' => 1,
+                    'priceable_type' => 'product_variant'
+                ]
+            );
             $lists = [
                 ['Толщина, мм', $row[5]],
                 ['Ширина, мм', $row[6]],
