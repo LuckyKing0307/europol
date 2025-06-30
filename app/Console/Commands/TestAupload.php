@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Jobs\ImportCatalogJob;
+use App\Jobs\ImportImagesJob;
 use App\Jobs\ImportOffersJob;
 use App\Jobs\ImportProductsFromExcel;
 use App\Models\ExcelImport;
@@ -30,8 +31,6 @@ class TestAupload extends Command
      */
     public function handle()
     {
-        $import = ExcelImport::find(2);
-
-        ImportProductsFromExcel::dispatch($import);
+        ImportImagesJob::dispatch('imports/photos.zip');
     }
 }

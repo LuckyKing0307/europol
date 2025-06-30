@@ -68,7 +68,9 @@
                             class="p-6 space-y-4 bg-white border border-gray-100 shadow-xl">
                             <x-header.search class="max-w-sm mr-4"/>
                             @foreach ($this->collections as $root)
-                                <livewire:components.collection-node :node="$root" :level="0" :key="'node-'.$root->id" />
+                                @if($root->id>=53)
+                                    <livewire:components.collection-node :node="$root" :level="0" :key="'node-'.$root->id" />
+                                @endif
                             @endforeach
                         </ul>
 
