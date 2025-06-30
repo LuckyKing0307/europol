@@ -99,7 +99,9 @@
                     <div class="menu_block hidden">
                         <ul class="p-6 space-y-4 bg-white border border-gray-100 shadow-xl openMenu">
                             @foreach ($this->collections as $root)
+                                @if($root->id>=53)
                                 <livewire:components.collection-node :node="$root" :level="0" :key="'node-'.$root->id" />
+                                @endif
                             @endforeach
                         </ul>
                     </div>
