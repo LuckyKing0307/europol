@@ -33,7 +33,7 @@ class TestAupload extends Command
      */
     public function handle()
     {
-        $products = Product::where('created_at', '<', now()->subDays(2))->get();
+        $products = Product::where('created_at', '>', now()->subDays(2))->get();
         if (!$products->isEmpty()) {
             foreach ($products as $product) {
                 $variant = $product->variants()->first();
