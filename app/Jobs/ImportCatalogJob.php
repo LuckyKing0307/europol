@@ -36,12 +36,6 @@ class ImportCatalogJob implements ShouldQueue
     {
         $xml = simplexml_load_file($this->filePath);
             $collectionIndex = [];           // guid  => collection_id
-            $this->importGroups(
-                $xml->Классификатор->Группы->Группа ?? [],
-                null,
-                $collectionIndex
-            );
-
             /** --------- 3. Товары --------- */
             foreach ($xml->Каталог->Товары->Товар ?? [] as $item) {
                 $this->importProduct($item, $collectionIndex);
@@ -94,7 +88,7 @@ class ImportCatalogJob implements ShouldQueue
             }
         }
     }
-    private function importProduct(\SimpleXMLElement $itemXml, array $groupIndex): void
+    private function importProduct(\SimpleXMLElement $itemXml): void
     {
         /* ---------- 1. Базовые данные из XML ---------- */
         $guid        = (string) $itemXml->Ид;
@@ -144,16 +138,6 @@ class ImportCatalogJob implements ShouldQueue
                 ],
                 ['price' => (int) round($price * 100)]
             );
-        }
-
-        /* ---------- 5. Привязка к коллекциям ---------- */
-        $collectionIds = collect($itemXml->Группы->Ид ?? [])
-            ->map(fn ($g) => $groupIndex[(string) $g] ?? null)
-            ->filter()
-            ->all();
-
-        if ($collectionIds) {
-            $product->collections()->syncWithoutDetaching($collectionIds);
         }
     }
 }
