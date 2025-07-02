@@ -9,7 +9,7 @@
                         @foreach ($this->collections as $root)
                             @if($root->id>=53)
                                 <a class="swiper-slide category_list"  href="{{ route('collection.view', $root->defaultUrl->slug) }}">
-                                    <h3 class="category-title">{{ $node->translateAttribute('name') }}</h3>
+                                    <h3 class="category-title">{{ $root->translateAttribute('name') }}</h3>
                                     <img src="{{asset('img/laminat.png')}}" alt="">
                                 </a>
                             @endif
