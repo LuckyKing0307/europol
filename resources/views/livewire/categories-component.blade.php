@@ -6,34 +6,14 @@
                 <!-- Обёртка Swiper -->
                 <div class="swiper category-slider" style="padding-bottom: 30px">
                     <div class="swiper-wrapper">
-                        <a class="swiper-slide category_list"  href="">
-                            <h3 class="category-title">Ламинат</h3>
-                            <img src="{{asset('img/laminat.png')}}" alt="">
-                        </a>
-                        <a class="swiper-slide category_list"  href="">
-                            <h3 class="category-title">Ламинат</h3>
-                            <img src="{{asset('img/laminat.png')}}" alt="">
-                        </a>
-                        <a class="swiper-slide category_list"  href="">
-                            <h3 class="category-title">Ламинат</h3>
-                            <img src="{{asset('img/laminat.png')}}" alt="">
-                        </a>
-                        <a class="swiper-slide category_list"  href="">
-                            <h3 class="category-title">Ламинат</h3>
-                            <img src="{{asset('img/laminat.png')}}" alt="">
-                        </a>
-                        <a class="swiper-slide category_list"  href="">
-                            <h3 class="category-title">Ламинат</h3>
-                            <img src="{{asset('img/laminat.png')}}" alt="">
-                        </a>
-                        <a class="swiper-slide category_list"  href="">
-                            <h3 class="category-title">Ламинат</h3>
-                            <img src="{{asset('img/laminat.png')}}" alt="">
-                        </a>
-                        <a class="swiper-slide category_list"  href="">
-                            <h3 class="category-title">Ламинат</h3>
-                            <img src="{{asset('img/laminat.png')}}" alt="">
-                        </a>
+                        @foreach ($this->collections as $root)
+                            @if($root->id>=53)
+                                <a class="swiper-slide category_list"  href="{{ route('collection.view', $root->defaultUrl->slug) }}">
+                                    <h3 class="category-title">{{ $node->translateAttribute('name') }}</h3>
+                                    <img src="{{asset('img/laminat.png')}}" alt="">
+                                </a>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
