@@ -1,4 +1,4 @@
-<div class="mx-auto max-w-screen-2xl content_block">
+<div class="mx-auto max-w-screen-2xl content_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
     <div class="block_title">Популярные товары</div>
     <div class="block_content">
         <div class="sm:w-full lg:w-1/2 flex justify-center">
