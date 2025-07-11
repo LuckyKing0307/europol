@@ -1,3 +1,4 @@
+@section('title', $this->collection->translateAttribute('name'))
 <section>
     @livewire('catalog-novigation')
     @livewire('components.filtration')
