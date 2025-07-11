@@ -3,13 +3,13 @@
         <div class="max-w-screen-2xl mx-auto flex justify-end">
             <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl ">
                 <div class="flex header-info">
-                    <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span><span id="tashkent">Ташкент</span></div>
+                    <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span><span id="tashkent" class="ml-2">Ташкент</span></div>
                     <a href="{{route('maps')}}" class="shops">Магазины</a>
                 </div>
                 <div class="lang flex header-info">
                     {{--                @livewire('language-switcher')--}}
                     <div class="working-time">с 9:00 до 20:00 ежедневно</div>
-                    <a href="tel:+998901234567"><span><img src="{{asset('img/phone.svg')}}" alt=""></span>+998 90 123 45 67</a>
+                    <a href="tel:+998901234567" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt="" style="margin-left: 5px;"></span>+998 90 123 45 67</a>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
 
                <x-brand.logo class="w-auto h-6 text-indigo-600"/>
            </a>
-            <div class="flex items-center justify-center  ml-2 lg:justify-center catalogs_wrapper" >
+            <div class="flex items-center justify-center lg:justify-center catalogs_wrapper" >
                 <div class="catalogs">
                     <div class="btns active menu_btn"  onclick="openMenu()"><button class="menu_btn">{{ __('header.catalog') }}</button></div>
                     <div class="menu_block hidden">
