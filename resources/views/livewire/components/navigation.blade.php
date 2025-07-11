@@ -1,7 +1,8 @@
 <header class="relative border-b border-gray-100">
     <div class="sub-header ">
         <div class="max-w-screen-2xl mx-auto flex justify-end">
-            <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl ">
+            <div class="flex" style="min-width: 10%;"></div>
+            <div class="flex flex-1 items-center justify-between px-4 max-w-screen-2xl ">
                 <div class="flex header-info">
                     <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span><span id="tashkent" class="ml-2">Ташкент</span></div>
                     <a href="{{route('maps')}}" class="shops">Магазины</a>
@@ -9,13 +10,13 @@
                 <div class="lang flex header-info">
                     {{--                @livewire('language-switcher')--}}
                     <div class="working-time">с 9:00 до 20:00 ежедневно</div>
-                    <a href="tel:+998901234567" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt="" style="margin-left: 5px;"></span>+998 90 123 45 67</a>
+                    <a href="tel:+998901234567" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt="" style="margin-left: 10px;margin-right: 5px;"></span>+998 90 123 45 67</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="max-w-screen-2xl mx-auto flex justify-end">
-        <div class="flex items-center" style="max-width: 15%;">
+        <div class="flex items-center" style="max-width: 10%;">
             <a class="flex items-center flex-shrink-0 logo_item"  style="max-width: 100%;"
                href="{{ url('/') }}"
                wire:navigate
@@ -25,7 +26,7 @@
                 <x-brand.logo class="w-auto h-6 text-indigo-600"/>
             </a>
         </div>
-        <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl menu_bar">
+        <div class="flex flex-1 items-center justify-between px-4 max-w-screen-2xl menu_bar">
             <div x-data="{ mobileMenu: false }">
                 <button x-on:click="mobileMenu = !mobileMenu"
                         class="grid flex-shrink-0 w-16 h-16 border-l border-gray-100 lg:hidden">
@@ -121,8 +122,9 @@
     </div>
 
     <div class="max-w-screen-2xl mx-auto flex justify-end main_pc_menu">
-        <div class="flex flex-1 items-center justify-between h-16 px-4 max-w-screen-xl">
-            <nav class="hidden lg:gap-4 lg:flex">
+        <div class="flex" style="min-width: 10%;"></div>
+        <div class="flex flex-1 items-center justify-between h-16 px-4 max-w-screen-2xl">
+            <nav class="hidden lg:gap-4 lg:flex nav_data">
                 {{--            @foreach ($this->collections as $collection)--}}
                 {{--                <a class="text-sm font-medium transition hover:opacity-75"--}}
                 {{--                   href="{{ route('collection.view', $collection->defaultUrl->slug) }}"--}}

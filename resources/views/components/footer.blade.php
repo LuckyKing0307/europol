@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="footer__container">
+    <div class="footer__container max-w-screen-2xl ">
         <!-- Блок с лого и описанием -->
         <div class="footer__col footer__col--brand">
             <x-brand.logo class="footer__logo" />

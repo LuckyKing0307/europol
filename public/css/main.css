@@ -1,11 +1,77 @@
 /* Кастомная пагинация (точки) */
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Maxima Nouva';
+    src: url('../fonts/Maxima/MaximaNouva-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
 body{
     overflow-x: hidden;
 }
+.text-sm{
+    font-family: Maxima Nouva,sans-serif !important;
+}
 *{
-    font-family: Roboto, sans-serif;
     color: #272727;
     box-sizing: border-box;
+    font-family: Maxima Nouva, sans-serif !important;
 }
 .swiper-pagination-bullet {
     background-color: #d1d5db; /* gray-400 */
@@ -241,7 +307,7 @@ input:checked + .switch>.slider:before {
     vertical-align: bottom;
 }
 .text{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Maxima Nouva', sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 150%;
@@ -392,7 +458,7 @@ input:checked + .switch>.slider:before {
     vertical-align: bottom;
 }
 .review_block_text{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Maxima Nouva', sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -407,7 +473,7 @@ input:checked + .switch>.slider:before {
 
 }
 .score_date{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Maxima Nouva', sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -468,7 +534,7 @@ input:checked + .switch>.slider:before {
 .in_stock{
     margin-top: 18px;
     margin-bottom: 31px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Maxima Nouva', sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
@@ -566,7 +632,7 @@ input:checked + .switch>.slider:before {
     margin-bottom: 7px;
 }
 .product_info_text{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Maxima Nouva', sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
@@ -865,7 +931,7 @@ input:checked + .switch>.slider:before {
     content: none !important;
 }
 .info_block_text{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Maxima Nouva', sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -1081,7 +1147,6 @@ article{
 }
 
 .footer__container {
-    max-width: 1280px;
     margin: 0 auto;
     display: flex;
     gap: 40px;

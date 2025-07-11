@@ -1,5 +1,5 @@
 <div class="before-after-block">
-    <div class="mx-auto max-w-screen-xl content_block" style="margin-top: 0;">
+    <div class="mx-auto max-w-screen-2xl content_block" style="margin-top: 0;">
         <div class="block_title">Магия преображения полов</div>
         <div class="block_text">Посмотрите, как напольные покрытия меняют восприятие пространства</div>
         <div class="block_content">
