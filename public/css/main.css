@@ -212,7 +212,7 @@ body{
     position: fixed;
 }
 .zet{
-    z-index: 11;
+    z-index: 1000;
     height: 100vh;
 }
 /* Слайдер (круглая часть) */
