@@ -27,7 +27,8 @@ class ProductPrice extends Component
                 $variant ?: $product->variants->first()
             )->get()->matched;
         } catch (\Lunar\Exceptions\MissingCurrencyPriceException $e) {
-            $this->price = null; // или какая-то дефолтная цена
+            $this->price = null;
+            // или какая-то дефолтная цена
         }
     }
 
