@@ -6,6 +6,7 @@
                 <div class="swiper catalog-slider">
                     <div class="swiper-wrapper">
                         @foreach ($this->collections as $collection)
+                            @if($collection->id>=53)
                             <a class="swiper-slide catalog_list"  href="{{ route('collection.view', $collection->defaultUrl->slug) }}">
                                 <p class="text-sm font-medium">
                                     {{ $collection->translateAttribute('name') }}
@@ -13,6 +14,7 @@
                                 <img src="{{ $collection->getFirstMediaUrl('images') }}"
                                      alt="{{ $collection->translate('name') }}">
                             </a>
+                            @endif
                         @endforeach
 
 {{--                        <a class="swiper-slide catalog_list"--}}
