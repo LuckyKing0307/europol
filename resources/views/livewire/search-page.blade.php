@@ -1,5 +1,5 @@
 <section>
-    <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-screen-2xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold">
             {{ __('search.result') }}
             @if (isset($term))
