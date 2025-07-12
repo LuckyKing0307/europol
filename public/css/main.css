@@ -619,7 +619,9 @@ input:checked + .switch>.slider:before {
     margin-bottom: 7px;
     margin-top: 7px;
     height: 50px;
-
+    max-height: 50px;
+    min-height: 50px;
+    overflow: hidden;
 }
 .main_price{
     font-weight: 500;
