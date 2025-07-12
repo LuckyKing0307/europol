@@ -22,9 +22,13 @@ class ProductPrice extends Component
      */
     public function __construct($product = null, $variant = null)
     {
+        try {
             $this->price = Pricing::for(
                 $variant ?: $product->variants->first()
             )->get()->matched;
+        } catch (\Lunar\Exceptions\MissingCurrencyPriceException $e) {
+            $this->price = null; // или какая-то дефолтная цена
+        }
     }
 
     /**
