@@ -618,6 +618,8 @@ input:checked + .switch>.slider:before {
     vertical-align: bottom;
     margin-bottom: 7px;
     margin-top: 7px;
+    height: 50px;
+
 }
 .main_price{
     font-weight: 500;
