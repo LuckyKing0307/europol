@@ -1,3 +1,3 @@
 <span {{ $attributes }}>
-    {{ $price?->price->formatted() }}
+    {{ $product->price?->formatted() }}
 </span>
