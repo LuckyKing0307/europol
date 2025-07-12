@@ -1,4 +1,4 @@
-<header class="relative border-b border-gray-100" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
+<header class="relative border-b border-gray-100" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" style="position: relative; z-index: 100;">
     <div class="sub-header ">
         <div class="max-w-screen-2xl mx-auto flex justify-end">
             <div class="flex" style="min-width: 10%;"></div>
