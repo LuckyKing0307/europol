@@ -85,7 +85,9 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
                         'name' => new TranslatedText(collect([
                             'en' => new Text($name),
                         ])),
-                        'description' => new Text($description),
+                        'description' => new TranslatedText(collect([
+                            'en' => new Text($description),
+                        ])),
                     ]),
                 ]
             );
