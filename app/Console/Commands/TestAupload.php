@@ -39,8 +39,7 @@ class TestAupload extends Command
     {
         // Получаем ID всех продуктов, которые нужно удалить
         $productIds = DB::table('lunar_products')
-            ->where('status', 'draft')
-            ->whereNotNull('external_id')
+            ->where('brand_id', '1')
             ->pluck('id');
 
         if ($productIds->isEmpty()) {
