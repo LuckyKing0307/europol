@@ -38,7 +38,7 @@ class TestAupload extends Command
     public function handle()
     {
         // Получаем ID всех продуктов, которые нужно удалить
-        $productIds = DB::table('products')
+        $productIds = DB::table('lunar_products')
             ->where('status', 'draft')
             ->whereNotNull('external_id')
             ->pluck('id');
@@ -48,16 +48,19 @@ class TestAupload extends Command
         }
 
         // Удаляем связанные данные
-        DB::table('characteristics')->whereIn('product_id', $productIds)->delete();
-        DB::table('images')->whereIn('product_id', $productIds)->delete();
+        DB::table('lunar_collection_product')->whereIn('product_id', $productIds)->delete();
+        DB::table('lunar_customer_group_product')->whereIn('product_id', $productIds)->delete();
+        DB::table('lunar_product_associations')->whereIn('product_parent_id', $productIds)->delete();
+        DB::table('lunar_product_product_option')->whereIn('product_id', $productIds)->delete();
+        DB::table('product_characteristics')->whereIn('product_id', $productIds)->delete();
 
-        $variantIds = DB::table('variants')->whereIn('product_id', $productIds)->pluck('id');
+        $variantIds = DB::table('lunar_product_variants')->whereIn('product_id', $productIds)->pluck('id');
 
         if ($variantIds->isNotEmpty()) {
-            DB::table('prices')->whereIn('variant_id', $variantIds)->delete();
-            DB::table('variants')->whereIn('id', $variantIds)->delete();
+            DB::table('lunar_prices')->whereIn('priceable_id', $variantIds)->delete();
+            DB::table('lunar_product_variants')->whereIn('id', $variantIds)->delete();
         }
 
-        DB::table('products')->whereIn('id', $productIds)->delete();
+        DB::table('lunar_products')->whereIn('id', $productIds)->delete();
     }
 }
