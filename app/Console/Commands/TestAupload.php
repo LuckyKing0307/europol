@@ -36,18 +36,33 @@ class TestAupload extends Command
      */
     public function handle()
     {
-        $products = Product::where(['status' => 'draft'])->whereNotNull('external_id')->get();
-        foreach ($products as $product) {
-            $product->characteristics()->delete();
+        $this->addNewProducts('https://api.moysklad.ru/api/remap/1.2/report/stock/all');
+    }
 
-            $product->images()->delete();
+    function addNewProducts($link)
+    {
+        $client = new \GuzzleHttp\Client();
+        $response = $client->get($link, [
+            'headers' => [
+                'Authorization' => 'Basic ' . base64_encode('admin@europol_uz:09031983iz'),
+                'Content-Type'  => 'application/json;charset=utf-8',
+                'Accept-Encoding'  => 'gzip'
+            ],
+        ]);
 
-            foreach ($product->variants as $variant) {
-                $variant->prices()->delete();
-                $variant->delete();
-            }
+        $data = json_decode($response->getBody(), true);
+        $filename = 'moysklad_' . uniqid() . '.json';
+        $path = storage_path('app/moysklad/' . $filename);
+        // Убедимся, что директория существует
+        if (!file_exists(dirname($path))) {
+            mkdir(dirname($path), 0777, true);
+        }
 
-            $product->delete();
+        // Сохраняем данные
+        file_put_contents($path, json_encode($data));
+        ParcerJob::dispatch($path);
+        if (isset($data['meta']['nextHref'])){
+            $this->addNewProducts($data['meta']['nextHref']);
         }
     }
 }
