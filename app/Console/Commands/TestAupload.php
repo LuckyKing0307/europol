@@ -10,6 +10,7 @@ use App\Jobs\ParcerJob;
 use App\Models\ExcelImport;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Lunar\Models\Price;
@@ -36,33 +37,27 @@ class TestAupload extends Command
      */
     public function handle()
     {
-        $this->addNewProducts('https://api.moysklad.ru/api/remap/1.2/report/stock/all');
-    }
+        // Получаем ID всех продуктов, которые нужно удалить
+        $productIds = DB::table('products')
+            ->where('status', 'draft')
+            ->whereNotNull('external_id')
+            ->pluck('id');
 
-    function addNewProducts($link)
-    {
-        $client = new \GuzzleHttp\Client();
-        $response = $client->get($link, [
-            'headers' => [
-                'Authorization' => 'Basic ' . base64_encode('admin@europol_uz:09031983iz'),
-                'Content-Type'  => 'application/json;charset=utf-8',
-                'Accept-Encoding'  => 'gzip'
-            ],
-        ]);
-
-        $data = json_decode($response->getBody(), true);
-        $filename = 'moysklad_' . uniqid() . '.json';
-        $path = storage_path('app/moysklad/' . $filename);
-        // Убедимся, что директория существует
-        if (!file_exists(dirname($path))) {
-            mkdir(dirname($path), 0777, true);
+        if ($productIds->isEmpty()) {
+            return;
         }
 
-        // Сохраняем данные
-        file_put_contents($path, json_encode($data));
-        ParcerJob::dispatch($path);
-        if (isset($data['meta']['nextHref'])){
-            $this->addNewProducts($data['meta']['nextHref']);
+        // Удаляем связанные данные
+        DB::table('characteristics')->whereIn('product_id', $productIds)->delete();
+        DB::table('images')->whereIn('product_id', $productIds)->delete();
+
+        $variantIds = DB::table('variants')->whereIn('product_id', $productIds)->pluck('id');
+
+        if ($variantIds->isNotEmpty()) {
+            DB::table('prices')->whereIn('variant_id', $variantIds)->delete();
+            DB::table('variants')->whereIn('id', $variantIds)->delete();
         }
+
+        DB::table('products')->whereIn('id', $productIds)->delete();
     }
 }
