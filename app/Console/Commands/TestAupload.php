@@ -37,29 +37,30 @@ class TestAupload extends Command
      */
     public function handle()
     {
-        // Получаем ID всех продуктов, которые нужно удалить
-        $productIds = DB::table('lunar_products')
-            ->where('brand_id', '1')
-            ->pluck('id');
+        $this->addNewProducts('https://api.moysklad.ru/api/remap/1.2/report/stock/all');
+    }
 
-        if ($productIds->isEmpty()) {
-            return;
-        }
-
+    function addNewProducts($link)
+    {
+        $client = new \GuzzleHttp\Client();
+        $response = $client->get($link, [
+            'headers' => [
+                'Authorization' => 'Basic ' . base64_encode('admin@europol_uz:09031983iz'),
+                'Content-Type' => 'application/json;charset=utf-8',
+                'Accept-Encoding' => 'gzip'
+            ],
+        ]);
         // Удаляем связанные данные
-        DB::table('lunar_collection_product')->whereIn('product_id', $productIds)->delete();
-        DB::table('lunar_customer_group_product')->whereIn('product_id', $productIds)->delete();
-        DB::table('lunar_product_associations')->whereIn('product_parent_id', $productIds)->delete();
-        DB::table('lunar_product_product_option')->whereIn('product_id', $productIds)->delete();
-        DB::table('product_characteristics')->whereIn('product_id', $productIds)->delete();
-
-        $variantIds = DB::table('lunar_product_variants')->whereIn('product_id', $productIds)->pluck('id');
-
-        if ($variantIds->isNotEmpty()) {
-            DB::table('lunar_prices')->whereIn('priceable_id', $variantIds)->delete();
-            DB::table('lunar_product_variants')->whereIn('id', $variantIds)->delete();
+        $data = json_decode($response->getBody(), true);
+        $filename = 'moysklad_' . uniqid() . '.json';
+        $path = storage_path('app/moysklad/' . $filename);
+        // Убедимся, что директория существует
+        if (!file_exists(dirname($path))) {
+            mkdir(dirname($path), 0777, true);
         }
 
-        DB::table('lunar_products')->whereIn('id', $productIds)->delete();
+        // Сохраняем данные
+        file_put_contents($path, json_encode($data));
+        ParcerJob::dispatch($path);
     }
 }
