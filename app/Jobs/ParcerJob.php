@@ -40,15 +40,6 @@ class ParcerJob implements ShouldQueue
                         ])),
                     ]),
                 ]);
-            } else {
-                $product->update([
-                    'product_type_id' => 1,
-                    'attribute_data' => collect([
-                        'name' => new TranslatedText(collect([
-                            'en' => new Text($row['name']),
-                        ])),
-                    ]),
-                ]);
             }
             $variant = $product->variants()->firstOrCreate(
                 ['sku' => $row['code']],
