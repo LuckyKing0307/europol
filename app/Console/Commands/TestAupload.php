@@ -46,6 +46,7 @@ class TestAupload extends Command
                 $variant->prices()->delete();
                 $variant->delete();
             }
+
             $product->delete();
         }
     }
