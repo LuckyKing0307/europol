@@ -23,14 +23,14 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
 {
     use RemembersRowNumber, Importable;
 
-    public function __construct(protected ?string $defaultCategory = null)
+    public function __construct(protected string $defaultCategory,protected array $firstRow)
     {
     }
 
     public function model(array $row)
     {
+        info('ass1');
         if($row[0]!=''){
-
             $name = $row[0];
             $collection_father = Collection::whereRaw(
                 "JSON_UNQUOTE(JSON_EXTRACT(attribute_data, '$.name.value')) = ?",
@@ -68,12 +68,14 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
                     ]
                 );
             }
-
-            $brand = Brand::firstOrCreate(['name' => $row[2]]);
+            $brand = null;
+            if($row[1]!=''){
+                $brand = Brand::firstOrCreate(['name' => $row[1]]);
+            }
             $guid = $row[3];
             $sku = $row[3];
             $name = $row[4];
-            $description = $row[16];
+            $description = $row[18] ? $row[18] : $row['17'];
 
             $product = Product::updateOrCreate(
                 ['external_id' => $guid],
@@ -91,6 +93,8 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
                     ]),
                 ]
             );
+            info('ass');
+            info($product->id);
             $variant = $product->variants()->firstOrCreate(
                 ['sku' => $sku],
                 [
@@ -108,29 +112,18 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
                     'priceable_type' => 'product_variant'
                 ]
             );
-            $lists = [
-                ['Толщина, мм', $row[5]],
-                ['Ширина, мм', $row[6]],
-                ['Длина, мм', $row[7]],
-                ['Фаска', $row[8]],
-                ['Класс износостойкости', $row[9]],
-                ['Страна производителя', $row[10]],
-                ['Цвет', $row[11]],
-                ['Тип соединения', $row[12]],
-                ['Пожарные сертификаты', $row[13]],
-                ['Срок службы, лет', $row[14]],
-                ['В упаковке, шт', $row[15]],
-            ];
-            foreach ($lists as $list) {
-                ProductCharacteristic::updateOrCreate(
-                    [
-                        'product_id' => $product->id,
-                        'key' => $list[0],
-                    ],
-                    [
-                        'value' => $list[1],
-                    ]
-                );
+            for ($i=5;$i<=17;$i++){
+                if($this->firstRow[$i]!='' and $this->firstRow[$i]!=null){
+                    ProductCharacteristic::updateOrCreate(
+                        [
+                            'product_id' => $product->id,
+                            'key' => $this->firstRow[$i],
+                        ],
+                        [
+                            'value' => $row[$i],
+                        ]
+                    );
+                }
             }
             $product->collections()->syncWithoutDetaching([$collection->id]);
         }

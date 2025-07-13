@@ -29,7 +29,7 @@ class ImportProductsFromExcel implements ShouldQueue
         $this->import->mark('processing');
 
         try {
-            Excel::import(new ProductRowsImport, Storage::path('public/'.$this->import->path));
+            Excel::import(new ProductSheetsImport(Storage::path('public/'.$this->import->path)), Storage::path('public/'.$this->import->path));
         } catch (\Throwable $e) {
             $this->import->mark('failed', ['error' => $e->getMessage()]);
         }
