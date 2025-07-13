@@ -6,9 +6,12 @@ use App\Jobs\ImportCatalogJob;
 use App\Jobs\ImportImagesJob;
 use App\Jobs\ImportOffersJob;
 use App\Jobs\ImportProductsFromExcel;
+use App\Jobs\ParcerJob;
 use App\Models\ExcelImport;
+use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Lunar\Models\Price;
 use Lunar\Models\Product;
 
@@ -33,23 +36,33 @@ class TestAupload extends Command
      */
     public function handle()
     {
-        $products = Product::where('created_at', '>', now()->subDays(2))->get();
-        if (!$products->isEmpty()) {
-            foreach ($products as $product) {
-                $variant = $product->variants()->first();
-                if ($variant){
-                    Price::updateOrCreate(
-                        ['priceable_id' => $variant->id],
-                        [
-                            'price' => 0,
-                            'compare_price' => 0,
-                            'customer_group_id' => 1,
-                            'currency_id' => 1,
-                            'priceable_type' => 'product_variant'
-                        ]
-                    );
-                }
-            }
+        $this->addNewProducts('https://api.moysklad.ru/api/remap/1.2/report/stock/all');
+    }
+
+    function addNewProducts($link)
+    {
+        $client = new \GuzzleHttp\Client();
+        $response = $client->get($link, [
+            'headers' => [
+                'Authorization' => 'Basic ' . base64_encode('admin@europol_uz:09031983iz'),
+                'Content-Type'  => 'application/json;charset=utf-8',
+                'Accept-Encoding'  => 'gzip'
+            ],
+        ]);
+
+        $data = json_decode($response->getBody(), true);
+        $filename = 'moysklad_' . uniqid() . '.json';
+        $path = storage_path('app/moysklad/' . $filename);
+        // Убедимся, что директория существует
+        if (!file_exists(dirname($path))) {
+            mkdir(dirname($path), 0777, true);
+        }
+
+        // Сохраняем данные
+        file_put_contents($path, json_encode($data));
+        ParcerJob::dispatch($path);
+        if (isset($data['meta']['nextHref'])){
+            $this->addNewProducts($data['meta']['nextHref']);
         }
     }
 }
