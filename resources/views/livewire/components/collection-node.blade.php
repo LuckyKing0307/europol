@@ -9,7 +9,7 @@
          alt="{{ $node->translateAttribute('name') }}"
          class="w-8 h-8 rounded object-cover" loading="lazy">
 
-    <a href="{{ route('collection.view', $node->defaultUrl->slug) }}"
+    <a href="{{ route('collection.view', $node->defaultUrl?->slug) }}"
        class="text-sm font-medium">{{ $node->translateAttribute('name') }}</a>
 
     {{-- Подменю --}}

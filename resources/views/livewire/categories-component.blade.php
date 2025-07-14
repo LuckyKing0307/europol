@@ -4,7 +4,7 @@
         <div class="sm:w-full lg:w-1/2 flex justify-center">
             <div class="w-full max-w-md hidden_type">
                 <!-- Обёртка Swiper -->
-                <div class="swiper category-slider" style="padding-bottom: 30px">
+                <div class="swiper category-slider" style="padding-bottom: 30px; overflow: visible;">
                     <div class="swiper-wrapper">
                         @foreach ($this->collections as $root)
                             @if($root->id>=53)

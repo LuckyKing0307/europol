@@ -24,7 +24,7 @@
     @stack('page-styles')
     <link
         rel="icon"
-        href="{{ asset('favicon.svg') }}"
+        href="{{ asset('icon.svg') }}"
     >
     @livewireStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
