@@ -51,8 +51,7 @@ Route::get('/favorites', \App\Livewire\Pages\Favorites::class)->name('favorites.
 Route::get('/works', \App\Livewire\Pages\Works::class)->name('work.view');
 Route::get('/warranty', \App\Livewire\Pages\Warranty::class)->name('warranty.view');
 
-Route::get('/collections/{slug}', CollectionPage::class)->name('collection.view');
-Route::get('/collections/{slug}', CollectionPage::class)->name('collection.view');
+Route::get('/collections/{slug?}', CollectionPage::class)->name('collection.view');
 Route::get('/collections', CollectionPage::class)->name('collection.view.all');
 
 Route::get('/products/{slug}', ProductPage::class)->name('product.view');
