@@ -49,11 +49,6 @@ class AmoController extends Controller
 
     public function handleCallback(Request $request)
     {
-        $state = session('oauth2state');
-        if (empty($request->state) || $request->state !== $state) {
-            abort(403, 'Invalid state');
-        }
-
         $apiClient = new AmoCRMApiClient(
             config('services.amocrm.client_id'),
             config('services.amocrm.client_secret'),
