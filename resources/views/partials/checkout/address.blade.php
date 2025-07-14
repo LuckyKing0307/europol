@@ -4,6 +4,19 @@
         <h3 class="text-lg font-medium">
             Детали Заказа
         </h3>
+
+        @if ($type == 'shipping' && $step == $currentStep)
+            <label class="flex items-center p-2 rounded-lg cursor-pointer hover:bg-gray-50">
+                <input class="w-5 h-5 text-green-600 border-gray-100 rounded"
+                       type="checkbox"
+                       value="1"
+                       wire:model.live="shippingIsBilling" />
+
+                <span class="ml-2 text-xs font-medium">
+                    {{ __('address.same_as_billing') }}
+                </span>
+            </label>
+        @endif
         @if ($currentStep > $step)
             <button class="px-5 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     type="button"
