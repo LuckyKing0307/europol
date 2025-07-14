@@ -38,6 +38,7 @@ class TestAupload extends Command
     public function handle()
     {
         $this->addNewProducts('https://api.moysklad.ru/api/remap/1.2/report/stock/all');
+
     }
 
     function addNewProducts($link)
