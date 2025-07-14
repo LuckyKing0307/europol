@@ -108,9 +108,9 @@ class CheckoutPage extends Component
         }
 
         // Do we have a shipping address?
-        $this->shipping = $this->cart->shippingAddress ?: new CartAddress;
 
-        $this->billing = $this->cart->billingAddress ?: new CartAddress;
+        $this->shipping = $this->cart->shippingAddress ?: new CartAddress;
+        $this->billing = clone $this->shipping;
 
         $this->determineCheckoutStep();
     }
