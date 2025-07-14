@@ -6,65 +6,55 @@ use AmoCRM\Client\AmoCRMApiClient;
 use AmoCRM\Collections\Leads\LeadsCollection;
 use AmoCRM\Models\LeadModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use League\OAuth2\Client\Token\AccessToken;
 
 class AmoController extends Controller
 {
-    //
     protected AmoCRMApiClient $client;
 
+    public function __construct()
+    {
+        $this->client = new AmoCRMApiClient(
+            config('services.amocrm.client_id'),        // можно любой, если не используется
+            config('services.amocrm.client_secret'),    // можно любой
+            config('services.amocrm.redirect_uri')      // можно любой
+        );
 
-    public function createLead($order)
+        $token = new AccessToken([
+            'access_token'  => config('services.amocrm.access_token'),
+            'expires'       => time() + 3600 * 24 * 365, // фиктивный срок, например 1 год
+            'refresh_token' => '',                       // не нужен
+            'baseDomain'    => config('services.amocrm.base_domain'),
+        ]);
+
+        $this->client->setAccountBaseDomain(config('services.amocrm.base_domain'));
+        $this->client->setAccessToken($token);
+    }
+
+    public function createLead(string $name, int $price = 0): void
     {
         $lead = new LeadModel();
-        $lead->setName("Заказ №{$order->id}")
-            ->setPrice($order->total_price);
+        $lead->setName($name)->setPrice($price)->setPipelineId(9737022)->setStatusId(77583890);
 
-        $leadsCollection = new LeadsCollection();
-        $leadsCollection->add($lead);
 
-        $leadsService = $this->client->leads();
-        $leadsService->add($leadsCollection);
+        $leads = new LeadsCollection();
+        $leads->add($lead);
+
+        $this->client->leads()->add($leads);
     }
-    public function redirectToAmo()
+    public function pipes()
     {
-        $apiClient = new AmoCRMApiClient(
-            config('services.amocrm.client_id'),
-            config('services.amocrm.client_secret'),
-            config('services.amocrm.redirect_uri')
-        );
+        $pipelines = $this->client->pipelines()->get();
 
-        $apiClient->setAccountBaseDomain(config('services.amocrm.base_domain'));
+        foreach ($pipelines as $pipeline) {
+            echo "PIPELINE: " . $pipeline->getName() . " | ID: " . $pipeline->getId() . PHP_EOL;
 
-        $state = bin2hex(random_bytes(16));
-        session()->put('oauth2state', $state);
+            foreach ($pipeline->getStatuses() as $status) {
+                echo "- STAGE: " . $status->getName() . " | ID: " . $status->getId() . PHP_EOL;
+            }
+        }
 
-        $authUrl = $apiClient->getOAuthClient()->getAuthorizeUrl([
-            'state' => $state,
-            'mode' => 'post_message',
-        ]);
-
-        return redirect($authUrl);
-    }
-
-    public function handleCallback(Request $request)
-    {
-        $apiClient = new AmoCRMApiClient(
-            config('services.amocrm.client_id'),
-            config('services.amocrm.client_secret'),
-            config('services.amocrm.redirect_uri')
-        );
-
-        $apiClient->setAccountBaseDomain(config('services.amocrm.base_domain'));
-
-        $accessToken = $apiClient->getOAuthClient()->getAccessTokenByCode($request->code);
-
-        // 📌 ВЫВЕДИ ТОКЕНЫ В КОНСОЛЬ ИЛИ СОХРАНИ В .env/.db
-        dd([
-            'access_token' => $accessToken->getToken(),
-            'refresh_token' => $accessToken->getRefreshToken(),
-            'expires' => $accessToken->getExpires(),
-        ]);
     }
 
 }

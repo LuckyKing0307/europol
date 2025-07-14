@@ -16,10 +16,7 @@ return [
     'amocrm' => [
         'client_id' => env('AMO_CLIENT_ID'),
         'client_secret' => env('AMO_CLIENT_SECRET'),
-        'redirect_uri' => env('AMO_REDIRECT_URI'),
         'access_token' => env('AMO_ACCESS_TOKEN'),
-        'refresh_token' => env('AMO_REFRESH_TOKEN'),
-        'expires' => env('AMO_EXPIRES'),
         'base_domain' => env('AMO_BASE_DOMAIN'), // например: yourdomain.amocrm.ru
     ],
     'mailgun' => [

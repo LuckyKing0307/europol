@@ -76,19 +76,6 @@
                     'type' => 'shipping',
                     'step' => $steps['shipping_address'],
                 ])
-
-                @include('partials.checkout.shipping_option', [
-                    'step' => $steps['shipping_option'],
-                ])
-
-                @include('partials.checkout.address', [
-                    'type' => 'billing',
-                    'step' => $steps['billing_address'],
-                ])
-
-                @include('partials.checkout.payment', [
-                    'step' => $steps['payment'],
-                ])
             </div>
         </div>
     </div>
