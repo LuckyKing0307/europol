@@ -2,7 +2,7 @@
       class="bg-white border border-gray-100 rounded-xl">
     <div class="flex items-center justify-between h-16 px-6 border-b border-gray-100">
         <h3 class="text-lg font-medium">
-            {{ __('address.details') }}
+            Детали Заказа
         </h3>
         @if ($currentStep > $step)
             <button class="px-5 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-700"
@@ -37,15 +37,6 @@
                                    label="{{ __('address.contact_phone') }}"
                                    :errors="$errors->get($type . '.contact_phone')">
                         <x-input.text wire:model.live="{{ $type }}.contact_phone" />
-                    </x-input.group>
-
-                    <x-input.group class="col-span-6 sm:col-span-3"
-                                   label="{{ __('address.contact_email') }}"
-                                   :errors="$errors->get($type . '.contact_email')"
-                                   required>
-                        <x-input.text wire:model.live="{{ $type }}.contact_email"
-                                      type="email"
-                                      required />
                     </x-input.group>
                 </div>
             @elseif($currentStep > $step)
