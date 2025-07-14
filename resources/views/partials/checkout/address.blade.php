@@ -47,12 +47,6 @@
                                       required />
                     </x-input.group>
 
-                    <x-input.group class="col-span-6"
-                                   label="{{ __('address.company_name') }}"
-                                   :errors="$errors->get($type . '.company_name')">
-                        <x-input.text wire:model.live="{{ $type }}.company_name" />
-                    </x-input.group>
-
                     <x-input.group class="col-span-6 sm:col-span-3"
                                    label="{{ __('address.contact_phone') }}"
                                    :errors="$errors->get($type . '.contact_phone')">
@@ -68,66 +62,6 @@
                                       required />
                     </x-input.group>
 
-                    <div class="col-span-6">
-                        <hr class="h-px my-4 bg-gray-100 border-none">
-                    </div>
-
-                    <x-input.group class="col-span-3 sm:col-span-2"
-                                   label="{{ __('address.line_one') }}"
-                                   :errors="$errors->get($type . '.line_one')"
-                                   required>
-                        <x-input.text wire:model.live="{{ $type }}.line_one"
-                                      required />
-                    </x-input.group>
-
-                    <x-input.group class="col-span-3 sm:col-span-2"
-                                   label="{{ __('address.line_two') }}"
-                                   :errors="$errors->get($type . '.line_two')">
-                        <x-input.text wire:model.live="{{ $type }}.line_two" />
-                    </x-input.group>
-
-                    <x-input.group class="col-span-3 sm:col-span-2"
-                                   label="{{ __('address.line_three') }}"
-                                   :errors="$errors->get($type . '.line_three')">
-                        <x-input.text wire:model.live="{{ $type }}.line_three" />
-                    </x-input.group>
-
-                    <x-input.group class="col-span-3 sm:col-span-2"
-                                   label="{{ __('address.city') }}"
-                                   :errors="$errors->get($type . '.city')"
-                                   required>
-                        <x-input.text wire:model.live="{{ $type }}.city"
-                                      required />
-                    </x-input.group>
-
-                    <x-input.group class="col-span-3 sm:col-span-2"
-                                   label="{{ __('address.state') }}"
-                                   :errors="$errors->get($type . '.state')">
-                        <x-input.text wire:model.live="{{ $type }}.state" />
-                    </x-input.group>
-
-                    <x-input.group class="col-span-3 sm:col-span-2"
-                                   label="{{ __('address.postcode') }}"
-                                   :errors="$errors->get($type . '.postcode')"
-                                   required>
-                        <x-input.text wire:model.live="{{ $type }}.postcode"
-                                      required />
-                    </x-input.group>
-
-                    <x-input.group class="col-span-6"
-                                   label="{{ __('address.country') }}"
-                                   required>
-                        <select class="w-full p-3 border border-gray-200 rounded-lg sm:text-sm"
-                                wire:model.live="{{ $type }}.country_id">
-                            <option value="">{{ __('address.select_country') }}</option>
-                            @foreach ($this->countries as $country)
-                                <option value="{{ $country->id }}"
-                                        wire:key="country_{{ $country->id }}">
-                                    {{ $country->native }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </x-input.group>
                 </div>
             @elseif($currentStep > $step)
                 <dl class="grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
