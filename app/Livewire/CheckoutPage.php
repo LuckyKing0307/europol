@@ -121,21 +121,25 @@ class CheckoutPage extends Component
             'shipping.first_name' => 'required',
         ]);
 
-        // Жестко задаём недостающие поля
         $countryId = Country::where('iso3', 'UZB')->value('id');
 
-        $data = array_merge($this->shipping, [
-            'line_one'   => 'ул. Автоматическая, 123',
-            'city'       => 'Ташкент',
-            'postcode'   => '100000',
+        // Собираем полностью обязательные данные
+        $addressData = array_merge($this->shipping, [
+            'line_one' => 'ул. Автоматическая, 123',
+            'city' => 'Ташкент',
+            'postcode' => '100000',
             'country_id' => $countryId,
         ]);
 
-        $this->cart->setShippingAddress($data);
-        $this->cart->setBillingAddress($data);
+        // Устанавливаем shipping и billing адреса одинаковыми
+        $this->cart->setShippingAddress($addressData);
+        $this->cart->setBillingAddress($addressData);
+
+        $this->shipping = $this->cart->shippingAddress;
 
         $this->determineCheckoutStep();
     }
+
 
     public function saveShippingOption(): void
     {
