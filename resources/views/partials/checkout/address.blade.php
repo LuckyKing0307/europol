@@ -61,7 +61,6 @@
                                       type="email"
                                       required />
                     </x-input.group>
-
                 </div>
             @elseif($currentStep > $step)
                 <dl class="grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
@@ -135,20 +134,37 @@
             @endif
 
             @if ($step == $currentStep)
-                <div class="mt-6 text-right">
-                    <button class="px-5 py-3 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500"
-                            type="submit"
-                            wire:key="submit_btn"
-                            wire:loading.attr="disabled"
-                            wire:target="saveAddress">
-                        <span wire:loading.remove wire:target="saveAddress">
-                            {{ __('address.save_address') }}
+                    <form wire:submit="checkout">
+                        <div class="p-4 text-sm text-center text-blue-700 rounded-lg bg-blue-50">
+                            {{ __('payment.offline_notice') }}
+                        </div>
+
+                        <button class="px-5 py-3 mt-4 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500"
+                                type="submit"
+                                wire:key="payment_submit_btn"
+                        >
+                        <span wire:loading.remove.delay wire:target="checkout">
+                            {{ __('payment.submit_order') }}
                         </span>
-                        <span wire:loading wire:target="saveAddress">
-                            {{ __('address.saving') }}
+                            <span wire:loading.delay wire:target="checkout">
+                            <svg class="w-5 h-5 text-white animate-spin"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 24 24">
+                                <circle class="opacity-25"
+                                        cx="12"
+                                        cy="12"
+                                        r="10"
+                                        stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                <path class="opacity-75"
+                                      fill="currentColor"
+                                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
                         </span>
-                    </button>
-                </div>
+                        </button>
+                    </form>
             @endif
         </div>
     @endif
