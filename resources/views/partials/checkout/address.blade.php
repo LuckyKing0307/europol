@@ -2,22 +2,8 @@
       class="bg-white border border-gray-100 rounded-xl">
     <div class="flex items-center justify-between h-16 px-6 border-b border-gray-100">
         <h3 class="text-lg font-medium">
-            {{ ucfirst($type) }} {{ __('address.details') }}
+            {{ __('address.details') }}
         </h3>
-
-        @if ($type == 'shipping' && $step == $currentStep)
-            <label class="flex items-center p-2 rounded-lg cursor-pointer hover:bg-gray-50">
-                <input class="w-5 h-5 text-green-600 border-gray-100 rounded"
-                       type="checkbox"
-                       value="1"
-                       wire:model.live="shippingIsBilling" />
-
-                <span class="ml-2 text-xs font-medium">
-                    {{ __('address.same_as_billing') }}
-                </span>
-            </label>
-        @endif
-
         @if ($currentStep > $step)
             <button class="px-5 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-700"
                     type="button"
