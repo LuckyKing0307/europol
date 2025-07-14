@@ -55,16 +55,6 @@ class CheckoutAddress extends Component
         return [
             'address.first_name' => 'required',
             'address.last_name' => 'required',
-            'address.line_one' => 'required',
-            'address.country_id' => 'required',
-            'address.city' => 'required',
-            'address.postcode' => 'required',
-            'address.company_name' => 'nullable',
-            'address.line_two' => 'nullable',
-            'address.line_three' => 'nullable',
-            'address.state' => 'nullable',
-            'address.delivery_instructions' => 'nullable',
-            'address.contact_email' => 'nullable|email',
             'address.contact_phone' => 'nullable',
         ];
     }

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Http\Controllers\AmoController;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
 use Livewire\Component;
@@ -50,9 +51,6 @@ class CheckoutPage extends Component
      */
     public array $steps = [
         'shipping_address' => 1,
-        'shipping_option' => 2,
-        'billing_address' => 3,
-        'payment' => 4,
     ];
 
     /**
@@ -261,21 +259,17 @@ class CheckoutPage extends Component
             $shipping = $this->cart->shippingAddress;
             $billing  = $this->cart->billingAddress;
 
-            $text = "<b>🛒 Новый заказ #{$this->cart->id}</b>\n"
-                . "Сумма: {$this->cart->total->formatted()}\n\n"
-                . "<u>Товары:</u>\n{$lines}\n\n"
-                . "<u>Доставка:</u>\n"
-                . "{$shipping->first_name} {$shipping->last_name}, "
-                . "{$shipping->line_one} {$shipping->city}, {$shipping->postcode}\n\n"
-                . "<u>Оплата:</u> {$this->paymentType}\n";
+//            $text = "<b>🛒 Новый заказ #{$this->cart->id}</b>\n"
+//                . "Сумма: {$this->cart->total->formatted()}\n\n"
+//                . "<u>Товары:</u>\n{$lines}\n\n"
+//                . "<u>Доставка:</u>\n"
+//                . "{$shipping->first_name} {$shipping->last_name}, "
+//                . "{$shipping->line_one} {$shipping->city}, {$shipping->postcode}\n\n"
+//                . "<u>Оплата:</u> {$this->paymentType}\n";
 
-            // Отправляем в Telegram
-            Telegram::sendMessage([
-                'chat_id'    => config('services.telegram.chat_id'),
-                'parse_mode' => 'HTML',
-                'text'       => $text,
-            ]);
-            return;
+            $amo = new AmoController();
+            $amo->createLead('Заказ с сайта от - '.$shipping->first_name,$this->cart->total->value);
+
         }
 
         return redirect()->route('checkout-success.view');
