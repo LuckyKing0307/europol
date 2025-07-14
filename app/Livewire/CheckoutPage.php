@@ -133,7 +133,6 @@ class CheckoutPage extends Component
 
         // Устанавливаем shipping и billing адреса одинаковыми
         $this->cart->setShippingAddress($addressData);
-        $this->cart->setBillingAddress($addressData);
 
         $this->shipping = $this->cart->shippingAddress;
 
