@@ -135,10 +135,6 @@
 
             @if ($step == $currentStep)
                     <form wire:submit="checkout">
-                        <div class="p-4 text-sm text-center text-blue-700 rounded-lg bg-blue-50">
-                            {{ __('payment.offline_notice') }}
-                        </div>
-
                         <button class="px-5 py-3 mt-4 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500"
                                 type="submit"
                                 wire:key="payment_submit_btn"
