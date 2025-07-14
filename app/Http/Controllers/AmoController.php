@@ -13,26 +13,6 @@ class AmoController extends Controller
     //
     protected AmoCRMApiClient $client;
 
-    public function __construct()
-    {
-        $clientId = config('services.amocrm.client_id');
-        $clientSecret = config('services.amocrm.client_secret');
-        $redirectUri = config('services.amocrm.redirect_uri');
-
-        $this->client = new AmoCRMApiClient($clientId, $clientSecret, $redirectUri);
-
-        // Вставь access_token, refresh_token, expires из своей БД или .env
-        $accessToken = new AccessToken([
-            'access_token'  => config('services.amocrm.access_token'),
-            'refresh_token' => config('services.amocrm.refresh_token'),
-            'expires'       => config('services.amocrm.expires'),
-            'baseDomain'    => config('services.amocrm.base_domain'),
-        ]);
-
-        $this->client
-            ->setAccessToken($accessToken)
-            ->setAccountBaseDomain(config('services.amocrm.base_domain'));
-    }
 
     public function createLead($order)
     {
