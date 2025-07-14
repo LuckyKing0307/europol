@@ -81,12 +81,6 @@ class CheckoutPage extends Component
     public function rules(): array
     {
         return array_merge(
-            $this->getAddressValidation('shipping'),
-            $this->getAddressValidation('billing'),
-            [
-                'shippingIsBilling' => 'boolean',
-                'chosenShipping' => 'required',
-            ]
         );
     }
 
