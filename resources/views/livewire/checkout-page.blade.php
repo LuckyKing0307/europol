@@ -1,4 +1,4 @@
-<div>
+<div style="margin-top: 50px;">
     <div class="max-w-screen-xl mx-auto">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-start">
             <div class="px-6 py-8 space-y-4 bg-white border border-gray-100 lg:sticky lg:top-8 rounded-xl lg:order-last">
