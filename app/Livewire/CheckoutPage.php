@@ -117,27 +117,22 @@ class CheckoutPage extends Component
 
     public function saveAddress(string $type): void
     {
-        // Валидация только нужных для формы полей
-        $validatedData = $this->validate([
-            "{$type}.first_name" => 'required',
-            "{$type}.last_name" => 'nullable',
-            "{$type}.contact_phone" => 'nullable',
+        $this->validate([
+            'shipping.first_name' => 'required',
         ]);
 
-        $address = $this->{$type};
+        // Жестко задаём недостающие поля
+        $countryId = Country::where('iso3', 'UZB')->value('id');
 
-        // 🛠 Жестко задаём обязательные поля для CartAddress
-        $address->country_id = Country::where('iso3', 'UZB')->value('id');
-        $address->line_one = 'ул. Автоматическая, 123';
-        $address->city = 'Ташкент';
-        $address->postcode = '100000';
+        $data = array_merge($this->shipping, [
+            'line_one'   => 'ул. Автоматическая, 123',
+            'city'       => 'Ташкент',
+            'postcode'   => '100000',
+            'country_id' => $countryId,
+        ]);
 
-        $this->cart->setShippingAddress($address);
-
-        // Дублируем в billing
-        $this->cart->setBillingAddress($address->only($address->getFillable()));
-
-        $this->shipping = $this->cart->shippingAddress;
+        $this->cart->setShippingAddress($data);
+        $this->cart->setBillingAddress($data);
 
         $this->determineCheckoutStep();
     }
