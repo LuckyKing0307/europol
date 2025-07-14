@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\NewVisitorMessage;
+use App\Http\Controllers\AmoController;
 use App\Http\Controllers\ChatController;
 use App\Livewire\CheckoutPage;
 use App\Livewire\CheckoutSuccessPage;
@@ -50,7 +51,8 @@ Route::get('/blog', \App\Livewire\Pages\Blog::class)->name('blog.view');
 Route::get('/favorites', \App\Livewire\Pages\Favorites::class)->name('favorites.view');
 Route::get('/works', \App\Livewire\Pages\Works::class)->name('work.view');
 Route::get('/warranty', \App\Livewire\Pages\Warranty::class)->name('warranty.view');
-
+Route::get('/amocrm/auth', [AmoController::class, 'redirectToAmo']);
+Route::get('/amocrm/callback', [AmoController::class, 'handleCallback']);
 Route::get('/collections/{slug?}', CollectionPage::class)->name('collection.view');
 Route::get('/collections', CollectionPage::class)->name('collection.view.all');
 
