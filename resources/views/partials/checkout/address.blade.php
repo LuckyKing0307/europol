@@ -111,16 +111,21 @@
             @endif
 
             @if ($step == $currentStep)
-                    <form wire:submit="checkout">
-                        <button class="px-5 py-3 mt-4 text-sm font-medium text-white basket"
-                                style="color: #fff;"
-                                type="submit"
-                                wire:key="payment_submit_btn"
-                        >
+            @endif
+        </div>
+    @endif
+</form>
+
+<form wire:submit="checkout">
+    <button class="px-5 py-3 mt-4 text-sm font-medium text-white basket"
+            style="color: #fff;"
+            type="submit"
+            wire:key="payment_submit_btn"
+    >
                         <span wire:loading.remove.delay wire:target="checkout">
                             {{ __('payment.submit_order') }}
                         </span>
-                            <span wire:loading.delay wire:target="checkout">
+        <span wire:loading.delay wire:target="checkout">
                             <svg class="w-5 h-5 text-white animate-spin"
                                  xmlns="http://www.w3.org/2000/svg"
                                  fill="none"
@@ -137,9 +142,5 @@
                                 </path>
                             </svg>
                         </span>
-                        </button>
-                    </form>
-            @endif
-        </div>
-    @endif
+    </button>
 </form>
