@@ -112,7 +112,8 @@
 
             @if ($step == $currentStep)
                     <form wire:submit="checkout">
-                        <button class="basket"
+                        <button class="px-5 py-3 mt-4 text-sm font-medium text-white basket"
+                                style="color: #fff;"
                                 type="submit"
                                 wire:key="payment_submit_btn"
                         >
