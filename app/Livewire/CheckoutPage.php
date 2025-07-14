@@ -74,18 +74,21 @@ class CheckoutPage extends Component
         'payment_intent',
         'payment_intent_client_secret',
     ];
-
+    public array $rules = [];
     /**
      * {@inheritDoc}
      */
-    public function rules(): array
-    {
-        return array_merge(
-        );
-    }
 
     public function mount(): void
     {
+        $this->rules = array_merge(
+            $this->getAddressValidation('shipping'),
+            $this->getAddressValidation('billing'),
+            [
+                'shippingIsBilling' => 'boolean',
+                'chosenShipping' => 'required',
+            ]
+        );
         if (! $this->cart = CartSession::current()) {
             $this->redirect('/');
 
@@ -295,16 +298,6 @@ class CheckoutPage extends Component
         return [
             "{$type}.first_name" => 'required',
             "{$type}.last_name" => 'required',
-            "{$type}.line_one" => 'required',
-            "{$type}.country_id" => 'required',
-            "{$type}.city" => 'required',
-            "{$type}.postcode" => 'required',
-            "{$type}.company_name" => 'nullable',
-            "{$type}.line_two" => 'nullable',
-            "{$type}.line_three" => 'nullable',
-            "{$type}.state" => 'nullable',
-            "{$type}.delivery_instructions" => 'nullable',
-            "{$type}.contact_email" => 'required|email',
             "{$type}.contact_phone" => 'nullable',
         ];
     }
