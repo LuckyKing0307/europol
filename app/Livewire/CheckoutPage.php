@@ -50,6 +50,7 @@ class CheckoutPage extends Component
         }
 
         $this->shipping = $this->cart->shippingAddress ?: new CartAddress;
+        $this->shipping->country_id = Country::where('iso3', 'UZB')->value('id');
 
         $this->rules = array_merge(
             $this->getAddressValidation('shipping'),
