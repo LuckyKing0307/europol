@@ -49,7 +49,6 @@ img {
 }
 
 .basket {
-	background-color: #fff;
 	width: 100%;
 }
 
@@ -70,7 +69,7 @@ img {
 	margin-bottom: 50px;
 	font-size: 24px;
 	font-weight: 700;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .basket__btn {
@@ -88,7 +87,7 @@ img {
 .basket__subtitle {
 	font-size: 18px;
 	font-weight: 500;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .basket__phone {
@@ -97,13 +96,12 @@ img {
 	font-size: 32px;
 	font-weight: 500;
 	text-decoration: none;
-	color: #1c1e21;
+	color: #fff;
 }
 
 /* ===================== Избранное ===================== */
 
 .favorites {
-	background-color: #fff;
 	width: 100%;
 }
 
@@ -125,7 +123,7 @@ img {
 	margin-bottom: 50px;
 	font-size: 24px;
 	font-weight: 700;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .favorites__btn {
@@ -152,13 +150,14 @@ img {
 	font-weight: 700;
 	font-size: 32px;
 	margin-bottom: 25px;
+    color: white;
 }
 
 .blogs__descr {
 	text-align: center;
 	font-size: 16px;
 	margin-bottom: 60px;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .blogs__search {
@@ -185,7 +184,7 @@ img {
 	font-style: normal;
 	font-weight: 500;
 	font-size: 18px;
-	color: #1c1e21;
+	color: #fff;
 	cursor: pointer;
 }
 
@@ -212,7 +211,6 @@ img {
 
 .blogs-list__article {
 	overflow: hidden;
-	background: #fff9ee;
 	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.12);
 	border-radius: 20px;
 }
@@ -232,14 +230,14 @@ img {
 .blogs-article__title {
 	font-size: 24px;
 	font-weight: 700;
-	color: #1c1e21;
+	color: #fff;
 	margin-bottom: 10px;
 }
 
 .blogs-article__descr {
 	font-size: 18px;
 	font-weight: 500;
-	color: #1c1e21;
+	color: #fff;
 	margin-bottom: 40px;
 }
 
@@ -247,7 +245,7 @@ img {
 	display: block;
 	font-size: 18px;
 	align-self: flex-end;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .pagination {
@@ -273,7 +271,7 @@ img {
 .pagination__number {
 	font-weight: 700;
 	font-size: 18px;
-	color: #1c1e21;
+	color: #fff;
 	cursor: pointer;
 }
 
@@ -331,7 +329,7 @@ img {
 	position: relative;
 	font-size: 18px;
 	font-weight: 500;
-	color: #1c1e21;
+	color: #fff;
 	text-align: right;
 }
 
@@ -350,7 +348,6 @@ img {
 	width: 100%;
 	bottom: -5px;
 	right: 0;
-	background-color: #1c1e21;
 	max-width: 190px;
 }
 
@@ -365,7 +362,7 @@ img {
 .blog__title {
 	text-align: center;
 	font-size: 24px;
-	color: #1c1e21;
+	color: #fff;
 	margin-bottom: 55px;
 }
 
@@ -391,7 +388,7 @@ img {
 	margin-bottom: 34px;
 	font-size: 48px;
 	font-weight: 700;
-	color: #1c1e21;
+	color: #fff;
 	text-align: center;
 }
 
@@ -399,7 +396,7 @@ img {
 	text-align: center;
 	font-size: 24px;
 	margin-bottom: 65px;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .works__gallery {
@@ -420,13 +417,13 @@ img {
 	margin-bottom: 42px;
 	font-size: 32px;
 	font-weight: 700;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .works-project__descr p {
 	font-size: 18px;
 	margin-bottom: 20px;
-	color: #1c1e21;
+	color: #fff;
 	line-height: 150%;
 }
 
@@ -448,6 +445,7 @@ img {
 
 .works-card__title {
 	font-size: 24px;
+    color: white;
 }
 
 /* ===================== О нас ===================== */
@@ -458,7 +456,6 @@ img {
 .b2b__content {
 	position: relative;
 	padding: 200px 0 200px 130px;
-	background: linear-gradient(90.6deg, #e0c490 0.7%, #dbb875 100%);
 	margin-bottom: 60px;
 }
 
@@ -520,7 +517,6 @@ img {
 	display: flex;
 	align-items: center;
 	max-width: 700px;
-	background: #fff9ee;
 	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.12);
 	border-radius: 20px;
 	padding: 40px;
@@ -536,7 +532,7 @@ img {
 	text-align: center;
 	font-size: 32px;
 	margin-bottom: 35px;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .about-services__subtitle,
@@ -544,33 +540,32 @@ img {
 .warranty-services__subtitle {
 	font-size: 24px;
 	margin-bottom: 25px;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .about-services__descr,
 .b2b-services__descr,
 .warranty-services__descr {
 	font-size: 18px;
-	color: #1c1e21;
+	color: #fff;
 	line-height: 150%;
 }
 
 .about__aim {
 	padding: 40px 0;
-	background-color: #fff9ee;
 }
 
 .about-aim__title {
 	text-align: center;
 	font-size: 32px;
 	margin-bottom: 35px;
-	color: #1c1e21;
+	color: #fff;
 }
 
 .about-aim__descr {
 	text-align: center;
 	font-size: 18px;
-	color: #1c1e21;
+	color: #fff;
 	line-height: 150%;
 }
 
@@ -589,11 +584,7 @@ img {
 
 .b2b__title,
 .b2b__descr {
-	color: #1c1e21;
-}
-
-.b2b__services {
-	background-color: #fff;
+	color: #fff;
 }
 
 .b2b-contact__title,
@@ -604,7 +595,7 @@ img {
 	text-align: center;
 	font-size: 32px;
 	margin-bottom: 60px;
-	color: #1c1e21;
+	color: #fff;
 	max-width: 680px;
     margin-top: 150px;
 }
@@ -613,7 +604,6 @@ img {
 .warranty-form__wrapper {
 	width: 100%;
 	border-radius: 20px;
-	background-color: #fff;
 	box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.12);
 	padding: 80px 20px 20px 20px;
 }
@@ -642,7 +632,7 @@ img {
 .b2b-form__textarea::placeholder,
 .warranty-form__input::placeholder,
 .warranty-form__textarea::placeholder {
-	color: #070505;
+	color: #fff;
 }
 
 .b2b-form__textarea,
@@ -685,13 +675,12 @@ img {
 /* ====================== Гарантия ====================== */
 
 .warranty__content {
-	background-color: #fff;
 	padding: 120px 0;
 }
 
 .warranty__descr,
 .warranty__title {
-	color: #1c1e21;
+	color: #fff;
 }
 
 .warranty__content .container {
@@ -702,7 +691,6 @@ img {
 }
 .faq {
 	padding: 250px 0px;
-	background: url("../img/b2b-form-bg.png") no-repeat center center / cover;
 }
 
 .faq .container {
@@ -714,7 +702,7 @@ img {
 	font-size: 32px;
 	text-align: center;
 	margin-bottom: 40px;
-	color: #070505;
+	color: #fff;
 }
 
 .faq-item {
@@ -729,7 +717,7 @@ img {
 	width: 100%;
 	font-size: 18px;
 	font-weight: bold;
-	color: #070505;
+	color: #fff;
 	background: none;
 	border: none;
 	padding: 0;
@@ -737,6 +725,7 @@ img {
 }
 
 .faq-item__text {
+    color: white;
 	text-align: left;
 	flex: 1;
 }
@@ -780,7 +769,7 @@ img {
 	transition: max-height 0.4s ease, padding-top 0.3s ease;
 	font-size: 18px;
 	font-weight: 500;
-	color: #070505;
+	color: #fff;
 	line-height: 1.5;
 	padding-top: 0;
 }
@@ -796,7 +785,7 @@ img {
 
 .warranty-form__txt {
 	font-size: 18px;
-	color: #070505;
+	color: #fff;
 }
 
 .warranty-contact {
@@ -821,14 +810,14 @@ img {
 
 .page-404__title {
 	font-size: 32px;
-	color: #1c1e21;
+	color: #fff;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
 
 .page-404__descr {
 	font-size: 18px;
-	color: #1c1e21;
+	color: #fff;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1092,6 +1081,7 @@ img {
 	.b2b-services__title {
 		font-size: 24px;
 		margin-bottom: 15px;
+        color: white;
 	}
 
 	.about-services__subtitle,
@@ -1099,6 +1089,7 @@ img {
 	.warranty-services__subtitle {
 		font-size: 18px;
 		margin-bottom: 15px;
+        color: white;
 	}
 
 	.about-services img,
@@ -1111,6 +1102,7 @@ img {
 	.b2b-services__descr,
 	.warranty-services__descr {
 		font-size: 18px;
+        color: white;
 	}
 
 	.about-aim__title {
