@@ -14,14 +14,13 @@
             <img src="{{asset('img/card.svg')}}" alt="">
         </span>
         </button>
-        <button class="header_btn"
-                x-on:click="linesVisible = !linesVisible">
+        <a class="header_btn" href="{{route('favorites.view')}}">
             <span class="sr-only">Cart</span>
 
             <span class="place-self-center">
             <img src="{{asset('img/like.svg')}}" alt="">
         </span>
-        </button>
+        </a>
     </div>
 
     <div
