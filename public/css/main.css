@@ -5,7 +5,20 @@
     font-weight: 400;
     font-style: normal;
 }
+* {
+    scrollbar-width: thin; /* для Firefox */
+    scrollbar-color: #DBB875 transparent; /* цвет ползунка и трека */
+}
 
+/* Chrome, Safari и Edge */
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
 @font-face {
     font-family: 'Maxima Nouva';
     src: url('../fonts/Maxima/MaximaNouva-Bold.ttf') format('truetype');
@@ -64,9 +77,15 @@
 
 body{
     overflow-x: hidden;
+    background: #0E0E0E;
+
 }
-.text-sm{
+.span_ml{
+    margin-left: 5px;
+}
+.text-sm,.text-3xl,.text-xl,.text-2xl{
     font-family: Maxima Nouva,sans-serif !important;
+    color: white !important;
 }
 *{
     color: #272727;
@@ -120,7 +139,10 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+header{
+    background: linear-gradient(270.8deg, #181818 44.56%, #2A2A2A 100%);
+    border: none !important;
+}
 .sub-header {
     width: 100%;
     margin-bottom: 20px;
@@ -266,9 +288,13 @@ input:checked + .switch>.slider:before {
 .search_input {
     padding: 11px 40px;
     padding-left: 24px;
-    border: none;
     color: #7B7873;
-    background: #EADEC7;
+    background: #1D1D1D;
+    border: 1px solid #424242;
+    font-family: SF Pro Display, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    vertical-align: bottom;
 }
 
 .search_btn {
@@ -286,7 +312,7 @@ input:checked + .switch>.slider:before {
     color: black;
 }
 .myCatalog{
-    background-color: #FFF9EE;
+    background-color: #0E0E0E;
     height: 70vh;
 }
 .mapping{
@@ -305,6 +331,7 @@ input:checked + .switch>.slider:before {
     font-size: 56px;
     line-height: 150%;
     vertical-align: bottom;
+    color: white;
 }
 .text{
     font-family: 'Maxima Nouva', sans-serif;
@@ -314,6 +341,7 @@ input:checked + .switch>.slider:before {
     vertical-align: bottom;
     margin-top: 32px;
     margin-bottom: 44px;
+    color: white;
 }
 .btn-main{
     padding: 12px 60px;
@@ -336,6 +364,7 @@ input:checked + .switch>.slider:before {
     display: flex;
     align-items: center;
     font-size: 24px;
+    color: white;
 }
 .hidden_menu      { display: none; }
 .block_menu       { display: block; }
@@ -363,8 +392,8 @@ input:checked + .switch>.slider:before {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #EADEC7;
     margin-left: 16px;
+    border: 1px solid #424242;
 }
 .header_img{
     display: flex;
@@ -381,9 +410,9 @@ input:checked + .switch>.slider:before {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #DBB875;
-
     color: white;
+    background: linear-gradient(270.8deg, #181818 44.56%, #2A2A2A 100%);
+    border: 1px solid #424242
 }
 .category-slider{
     margin-top: 36px;
@@ -391,10 +420,11 @@ input:checked + .switch>.slider:before {
 .category_list{
     text-align: center;
     box-shadow: 0 4px 12px -2px #0000001F;
-    background-color: #FFF9EE;
     aspect-ratio: 1 / 1;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #1D1D1D;
+    border: 1px solid #424242;
 }
 .category_list:hover {
     transform: scale(1.05);
@@ -402,6 +432,7 @@ input:checked + .switch>.slider:before {
 }
 .category-title{
     margin-top: 25px;
+    color: white;
 }
 
 .category_list img{
@@ -441,6 +472,7 @@ input:checked + .switch>.slider:before {
     font-weight: 700;
     font-size: 36px;
     line-height: 100%;
+    color: white;
 }
 
 .block_text{
@@ -449,6 +481,7 @@ input:checked + .switch>.slider:before {
     margin-top: 25px;
     width: 100%;
     margin-bottom: 25px;
+    color: white;
 }
 .review_block{
     padding: 70px 16px 20px 16px;
@@ -589,8 +622,8 @@ input:checked + .switch>.slider:before {
 }
 .product:hover{
     cursor: pointer;
-    background: #FFF9EE;
-    box-shadow: 0 4px 12px -2px #0000001F;
+    border: 1px solid gray;
+    box-shadow: 0 4px 12px -2px #ffff;
 }
 .sale{
     display: flex;
@@ -639,6 +672,10 @@ input:checked + .switch>.slider:before {
     font-size: 26px;
     line-height: 100%;
     margin-bottom: 7px;
+    color: white;
+}
+.sale_price>span{
+    color: white;
 }
 .product_info_text{
     font-family: 'Maxima Nouva', sans-serif;
@@ -647,10 +684,13 @@ input:checked + .switch>.slider:before {
     line-height: 150%;
     vertical-align: bottom;
     display: flex;
+    color: white;
+}
+.product_info_text>img{
+    margin-right: 5px;
 }
 .product_info_text>span{
-    color:#979797;
-    margin-left: 5px;
+    color:#fff;
     margin-right: 5px;
 }
 .sale_discount{
@@ -695,8 +735,74 @@ input:checked + .switch>.slider:before {
 }
 .basket{
     background: #DBB875;
-    width: 80%;
+    width: 80% !important;
     color: white;
+}
+#customChatButton {
+    width: 360px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: #dbb875;
+    color: white;
+    padding: 12px 16px 12px 12px;
+    border-radius: 12px 0 0 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+
+#customChatButton::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-bottom-left-radius: 24px;
+}
+
+.chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid white;
+}
+
+.chat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-name {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.chat-role {
+    font-size: 12px;
+    opacity: 0.85;
+    line-height: 1.2;
+}
+
+.chat-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10000;
 }
 .basket img path{
     fill: white;
@@ -929,11 +1035,12 @@ input:checked + .switch>.slider:before {
     vertical-align: bottom;
     height: 80px;
     margin-top: 40px;
+    color: white;
 }
 .before-after-block{
     width: 100%;
     padding: 100px 0;
-    background: #FFF9EE;
+    background: none;
     margin-top: 50px;
 }
 .beer-slider[data-beer-label]:after,.beer-reveal[data-beer-label]:after{
@@ -946,7 +1053,7 @@ input:checked + .switch>.slider:before {
     line-height: 150%;
     text-align: center;
     vertical-align: bottom;
-
+    color: white;
 }
 .open-btn{
     display: flex;
@@ -1057,7 +1164,6 @@ article{
 }
 .warranty-form__wrapper {
     width: 100%;
-    background-color: #fff;
     box-shadow: 0px 4px 12px -2px rgba(0, 0, 0, 0.12);
     padding: 80px 20px 20px 20px;
 }
@@ -1148,7 +1254,6 @@ article{
 }
 .footer {
     margin-top: 70px;
-    background: #e2c591;
     color: #fff;
     font-family: 'Inter', Arial, sans-serif;
     padding-top: 32px;
@@ -1243,7 +1348,9 @@ article{
     opacity: 0.95;
     line-height: 1.7;
 }
-
+.footer__contacts-list li{
+    color: white;
+}
 .footer__icon {
     margin-right: 8px;
     font-size: 17px;
@@ -1297,6 +1404,7 @@ article{
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 28px;
+    color: white;
 }
 
 .product-specs__table {
@@ -1559,8 +1667,7 @@ article{
 }
 .prices{
     width: 100%;
-    background: linear-gradient(90.6deg, #E0C490 0.7%, #DBB875 100%);
-
+    background: linear-gradient(90.6deg, #292929 0.7%, #181818 100%);
     display: flex;
     justify-content: space-between;
     padding: 20px 100px;
@@ -1572,6 +1679,10 @@ article{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.sku{
+    color: white;
+    margin-bottom: 5px;
 }
 .price_content{
     display: flex;
@@ -1590,6 +1701,11 @@ article{
     height: 300px;
     overflow: scroll;
     overflow-x: hidden;
+    border: 1px solid  grey;
+    background: #181818;
+}
+.sub_menu_data{
+    background: #181818;
 }
 .price_text{
     color: #fff;
@@ -1750,6 +1866,7 @@ article{
     .myCatalog{
         height: auto;
         padding: 50px 30px 60px;
+        background: #0E0E0E;
     }
     .review_text{
         display: none;

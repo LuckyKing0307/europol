@@ -56,16 +56,11 @@
                             <span class="product_data-pack-info"
                                   id="pack-info">1.76 м<sup>2</sup> = 11 шт = 1 упак</span>
                         </div>
-                        <div class="product_data-qty">
-                            <button class="product_data-btn product_data-btn--minus" id="minus-btn">−</button>
-                            <div class="product_data-qty-value" id="qty-value">
-                                1.76 м<sup>2</sup>
-                            </div>
-                            <button class="product_data-btn product_data-btn--plus" id="plus-btn">+</button>
-                        </div>
 
 
-                        <form class="mt-4">
+                        <livewire:components.add-to-cart :purchasable="$this->variant"
+                                                         :wire:key="$this->variant->id">
+                        <div class="mt-4">
                             <div class="space-y-4">
                                 @foreach ($this->productOptions as $option)
                                     <fieldset>
@@ -101,9 +96,7 @@
                                     </fieldset>
                                 @endforeach
                             </div>
-                        </form>
-                        <livewire:components.add-to-cart :purchasable="$this->variant"
-                                                         :wire:key="$this->variant->id">
+                        </div>
 
                             <div class="product_data-total-label">Итого</div>
                             <div class="product_data-total" id="total-price">
@@ -112,12 +105,12 @@
                             </div>
                             <div class="product_data-shipping">
                                 <span class="product_data-shipping-icon">🚚</span>
-                                Курьером в <span class="product_data-shipping-city">Ташкенте</span> ·
-                                <span class="product_data-shipping-price">1 190 сум</span> · Послезавтра
+                                Курьером в <span class="product_data-shipping-city span_ml">Ташкенте</span> ·
+                                <span class="product_data-shipping-price span_ml">1190 сум</span> · Послезавтра
                             </div>
                             <div class="product_data-return">
                                 <span class="product_data-return-icon">↺</span>
-                                Можно вернуть в течение <b>7 дней</b> после покупки
+                                Можно вернуть в течение <b class="span_ml">7 дней</b> <span class="span_ml">после покупки</span>
                             </div>
                     </div>
                     <div class="product-specs">
@@ -149,8 +142,6 @@
 </section>
 <script>
     let priceText = document.querySelector('.product_data-price-perm2 span').textContent;
-    let quantity = document.querySelector('#quantity');
-    quantity.style.display = 'none'
     // Оставить только число (заменяем запятую на точку, убираем всё кроме цифр и точки)
     let floatValue = parseFloat(priceText.replace(',', '.').replace(/[^\d.]/g, ''));
     // Настройки
@@ -185,7 +176,6 @@
     // Обработчики событий
     plusBtn.addEventListener('click', function () {
         if (currentM2 + productData.stepM2 <= productData.maxM2) {
-            quantity.value = parseInt(quantity.value) + 1;
             currentM2 += productData.stepM2;
             updateProductDisplay();
         }
@@ -193,7 +183,6 @@
 
     minusBtn.addEventListener('click', function () {
         if (currentM2 - productData.stepM2 >= productData.minM2) {
-            quantity.value = parseInt(quantity.value) - 1;
             currentM2 -= productData.stepM2;
             updateProductDisplay();
         }

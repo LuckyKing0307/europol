@@ -40,7 +40,7 @@ Route::get('/test-pusher', function () {
     return 'Event broadcasted';
 });
 Route::get('/set-webhook',    [ChatController::class, 'setWebhook']);
-Route::get('/', Home::class);
+Route::get('/', Home::class)->name('home_page');
 Route::get('/test', \App\Livewire\CreatePost::class);
 
 Route::get('/about', \App\Livewire\Pages\About::class)->name('about.view');

@@ -17,7 +17,8 @@ class AddToCart extends Component
     /**
      * The quantity to add to cart.
      */
-    public int $quantity = 1;
+    public float $quantity = 1;
+    public float $qty_float = 1.76;
 
     public int $productId;
 
@@ -30,6 +31,20 @@ class AddToCart extends Component
     public function mount()
     {
         $this->productId = $this->purchasable->id; // Получаем ID продукта
+    }
+
+    public function increment()
+    {
+        $this->qty_float = $this->qty_float+1.73;
+        $this->quantity = $this->quantity+1;
+    }
+
+    public function decrement()
+    {
+        if ($this->quantity > 0.5) {
+            $this->qty_float = $this->qty_float-1.73;
+            $this->quantity = $this->quantity-1;
+        }
     }
     public function addToCart(): void
     {

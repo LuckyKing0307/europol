@@ -7,7 +7,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1"
     >
-    <title>@yield('title', config('app.name'))</title>
+    <title>@yield('title', 'Europol | Ламинат Паркет Ковролин')</title>
     <meta name="title" content="@yield('title', config('app.name'))">
     <meta
         name="description"
@@ -50,16 +50,30 @@
     AOS.init();
 </script>
 @livewireScripts
-<script>(function(a,m,o,c,r,m){a[m]={id:"430467",hash:"7462463ff36f16ac96d963c482521d04374a712c44e99cbb71f0e91dd62bdcd3",locale:"ru",inline:false,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script>
+{{--<script>(function(a,m,o,c,r,m){a[m]={id:"430467",hash:"7462463ff36f16ac96d963c482521d04374a712c44e99cbb71f0e91dd62bdcd3",locale:"ru",inline:true,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script>--}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
 
 <script defer>
-    document.addEventListener('DOMContentLoaded', function() {
-        setInterval(function(){
-            amoSocialButton('onChatReady', function () {
-                amoSocialButton('runChatShow');
-            });
-        }, 100); // небольшая задержка для надёжности
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     setInterval(function(){
+    //         amoSocialButton('onChatReady', function () {
+    //             amoSocialButton('runChatShow');
+    //         });
+    //     }, 100); // небольшая задержка для надёжности
+    // });
+    // Открытие AmoCRM чата по клику
+    document.getElementById('customChatButton').addEventListener('click', function (e) {
+        amoSocialButton('runChatShow');
+    });
+    amoSocialButton('onChatShow', function () {
+        document.getElementById('customChatButton').style.display = 'none';
+        document.querySelector('.amo-button').style.width = '50px';
+        document.querySelector('.amo-button').style.height = '50px';
+    });
+    amoSocialButton('onChatHide', function () {
+        document.getElementById('customChatButton').style.display = 'flex';
+        document.querySelector('.amo-button').style.width = 0;
+        document.querySelector('.amo-button').style.height = 0;
     });
 </script>
 </body>

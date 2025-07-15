@@ -133,7 +133,7 @@
                 {{--                    {{ $collection->translateAttribute('name') }}--}}
                 {{--                </a>--}}
                 {{--            @endforeach--}}
-                <a href="#" class="text-sm font-medium transition hover:opacity-75">Главная</a>
+                <a href="{{route('home_page')}}" class="text-sm font-medium transition hover:opacity-75">Главная</a>
                 <a href="https://uzbekistan360.uz/ru/location/europolmke" class="text-sm font-medium transition hover:opacity-75" target="_blank">3D тур</a>
                 <a href="{{route('about.view')}}" class="text-sm font-medium transition hover:opacity-75">О компании</a>
                 <a href="{{route('work.view')}}" class="text-sm font-medium transition hover:opacity-75">Проекты</a>
