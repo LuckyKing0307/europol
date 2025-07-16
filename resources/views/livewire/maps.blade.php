@@ -9,18 +9,7 @@
 </style>
 <div class="max-w-screen-2xl mx-auto flex justify-between p-4">
     <div class="addresses" id="addressList">
-        <!-- Карточки генерируем шаблонно (ниже покажу как) -->
-        <!-- Пример одной карточки: -->
-        <!--
-        <div class="address-card" data-lat="41.319443" data-lon="69.248089">
-          <strong>ул. Паркент, 7 (Мирзо-Улугбекский&nbsp;р-н)</strong><br>
-          Ориентир: детсад&nbsp;№493<br>
-          Тел.: +998 (97)&nbsp;400-03-44<br>
-          <button class="show-btn">Показать на карте</button>
-        </div>
-        -->
     </div>
-
     <div id="map"></div>
 </div>
 
@@ -28,6 +17,7 @@
     /* 1) Подгружаем список адресов в массив (можно хранить в JSON или прямо в PHP) */
     const branches = [
         {
+            id: 0,
             title: 'Филиал 1 - Яккасарайский р-н, ул. Бабура, 87Б/1',
             hint: 'Корзинка - Аэропорт',
             phone: '+998 91 007 00 06',
@@ -35,6 +25,7 @@
             lon:   69.263105
         },
         {
+            id: 1,
             title: 'Филиал 2 - Алмазарский район, ул. Нурафшон, 50',
             hint: 'ТЦ Riviera Mall',
             phone: '+998 555 10 01 02',
@@ -42,6 +33,7 @@
             lon:  69.247667
         },
         {
+            id: 2,
             title: 'Филиал 3 - Яшнабадски р-н, ул. Паркент, 6А',
             hint: 'Паркентский рынок',
             phone: '+998 97 400 03 44',
@@ -49,6 +41,7 @@
             lon:  69.319074
         },
         {
+            id: 3,
             title: 'Филиал 4 - Шайхантахурский р-н, ул. Фурката, 2А',
             hint: 'TashkentCity',
             phone: '+998 90 008 95 44',
@@ -56,6 +49,7 @@
             lon:  69.242857
         },
         {
+            id: 4,
             title: 'Филиал 5 - Юнусусабадский р-н, ул. Киёт, 38А',
             hint: 'Алайский базар - Монумент (Мужество)',
             phone: '+998 90 932 51 12',
@@ -63,6 +57,7 @@
             lon:  69.277328
         },
         {
+            id: 5,
             title: 'Филиал 6 - ТЦ Global Stroy Мирзо-Улугбекский район, Малая кольцевая дорога, 15',
             hint: 'Метро Пушкин',
             phone: '+998 93 003 35 63',
@@ -70,6 +65,7 @@
             lon:   69.310818
         },
         {
+            id: 6,
             title: 'Филиал 7 - Алмазарский р-н, ул. Карасарай 314',
             hint: 'Жоми базар',
             phone: '+998 99 362 14 00',
@@ -77,6 +73,7 @@
             lon:  69.242170
         },
         {
+            id: 7,
             title: 'Филиал 8 - Яшнабадский р-н, Строй базар Гумбаз ',
             hint: 'Куйлюк',
             phone: '+998 555 10 01 02',
@@ -94,6 +91,7 @@
         <strong>${b.title}</strong><br>
         Ориентир.: ${b.hint}<br>
         Тел.:  <a href="tel:${b.phone.replace(/\s+/g, '')}">${b.phone}</a><br>
+        <div class="sub_maps" id="sub_maps-${b.id}" data-map="${b}"></div>
         <button class="show-btn">Показать на карте</button>
         <button class="show-btn" onclick="goToYandexMap(${b.lat},${b.lon})">Построить маршрут</button>
       </div>
@@ -106,7 +104,6 @@
             zoom: 11,
             controls: ['zoomControl', 'fullscreenControl']
         });
-
         // Группа для всех меток
         const clusterer = new ymaps.Clusterer({
             preset: 'islands#invertedYellowClusterIcons',
@@ -116,6 +113,25 @@
 
         // Создаём метки и вешаем события
         branches.forEach((b, i) => {
+            const mapId = 'sub_maps-' + b.id;
+            const container = document.getElementById(mapId);
+            if (!container) return;
+
+
+            const sub_map = new ymaps.Map(container, {
+                center: [b.lat, b.lon],
+                zoom: 15,
+                controls: ['zoomControl', 'fullscreenControl']
+            });
+
+            const sub_placemark = new ymaps.Placemark(
+                [b.lat, b.lon],
+                { balloonContent: `<strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
+                { preset: 'islands#yellowDotIcon' }
+            );
+
+            sub_placemark.events.add('click', () => activateCard(i));
+            sub_map.geoObjects.add(sub_placemark);
             const placemark = new ymaps.Placemark(
                 [b.lat, b.lon],
                 { balloonContent: `<strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
@@ -123,7 +139,7 @@
             );
             placemark.events.add('click', () => activateCard(i));
             clusterer.add(placemark);
-            b.placemark = placemark; // Сохраняем ссылку для дальнейших вызовов
+            b.placemark = placemark;
         });
 
         map.geoObjects.add(clusterer);
