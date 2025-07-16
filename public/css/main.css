@@ -1735,10 +1735,19 @@ article{
 .grade>img{
     width: 100%;
 }
+.sub_maps{
+    display: none;
+}
 @media (max-width: 768px) {
     .swiper-desktop { display: none; }
     .swiper-mobile { display: block; }
     .sub-header,.catalogs_wrapper,.search_input_wrapper{
+        display: none;
+    }
+    .sub_maps{
+        display: flex;
+    }
+    .map-focus-btn{
         display: none;
     }
     .addresses{
