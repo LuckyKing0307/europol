@@ -11,7 +11,7 @@ class Product extends LunarProduct
 {
     use Searchable;
 
-    public static function makeAllSearchableUsing(Builder $query): Builder
+    public function makeAllSearchableUsing(Builder $query): Builder
     {
         return $query;
     }
