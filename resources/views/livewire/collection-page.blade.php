@@ -2,15 +2,6 @@
 <section>
     @livewire('catalog-novigation')
     @livewire('components.filtration')
-    @if (!empty($this->activeFilters))
-        <div class="mb-6 flex flex-wrap items-center gap-2">
-            @foreach ($this->activeFilters as $filterId)
-                <div class="px-3 py-1 bg-gray-200 rounded-full text-sm">
-                    ID: {{ $filterId }}
-                </div>
-            @endforeach
-        </div>
-    @endif
     @if ($this->collection)
     <div class="max-w-screen-2xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold">

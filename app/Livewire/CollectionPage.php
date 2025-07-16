@@ -83,10 +83,12 @@ class CollectionPage extends Component
         }else{
             $query = $this->url?->element->products();
         }
+        info($this->activeFilters);
         if (!empty($this->activeFilters)) {
             $prod_ids = ProductCharacteristic::whereIn('value', $this->activeFilters)
                 ->pluck('product_id')
                 ->toArray();
+            info($prod_ids);
             $query->whereIn('id', $prod_ids);
         }
         if (!is_null($this->minPrice)) {
