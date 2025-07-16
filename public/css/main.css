@@ -1689,6 +1689,9 @@ article{
     color: white;
     margin-bottom: 5px;
 }
+.phone_open{
+    text-decoration: underline;
+}
 .price_content{
     display: flex;
     flex-direction: column;
