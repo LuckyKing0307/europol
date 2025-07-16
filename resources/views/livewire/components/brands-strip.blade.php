@@ -7,7 +7,7 @@
                 <div class="swiper brand-slider" style="padding-bottom: 40px;" >
                     <div class="swiper-wrapper">
                             @foreach($brands as $brand)
-                            <a href="{{ url()->current() }}?brand={{ $brandItem->id }}" class="flex swiper-slide brand_list items-center justify-center p-4 bg-white rounded-lg shadow
+                            <a href="{{ url()->current() }}?brand={{ $brand->id }}" class="flex swiper-slide brand_list items-center justify-center p-4 bg-white rounded-lg shadow
                   hover:shadow-md transition">
                                 @if ($brand->thumbnail)
                                     <img src="{{ $brand->thumbnail->getUrl('medium') }}" alt="{{ $brand->name }}"
