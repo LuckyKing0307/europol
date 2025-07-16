@@ -8,8 +8,7 @@
                             @foreach($brands as $brand)
                             <div class="flex swiper-slide brand_list items-center justify-center p-4 bg-white rounded-lg shadow
                   hover:shadow-md transition"
-                                 x-data
-                                 x-on:click="$wire.dispatch('brandSelected', {{ $brand->id }})">
+                                 wire:click="selectBrand({{ $brand->id }})">
                                 @if ($brand->thumbnail)
                                     <img src="{{ $brand->thumbnail->getUrl('medium') }}" alt="{{ $brand->name }}"
                                          class="max-h-16 object-contain m-auto">
