@@ -25,18 +25,31 @@
     </div>
 </div>
 <script>
-    if (document.querySelector('.brand-slider')) {
-        new Swiper('.brand-slider', {
-            slidesPerView: 6,
-            freeMode: true,
-            grabCursor: true,
-            spaceBetween: 20,
-            slidesOffsetAfter: 150,
-            breakpoints: {
-                320: {slidesPerView: 2, slidesOffsetAfter: 50},
-                640: {slidesPerView: 3, slidesOffsetAfter: 100},
-                1024: {slidesPerView: 6, slidesOffsetAfter: 150}
+    function initBrandSlider() {
+        const sliders = document.querySelectorAll('.brand-slider');
+        sliders.forEach((slider) => {
+            if (!slider.classList.contains('swiper-initialized')) {
+                new Swiper(slider, {
+                    slidesPerView: 6,
+                    freeMode: true,
+                    grabCursor: true,
+                    spaceBetween: 20,
+                    slidesOffsetAfter: 150,
+                    breakpoints: {
+                        320: {slidesPerView: 2, slidesOffsetAfter: 50},
+                        640: {slidesPerView: 3, slidesOffsetAfter: 100},
+                        1024: {slidesPerView: 6, slidesOffsetAfter: 150}
+                    }
+                });
             }
         });
     }
+
+    document.addEventListener('livewire:load', () => {
+        initBrandSlider(); // при первой загрузке
+    });
+
+    document.addEventListener('livewire:message.processed', () => {
+        initBrandSlider(); // после каждого обновления Livewire
+    });
 </script>
