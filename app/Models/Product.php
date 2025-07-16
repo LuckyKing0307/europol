@@ -19,9 +19,9 @@ class Product extends LunarProduct
     {
         return $this->getKey(); // или $this->id
     }
-    public function getScoutKeyName()
+    public function getScoutKeyName(): mixed
     {
-        return $this->getKeyName();
+        return 'id'; // или что ты используешь как primary key
     }
     public function characteristics(): HasMany
     {
