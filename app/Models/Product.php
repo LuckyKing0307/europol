@@ -15,11 +15,13 @@ class Product extends LunarProduct
     {
         return $query;
     }
-
-
     public function getScoutKey(): mixed
     {
         return $this->getKey(); // или $this->id
+    }
+    public function getScoutKeyName()
+    {
+        return $this->getKeyName();
     }
     public function characteristics(): HasMany
     {
