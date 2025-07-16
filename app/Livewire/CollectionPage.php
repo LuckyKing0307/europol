@@ -83,12 +83,10 @@ class CollectionPage extends Component
         }else{
             $query = $this->url?->element->products();
         }
-        info($this->activeFilters);
         if (!empty($this->activeFilters)) {
             $prod_ids = ProductCharacteristic::whereIn('value', $this->activeFilters)
                 ->pluck('product_id')
                 ->toArray();
-            info($prod_ids);
             $query->whereIn('lunar_products.id', $prod_ids);
         }
         if (!is_null($this->minPrice)) {
@@ -105,6 +103,8 @@ class CollectionPage extends Component
         if (!is_null($this->brand)) {
             $query->where('brand_id', $this->brand);
         }
+        info('SQL: ' . $query->toSql());
+        info('Bindings: ', $query->getBindings());
         return $query->paginate(16);
     }
     public function getCollectionsProperty()
