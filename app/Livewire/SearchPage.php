@@ -29,7 +29,7 @@ class SearchPage extends Component
      */
     public function getResultsProperty(): LengthAwarePaginator
     {
-        return Product::search($this->term)->paginate(50);
+        return Product::search($this->term)->paginate(16);
     }
 
     public function render(): View
