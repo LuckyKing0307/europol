@@ -44,9 +44,9 @@
     {{ $slot }}
 </main>
 <div id="customChatButton">
-    <img class="chat-avatar" src="{{asset('images/manager.png')}}" alt="Ирина">
+    <img class="chat-avatar" src="{{asset('images/manager.png')}}" alt="Тимур">
     <div class="chat-info">
-        <div class="chat-name">Ирина</div>
+        <div class="chat-name">Тимур</div>
         <div class="chat-role">Консультант</div>
     </div>
 </div>

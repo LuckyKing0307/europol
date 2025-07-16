@@ -43,7 +43,13 @@
 <main>
     {{ $slot }}
 </main>
-
+<div id="customChatButton">
+    <img class="chat-avatar" src="{{asset('images/manager.png')}}" alt="Тимур">
+    <div class="chat-info">
+        <div class="chat-name">Тимур</div>
+        <div class="chat-role">Консультант</div>
+    </div>
+</div>
 <x-footer/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
