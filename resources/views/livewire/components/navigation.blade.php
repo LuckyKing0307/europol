@@ -29,7 +29,7 @@
         <div class="flex flex-1 items-center justify-between px-4 max-w-screen-2xl menu_bar">
             <div x-data="{ mobileMenu: false }">
                 <button x-on:click="mobileMenu = !mobileMenu"
-                        class="grid flex-shrink-0 w-16 h-16 border-l border-gray-100 lg:hidden">
+                        class="grid flex-shrink-0 w-16 h-16 border-gray-100 lg:hidden">
                     <span class="sr-only">{{ __('header.language') }}</span>
                     <span class="place-self-center">
                     <svg xmlns="http://www.w3.org/2000/svg"
