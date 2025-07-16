@@ -16,7 +16,7 @@ class BrandsStrip extends Component
             ->get();
 
         return view('livewire.components.brands-strip', [
-            'brands' => $this->brands,
+            'brands' => $brands,
         ]);
     }
 
