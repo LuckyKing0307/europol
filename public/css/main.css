@@ -1885,6 +1885,23 @@ article{
     .sku{
         font-size: 10px;
     }
+    .in_stock{
+        margin-top: 5px;
+        margin-bottom: 7px;
+        font-size: 10px;
+    }
+    .like>img{
+        width: 15px;
+    }
+    .action>div{
+        font-size: 13px;
+    }
+    .basket{
+        margin-top: 5px;
+    }
+    .basket img{
+        font-size: 13px;
+    }
     .sale_price{
         font-size: 20px;
     }
