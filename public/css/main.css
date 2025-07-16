@@ -575,7 +575,9 @@ input:checked + .switch>.slider:before {
     font-size: 20px;
     background-size: cover;
 }
-
+.collection-grid{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
 .language_option img{
     border-radius: 50%;
     overflow: hidden;
@@ -1880,6 +1882,29 @@ article{
         width: 60%;
         margin-top: 58px;
     }
+    .sku{
+        font-size: 10px;
+    }
+    .sale_price{
+        font-size: 20px;
+    }
+    .product_info_text>span{
+        font-size: 8px;
+    }
+    .product_info_text{
+        font-size: 8px;
+    }
+    .product_medium_img img{
+        width: 5px;
+    }
+    .product_title{
+        font-size: 10px;
+        max-height: 30px;
+        min-height: 30px;
+    }
+    .product{
+        padding: 5px !important;
+    }
     .prices{
         flex-direction: column;
         padding: 20px 40px;
@@ -1902,6 +1927,9 @@ article{
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    .collection-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .section{
         background: #fff;

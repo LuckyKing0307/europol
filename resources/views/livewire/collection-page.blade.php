@@ -25,7 +25,7 @@
         <h1 class="text-3xl font-bold">
             {{__('products.all')}}
         </h1>
-        <div class="grid grid-cols-1 gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid collection-grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-4">
             @foreach($this->collections as $product)
                     <x-product-card :product="$product" />
             @endforeach
