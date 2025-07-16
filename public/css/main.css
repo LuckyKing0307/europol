@@ -5,22 +5,6 @@
     font-weight: 400;
     font-style: normal;
 }
-* {
-    scrollbar-width: thin; /* для Firefox */
-    scrollbar-color: #DBB875 transparent; /* цвет ползунка и трека */
-}
-.amo-button{
-    display: none !important;
-}
-/* Chrome, Safari и Edge */
-*::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-*::-webkit-scrollbar-track {
-    background: transparent;
-}
 @font-face {
     font-family: 'Maxima Nouva';
     src: url('../fonts/Maxima/MaximaNouva-Bold.ttf') format('truetype');
@@ -76,6 +60,122 @@
     font-weight: 100;
     font-style: italic;
 }
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-ThinItalic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Ultralight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-UltralightItalic.otf') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-RegularItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-SemiboldItalic.otf') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Heavy.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-HeavyItalic.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF/SF-Pro-Display-BlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
 
 body{
     overflow-x: hidden;
@@ -86,13 +186,27 @@ body{
     margin-left: 5px;
 }
 .text-sm,.text-3xl,.text-xl,.text-2xl{
-    font-family: Maxima Nouva,sans-serif !important;
+    font-family: Maxima Nouva, SF Pro Display,sans-serif !important;
     color: white !important;
 }
 *{
     color: #272727;
     box-sizing: border-box;
-    font-family: Maxima Nouva, sans-serif !important;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif !important;
+    scrollbar-width: thin; /* для Firefox */
+    scrollbar-color: #DBB875 transparent; /* цвет ползунка и трека */
+}
+.amo-button{
+    display: none !important;
+}
+/* Chrome, Safari и Edge */
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
 }
 .swiper-pagination-bullet {
     background-color: #d1d5db; /* gray-400 */
@@ -331,7 +445,7 @@ input:checked + .switch>.slider:before {
 }
 .title{
     width: 120%;
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 600;
     font-size: 56px;
     line-height: 150%;
@@ -339,7 +453,7 @@ input:checked + .switch>.slider:before {
     color: white;
 }
 .text{
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 150%;
@@ -494,14 +608,14 @@ input:checked + .switch>.slider:before {
     box-shadow: 0px 4px 12px -2px #0000001F;
 }
 .review_block_title{
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 150%;
     vertical-align: bottom;
 }
 .review_block_text{
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -516,7 +630,7 @@ input:checked + .switch>.slider:before {
 
 }
 .score_date{
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -577,7 +691,7 @@ input:checked + .switch>.slider:before {
 .in_stock{
     margin-top: 18px;
     margin-bottom: 31px;
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
@@ -683,7 +797,7 @@ input:checked + .switch>.slider:before {
     color: white;
 }
 .product_info_text{
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
@@ -1032,7 +1146,7 @@ input:checked + .switch>.slider:before {
     height: 153px;
 }
 .info_block_title{
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
@@ -1052,7 +1166,7 @@ input:checked + .switch>.slider:before {
     content: none !important;
 }
 .info_block_text{
-    font-family: 'Maxima Nouva', sans-serif;
+    font-family: Maxima Nouva, SF Pro Display, sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -1740,6 +1854,7 @@ article{
     width: 100%;
 }
 .sub_maps{
+    margin-top: 20px;
     display: none;
 }
 @media (max-width: 768px) {
