@@ -9,6 +9,9 @@
     scrollbar-width: thin; /* для Firefox */
     scrollbar-color: #DBB875 transparent; /* цвет ползунка и трека */
 }
+.amo-button{
+    display: none;
+}
 /* Chrome, Safari и Edge */
 *::-webkit-scrollbar {
     width: 8px;
