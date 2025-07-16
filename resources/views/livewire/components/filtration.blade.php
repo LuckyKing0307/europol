@@ -32,26 +32,34 @@
 
         <!-- Фильтрация по опциям -->
         @foreach ($productOptions as $key => $values)
-            @if($key!='Цена, UZS' and $key!='В наличии')
-            <div class="mb-4 option_list">
-                <hr>
-                <h3 class="text-lg font-semibold mb-2">{{$key}}</h3>
-                <ul class="space-y-1">
-                    @foreach ($values as $value)
-                        @if($value!='')
-                            <li>
-                                <label class="flex items-center gap-2 check_box">
-                                    {{ $value }}
-                                    <input type="checkbox" wire:model.live="selectedOptions" value="{{ $value }}">
-                                    <span class="flex items-center gap-2 switch">
-                                        <span class="slider"></span>
-                                    </span>
-                                </label>
-                            </li>
-                        @endif
-                    @endforeach
-                </ul>
-            </div>
+            @if($key !== 'Цена, UZS' && $key !== 'В наличии')
+                <div class="mb-4 option_list border-b pb-2" x-data="{ open: true }">
+                    <button
+                        class="w-full flex justify-between items-center text-left text-lg font-semibold mb-2 focus:outline-none"
+                        @click="open = !open"
+                    >
+                        <span>{{ $key }}</span>
+                        <svg :class="{ 'rotate-180': open }" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <ul class="space-y-1 mt-2" x-show="open" x-transition>
+                        @foreach ($values as $value)
+                            @if($value !== '')
+                                <li>
+                                    <label class="flex items-center gap-2 check_box">
+                                        {{ $value }}
+                                        <input type="checkbox" wire:model.live="selectedOptions" value="{{ $value }}">
+                                        <span class="flex items-center gap-2 switch">
+                                    <span class="slider"></span>
+                                </span>
+                                    </label>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
             @endif
         @endforeach
 
