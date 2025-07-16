@@ -33,7 +33,7 @@
         <!-- Фильтрация по опциям -->
         @foreach ($productOptions as $key => $values)
             @if($key !== 'Цена, UZS' && $key !== 'В наличии')
-                <div class="mb-4 option_list border-b pb-2" x-data="{ open: true }">
+                <div class="mb-4 option_list border-b pb-2" x-data="{ open: false }">
                     <button
                         class="w-full flex justify-between items-center text-left text-lg font-semibold mb-2 focus:outline-none"
                         @click="open = !open"
