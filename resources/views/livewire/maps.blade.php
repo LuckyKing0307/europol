@@ -95,6 +95,7 @@
         Ориентир.: ${b.hint}<br>
         Тел.:  <a href="tel:${b.phone}">${b.phone}</a><br>
         <button class="show-btn">Показать на карте</button>
+        <button onclick="goToYandexMap()">Построить маршрут до точки</button>
       </div>
     `).join('');
 
@@ -154,4 +155,16 @@
             if (!fromList) card.scrollIntoView({block: 'center', behavior: 'smooth'});
         }
     });
+    function goToYandexMap($lat,$lon) {
+        // Получаем координаты пользователя
+        navigator.geolocation.getCurrentPosition(function(position) {
+            const userLat = position.coords.latitude;
+            const userLon = position.coords.longitude;
+            const url = `https://yandex.ru/maps/?rtext=${userLat},${userLon}~${$lat},${$lon}&rtt=auto`;
+
+            window.open(url, '_blank');
+        }, function(error) {
+            alert("Не удалось получить ваше местоположение");
+        });
+    }
 </script>
