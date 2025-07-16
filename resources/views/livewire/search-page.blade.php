@@ -9,7 +9,7 @@
             @endif
         </h1>
 
-        <div class="grid grid-cols-1 gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid collection-grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-4">
             @foreach ($this->results as $result)
                 <x-product-card :product="$result" />
             @endforeach
