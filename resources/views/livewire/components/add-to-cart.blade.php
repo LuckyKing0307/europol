@@ -1,10 +1,12 @@
-<div class="add_to_cart cart_{{ $productId }}" wire:ignore.self>
+<div class="add_to_cart cart_{{ $productId }}" @if(!$shouldIgnore)
+    wire:ignore.self
+    @endif>
     <div class="product_data-qty">
         <button class="product_data-btn product_data-btn--minus" wire:click="decrement">−</button>
         <div class="product_data-qty-value">
             {{ number_format($qty_float, 2, '.', ' ') }} м<sup>2</sup>
         </div>
-        <button class="product_data-btn product_data-btn--plus" wire:click="increment">+</button>
+        <button class="product_data-btn product_data-btn--plus" wire:click="increment" wire:ignore.self>+</button>
     </div>
     <div class="close_cart">
         <button id="close-filter" class="close-btn" onclick="closeFilter('cart_{{ $productId }}')">✕</button>

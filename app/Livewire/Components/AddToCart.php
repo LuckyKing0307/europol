@@ -13,7 +13,7 @@ class AddToCart extends Component
      * The purchasable model we want to add to the cart.
      */
     public ?Purchasable $purchasable = null;
-
+    public bool $shouldIgnore = false;
     /**
      * The quantity to add to cart.
      */
@@ -35,12 +35,14 @@ class AddToCart extends Component
 
     public function increment()
     {
+        $this->shouldIgnore = true;
         $this->qty_float = $this->qty_float+1.73;
         $this->quantity = $this->quantity+1;
     }
 
     public function decrement()
     {
+        $this->shouldIgnore = true;
         if ($this->quantity > 0.5) {
             $this->qty_float = $this->qty_float-1.73;
             $this->quantity = $this->quantity-1;
@@ -48,6 +50,7 @@ class AddToCart extends Component
     }
     public function addToCart(): void
     {
+        $this->shouldIgnore = false;
         $this->validate();
 
         if ($this->purchasable->stock < $this->quantity) {
