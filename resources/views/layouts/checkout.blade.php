@@ -22,6 +22,9 @@
         name="description"
         content="Продажа Ламинатов,Паркета и Кавролина"
     >
+    <meta property="og:site_name" content="Europol"/>
+    <meta property="og:title" content="@yield('title', 'Europol | Ламинат Паркет Ковролин')">
+    <meta property="og:description" content="Продажа Ламинатов,Паркета и Кавролина">
     <link
         href="{{ asset('css/app.css') }}"
         rel="stylesheet"
