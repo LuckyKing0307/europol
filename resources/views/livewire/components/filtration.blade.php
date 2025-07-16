@@ -8,7 +8,7 @@
     <div id="overlay" class="bg_black" style="display: none;"></div>
 
     <!-- Модальное окно фильтра -->
-    <div id="filter-modal" class="p-6 bg-white max-w-md h-full overflow-y-auto fixed right-0 top-0 w-1/4 zet" style="display: none;">
+    <div id="filter-modal" class="p-6 bg-white max-w-md h-full overflow-y-auto fixed right-0 top-0 w-1/4 zet" style="display: none; z-index: 10000;">
         <div class="filter-header">
             <h2>{{ __('filters.filter') }}</h2>
             <button id="close-filter" class="close-btn" onclick="closedFilter('zet')">✕</button>
