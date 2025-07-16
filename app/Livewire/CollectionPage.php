@@ -83,23 +83,23 @@ class CollectionPage extends Component
         }else{
             $query = $this->url?->element->products();
         }
-        info($this->activeFilters);
         if (!empty($this->activeFilters)) {
             $prod_ids = ProductCharacteristic::whereIn('value', $this->activeFilters)
                 ->pluck('product_id')
                 ->toArray();
-            info($prod_ids);
             $query->whereIn('lunar_products.id', $prod_ids);
         }
         if (!is_null($this->minPrice)) {
-            $query->whereHas('variants.basePrices', function ($q) {
-                $q->where('price', '>=', $this->minPrice);
+            $query->whereHas('variants.prices', function ($q) {
+                $q->where('price', '>=', $this->minPrice)
+                    ->where('min_quantity', 1); // тут нет customer_group_id IS NULL
             });
         }
 
         if (!is_null($this->maxPrice)) {
-            $query->whereHas('variants.basePrices', function ($q) {
-                $q->where('price', '<=', $this->maxPrice);
+            $query->whereHas('variants.prices', function ($q) {
+                $q->where('price', '<=', $this->minPrice)
+                    ->where('min_quantity', 1); // тут нет customer_group_id IS NULL
             });
         }
         if (!is_null($this->brand)) {
