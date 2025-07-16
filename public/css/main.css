@@ -1691,6 +1691,7 @@ article{
 }
 .phone_open{
     text-decoration: underline;
+    margin-bottom: 5px;
 }
 .price_content{
     display: flex;
