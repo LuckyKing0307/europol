@@ -74,10 +74,8 @@ $info = [
     </div>
 </div>
 <script defer>
+    document.querySelectorAll('.add_to_cart').map(elem => elem.style.display = 'none');
     function openCart(e){
         document.querySelector('.'+e).style.display = 'flex';
-    }
-    function closeFilter(e){
-        document.querySelector('.'+e).style.display = 'none';
     }
 </script>
