@@ -17,6 +17,7 @@ class CollectionPage extends Component
     use FetchesUrls,WithPagination;
 
     public array $activeFilters = [];
+    public ?int $selectedBrandId = null;
     public ?int $minPrice = null;
     public ?int $maxPrice = null;
 
@@ -39,7 +40,11 @@ class CollectionPage extends Component
             }
         }
     }
-
+    public function brandSelected(int $brandId): void
+    {
+        $this->selectedBrandId = $brandId;
+        $this->resetPage(); // сбрасываем пагинацию
+    }
     /**
      * Computed property to return the collection.
      */
@@ -93,6 +98,9 @@ class CollectionPage extends Component
             $query->whereHas('variants.basePrices', function ($q) {
                 $q->where('price', '<=', $this->maxPrice);
             });
+        }
+        if (!is_null($this->selectedBrandId)) {
+            $query->where('brand_id', $this->selectedBrandId);
         }
         return $query->paginate(16);
     }

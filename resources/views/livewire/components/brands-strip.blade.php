@@ -7,15 +7,14 @@
                 <div class="swiper brand-slider" style="padding-bottom: 40px;">
                     <div class="swiper-wrapper">
                             @foreach($brands as $brand)
-                                <div class="flex swiper-slide brand_list items-center justify-center p-4 bg-white rounded-lg shadow
-                  hover:shadow-md transition">
-                                    @if ($brand->thumbnail)
-                                        <img src="{{ $brand->thumbnail->getUrl('medium') }}"
-                                             alt="{{ $brand->name }}"
-                                             class="max-h-16 object-contain m-auto">
-                                    @endif
-                                    <p class="brand_text">{{ $brand->name }}</p>
-                                </div>
+                            <div class="swiper-slide cursor-pointer"
+                                 wire:click="brandSelected({{ $brand->id }})">
+                                @if ($brand->thumbnail)
+                                    <img src="{{ $brand->thumbnail->getUrl('medium') }}" alt="{{ $brand->name }}"
+                                         class="max-h-16 object-contain m-auto">
+                                @endif
+                                <p class="brand_text" style="color: #1D1D1D;">{{ $brand->name }}</p>
+                            </div>
                             @endforeach
                     </div>
                     <div class="swiper-scrollbar mt-4"></div>
