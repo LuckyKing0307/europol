@@ -26,7 +26,11 @@ class Filtration extends Component
     }
     public function mount()
     {
-        $this->productOptions = ProductOption::with('values')->get();
+        $this->productOptions = \App\Models\ProductCharacteristic::all()
+            ->groupBy('key')
+            ->map(function ($items) {
+                return $items->pluck('value')->unique()->values();
+            });
     }
 
     public function applyFilters()
