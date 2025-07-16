@@ -1,4 +1,4 @@
-@section('title', $this->collection->translateAttribute('name'))
+@section('title', $this->collection ? $this->collection->translateAttribute('name') : 'Europol | Ламинат Паркет Ковролин')
 <section>
     @livewire('catalog-novigation')
     @livewire('components.filtration')
