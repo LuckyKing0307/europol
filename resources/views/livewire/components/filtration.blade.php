@@ -32,6 +32,7 @@
 
         <!-- Фильтрация по опциям -->
         @foreach ($productOptions as $key => $values)
+            @if($key!='Цена, UZS' and $key!='В наличии')
             <div class="mb-4 option_list">
                 <hr>
                 <h3 class="text-lg font-semibold mb-2">{{$key}}</h3>
@@ -51,6 +52,7 @@
                     @endforeach
                 </ul>
             </div>
+            @endif
         @endforeach
 
         <!-- Кнопка для применения фильтров -->
