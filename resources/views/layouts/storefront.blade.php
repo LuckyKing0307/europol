@@ -61,6 +61,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
 
 <script defer>
+    amoSocialButton('onChatReady', function () {
+        document.querySelector('.amo-button').style.display = 'none';
+    })
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function(){
             amoSocialButton('onChatReady', function () {
@@ -70,7 +73,7 @@
     });
     // Открытие AmoCRM чата по клику
     document.getElementById('customChatButton').addEventListener('click', function (e) {
-            amoSocialButton('runChatShow');
+        amoSocialButton('runChatShow');
     });
     amoSocialButton('onChatShow', function () {
         document.getElementById('customChatButton').style.display = 'none';
