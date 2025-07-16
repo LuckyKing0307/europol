@@ -40,3 +40,12 @@
         <livewire:components.brands-strip />
     </div>
 </section>
+
+<script defer>
+    function openCart(e){
+        document.querySelector('.'+e).style.display = 'flex';
+    }
+    function closeFilter(e){
+        document.querySelector('.'+e).style.display = 'none';
+    }
+</script>
