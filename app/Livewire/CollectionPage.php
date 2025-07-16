@@ -21,6 +21,9 @@ class CollectionPage extends Component
     public ?int $minPrice = null;
     public ?int $maxPrice = null;
 
+    #[Url(as: 'brand')]
+    public ?int $brand = null;
+
     public function mount(?string $slug=null): void
     {
         if ($slug) {
@@ -39,12 +42,6 @@ class CollectionPage extends Component
                 abort(404);
             }
         }
-    }
-    #[On('brand-selected')]
-    public function filterByBrand(int $id): void
-    {
-        $this->selectedBrandId = $id;
-        $this->resetPage();
     }
     /**
      * Computed property to return the collection.
@@ -100,8 +97,8 @@ class CollectionPage extends Component
                 $q->where('price', '<=', $this->maxPrice);
             });
         }
-        if (!is_null($this->selectedBrandId)) {
-            $query->where('brand_id', $this->selectedBrandId);
+        if (!is_null($this->brand)) {
+            $query->where('brand_id', $this->brand);
         }
         return $query->paginate(16);
     }
