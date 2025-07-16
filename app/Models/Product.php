@@ -2,15 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Scout\Searchable;
 use Lunar\Models\Product as LunarProduct;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends LunarProduct
 {
     use Searchable;
+
+    public static function makeAllSearchableUsing(Builder $query): Builder
+    {
+        return $query;
+    }
     public function characteristics(): HasMany
     {
         return $this->hasMany(ProductCharacteristic::class);
