@@ -1,8 +1,7 @@
 <div>
     <x-welcome-banner />
     @livewire('categories-component')
-    @livewire('top-sales')
-
+{{--    @livewire('top-sales')--}}
     <section class="mx-auto max-w-screen-2xl content_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
         <div class="block_title" style="text-align: center;">{{ __('why_choose_us.title') }}</div>
         <div class="flex information">

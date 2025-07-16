@@ -36,7 +36,7 @@
                          class="w-5 h-5"
                          fill="#fff"
                          viewBox="0 0 24 24"
-                         stroke="currentColor">
+                         stroke="#fff">
                         <path stroke-linecap="round"
                               stroke-linejoin="round"
                               stroke-width="2"
@@ -49,7 +49,7 @@
                 <div x-cloak
                      x-transition
                      x-show="mobileMenu"
-                     class="absolute top-auto z-50 w-screen p-4 w-full">
+                     class="absolute top-auto z-50 w-screen p-4 w-full ">
                     <div class="bg-white relative">
                         <button class="absolute text-gray-500 transition-transform top-3 right-3 hover:scale-110"
                                 type="button"
@@ -67,7 +67,7 @@
                             </svg>
                         </button>
                         <ul x-on:click.away="mobileMenu = false"
-                            class="p-6 space-y-4 bg-white border border-gray-100 shadow-xl">
+                            class="p-6 space-y-4 border border-gray-100 shadow-xl mobmenue">
                             <x-header.search class="max-w-sm mr-4"/>
                             @foreach ($this->collections as $root)
                                 @if($root->id>=53)
