@@ -89,7 +89,7 @@ class CollectionPage extends Component
                 ->pluck('product_id')
                 ->toArray();
             info($prod_ids);
-            $query->whereIn('id', $prod_ids);
+            $query->whereIn('lunar_products.id', $prod_ids);
         }
         if (!is_null($this->minPrice)) {
             $query->whereHas('variants.basePrices', function ($q) {
