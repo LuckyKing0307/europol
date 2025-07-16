@@ -60,8 +60,7 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-        <div class="" wire:ignore>
-            @livewire('components.brands-strip')
-        </div>
+        @php $brandKey = 'brands-strip' @endphp
+        @livewire('components.brands-strip', [], key($brandKey)
     </div>
 </section>
