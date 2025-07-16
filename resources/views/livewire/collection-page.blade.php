@@ -62,6 +62,6 @@
 {{--        </div>--}}
 
         @php $brandKey = 'brands-strip' @endphp
-        @livewire('components.brands-strip', [], key($brandKey)
+        @livewire('components.brands-strip', [], key($brandKey))
     </div>
 </section>
