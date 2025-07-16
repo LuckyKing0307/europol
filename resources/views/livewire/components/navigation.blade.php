@@ -77,9 +77,11 @@
                         </ul>
 
                         <div class="sub_section_menu">
-                            <div class="flex header-info">
-                                <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span><span id="tashkent" class="ml-2">Ташкент</span></div>
-                                <a href="{{route('maps')}}" class="shops">Магазины</a>
+                            <div class="">
+                                <div class="flex header-info">
+                                    <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span><span id="tashkent" class="ml-2">Ташкент</span></div>
+                                    <a href="{{route('maps')}}" class="shops">Магазины</a>
+                                </div>
                                 {{ __('header.phone') }}: <br><a href="tel:+998723049843">+998 (55) 510-01-02</a>
                             </div>
                             <div class="lang flex">
