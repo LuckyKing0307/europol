@@ -95,7 +95,7 @@
         Ориентир.: ${b.hint}<br>
         Тел.:  <a href="tel:${b.phone}">${b.phone}</a><br>
         <button class="show-btn">Показать на карте</button>
-        <button onclick="goToYandexMap(${b.lat},${b.lon})">Построить маршрут до точки</button>
+        <button class="show-btn" onclick="goToYandexMap(${b.lat},${b.lon})">Построить маршрут до точки</button>
       </div>
     `).join('');
 
