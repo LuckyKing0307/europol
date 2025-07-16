@@ -5,6 +5,9 @@
     font-weight: 400;
     font-style: normal;
 }
+iframe{
+    display: none;
+}
 * {
     scrollbar-width: thin; /* для Firefox */
     scrollbar-color: #DBB875 transparent; /* цвет ползунка и трека */
