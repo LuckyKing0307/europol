@@ -10,7 +10,7 @@
     scrollbar-color: #DBB875 transparent; /* цвет ползунка и трека */
 }
 .amo-button{
-    display: none;
+    display: none !important;
 }
 /* Chrome, Safari и Edge */
 *::-webkit-scrollbar {
