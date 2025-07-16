@@ -186,13 +186,13 @@ body{
     margin-left: 5px;
 }
 .text-sm,.text-3xl,.text-xl,.text-2xl{
-    font-family: Maxima Nouva, SF Pro Display,sans-serif !important;
+    font-family: 'Maxima Nouva', 'SF Pro Display',sans-serif !important;
     color: white !important;
 }
 *{
     color: #272727;
     box-sizing: border-box;
-    font-family: Maxima Nouva, SF Pro Display, sans-serif !important;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif !important;
     scrollbar-width: thin; /* для Firefox */
     scrollbar-color: #DBB875 transparent; /* цвет ползунка и трека */
 }
@@ -410,7 +410,7 @@ input:checked + .switch>.slider:before {
     color: #7B7873;
     background: #1D1D1D;
     border: 1px solid #424242;
-    font-family: SF Pro Display, sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
     font-weight: 500;
     font-size: 18px;
     vertical-align: bottom;
@@ -445,7 +445,7 @@ input:checked + .switch>.slider:before {
 }
 .title{
     width: 120%;
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 600;
     font-size: 56px;
     line-height: 150%;
@@ -453,7 +453,7 @@ input:checked + .switch>.slider:before {
     color: white;
 }
 .text{
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 150%;
@@ -608,14 +608,14 @@ input:checked + .switch>.slider:before {
     box-shadow: 0px 4px 12px -2px #0000001F;
 }
 .review_block_title{
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 700;
     font-size: 18px;
     line-height: 150%;
     vertical-align: bottom;
 }
 .review_block_text{
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -630,7 +630,7 @@ input:checked + .switch>.slider:before {
 
 }
 .score_date{
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -691,7 +691,7 @@ input:checked + .switch>.slider:before {
 .in_stock{
     margin-top: 18px;
     margin-bottom: 31px;
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
@@ -797,7 +797,7 @@ input:checked + .switch>.slider:before {
     color: white;
 }
 .product_info_text{
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
@@ -1146,7 +1146,7 @@ input:checked + .switch>.slider:before {
     height: 153px;
 }
 .info_block_title{
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 150%;
@@ -1166,7 +1166,7 @@ input:checked + .switch>.slider:before {
     content: none !important;
 }
 .info_block_text{
-    font-family: Maxima Nouva, SF Pro Display, sans-serif;
+    font-family: 'Maxima Nouva', 'SF Pro Display', sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
