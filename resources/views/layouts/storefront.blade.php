@@ -20,7 +20,7 @@
     <meta name="title" content="@yield('title', config('app.name'))">
     <meta
         name="description"
-        content="Example of an ecommerce storefront built with Lunar."
+        content="Продажа Ламинатов,Паркета и Кавролина"
     >
     <link
         href="{{ asset('css/app.css') }}"
