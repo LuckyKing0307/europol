@@ -20,6 +20,7 @@
         <div class="grid grid-cols-1 gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-4">
             @forelse($this->products as $product)
                 <x-product-card :product="$product"/>
+
             @empty
             @endforelse
         </div>
