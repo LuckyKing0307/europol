@@ -91,8 +91,8 @@
         <strong>${b.title}</strong><br>
         Ориентир.: ${b.hint}<br>
         Тел.:  <a href="tel:${b.phone.replace(/\s+/g, '')}">${b.phone}</a><br>
-        <div class="sub_maps" id="sub_maps-${b.id}" data-map="${b}"></div>
-        <button class="show-btn">Показать на карте</button>
+        <div class="sub_maps" id="sub_maps-${b.id}" style="width:100%;height:200px;"></div>
+        <button class="show-btn map-focus-btn">Показать на карте</button>
         <button class="show-btn" onclick="goToYandexMap(${b.lat},${b.lon})">Построить маршрут</button>
       </div>
     `).join('');
