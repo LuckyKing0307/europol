@@ -4,7 +4,7 @@
         <div class="product_data-qty-value">
             {{ number_format($qty_float, 2, '.', ' ') }} м<sup>2</sup>
         </div>
-        <button class="product_data-btn product_data-btn--plus" wire:click="increment" wire:ignore.self>+</button>
+        <button class="product_data-btn product_data-btn--plus" wire:click="increment">+</button>
     </div>
     <div class="close_cart">
         <button id="close-filter" class="close-btn" onclick="closeFilter('cart_{{ $productId }}')">✕</button>
