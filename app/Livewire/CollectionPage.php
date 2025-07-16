@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Product;
+use App\Models\ProductCharacteristic;
 use App\Traits\FetchesUrls;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
@@ -83,9 +84,10 @@ class CollectionPage extends Component
             $query = $this->url?->element->products();
         }
         if (!empty($this->activeFilters)) {
-            $query->whereHas('variants.productOptionValues', function ($q) {
-                $q->whereIn('lunar_product_option_values.id', $this->activeFilters);
-            });
+            $prod_ids = ProductCharacteristic::whereIn('value', $this->activeFilters)
+                ->pluck('product_id')
+                ->toArray();
+            $query->whereIn('id', $prod_ids);
         }
         if (!is_null($this->minPrice)) {
             $query->whereHas('variants.basePrices', function ($q) {
