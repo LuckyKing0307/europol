@@ -4,7 +4,7 @@
         <div class="sm:w-full lg:w-1/2 flex justify-center">
             <div class="w-full max-w-md hidden_type">
                 <!-- Обёртка Swiper -->
-                <div class="swiper brand-slider" style="padding-bottom: 40px;">
+                <div class="swiper brand-slider" style="padding-bottom: 40px;" wire:ignore>
                     <div class="swiper-wrapper">
                             @foreach($brands as $brand)
                             <div class="flex swiper-slide brand_list items-center justify-center p-4 bg-white rounded-lg shadow
