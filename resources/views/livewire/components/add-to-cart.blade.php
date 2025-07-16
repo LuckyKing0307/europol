@@ -1,6 +1,4 @@
-<div class="add_to_cart cart_{{ $productId }}" @if(!$shouldIgnore)
-    wire:ignore.self
-    @endif>
+<div class="add_to_cart cart_{{ $productId }}">
     <div class="product_data-qty">
         <button class="product_data-btn product_data-btn--minus" wire:click="decrement">−</button>
         <div class="product_data-qty-value">
