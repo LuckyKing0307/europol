@@ -69,7 +69,6 @@ $info = [
                                              :productId="$product->id"
                                              :wire:key="$product->variants->first()->id">
             <livewire:components.like-button :productId="$product->id"
-                                             :wire:key="$product->variants->first()->id">
         </div>
     </div>
 </div>
