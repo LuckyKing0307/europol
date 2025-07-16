@@ -3,12 +3,13 @@
     <div class="block_content brand_content">
         <div class="sm:w-full lg:w-1/2 flex justify-center">
             <div class="w-full max-w-md hidden_type">
+                <!-- Обёртка Swiper -->
                 <div class="swiper brand-slider" style="padding-bottom: 40px;">
                     <div class="swiper-wrapper">
                             @foreach($brands as $brand)
                             <div class="flex swiper-slide brand_list items-center justify-center p-4 bg-white rounded-lg shadow
                   hover:shadow-md transition"
-                                 wire:click="selectBrand({{ $brand->id }})">
+                                 wire:click="brandSelected({{ $brand->id }})">
                                 @if ($brand->thumbnail)
                                     <img src="{{ $brand->thumbnail->getUrl('medium') }}" alt="{{ $brand->name }}"
                                          class="max-h-16 object-contain m-auto">
