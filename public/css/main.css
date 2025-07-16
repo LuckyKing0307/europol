@@ -1741,6 +1741,12 @@ article{
     .sub-header,.catalogs_wrapper,.search_input_wrapper{
         display: none;
     }
+    .addresses{
+        width: 100% !important;
+    }
+    #map{
+        display: none;
+    }
     .grade{
         position: relative;
         width: 60%;
