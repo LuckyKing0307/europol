@@ -1779,6 +1779,10 @@ article{
         display: flex;
         justify-content: end;
     }
+    .search_input{
+        padding: 11px 20px;
+        font-size: 12px;
+    }
     .images_block,.boy_class,.product_description{
         width: 100%;
     }

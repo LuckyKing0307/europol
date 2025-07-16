@@ -78,7 +78,7 @@
 
                         <div class="sub_section_menu">
                             <div class="">
-                                {{ __('header.phone') }}: <br><a href="tel:+998723049843">+998 (72) 304-98-43</a>
+                                {{ __('header.phone') }}: <br><a href="tel:+998723049843">+998 (55) 510-01-02</a>
                             </div>
                             <div class="lang flex">
                                 @livewire('language-switcher')
