@@ -22,4 +22,10 @@ class BrandsStrip extends Component
             'brands' => $this->brands,
         ]);
     }
+
+
+    public function selectBrand(int $brandId): void
+    {
+        $this->dispatch('brand-selected', id: $brandId);
+    }
 }
