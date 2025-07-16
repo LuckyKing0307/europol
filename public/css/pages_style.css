@@ -828,7 +828,9 @@ img {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 24px;
 	}
-
+    .warranty-form__wrapper{
+        padding: 20px;
+    }
 	.blogs-tabs__list {
 		gap: 24px;
 	}
