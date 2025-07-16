@@ -77,13 +77,13 @@
     });
     amoSocialButton('onChatShow', function () {
         document.getElementById('customChatButton').style.display = 'none';
-        document.querySelector('.amo-button').style.display = 'flex';
+        document.querySelector('.amo-button').style.setProperty('display', 'flex', 'important');
         document.querySelector('.amo-button').style.width = '50px';
         document.querySelector('.amo-button').style.height = '50px';
     });
     amoSocialButton('onChatHide', function () {
         document.getElementById('customChatButton').style.display = 'flex';
-        document.querySelector('.amo-button').style.display = 'none';
+        document.querySelector('.amo-button').style.setProperty('display', 'none', 'important');
         document.querySelector('.amo-button').style.width = 0;
         document.querySelector('.amo-button').style.height = 0;
     });
