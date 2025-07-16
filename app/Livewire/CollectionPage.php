@@ -40,10 +40,11 @@ class CollectionPage extends Component
             }
         }
     }
-    public function brandSelected(int $brandId): void
+    #[On('brand-selected')]
+    public function filterByBrand(int $id): void
     {
-        $this->selectedBrandId = $brandId;
-        $this->resetPage(); // сбрасываем пагинацию
+        $this->selectedBrandId = $id;
+        $this->resetPage();
     }
     /**
      * Computed property to return the collection.
