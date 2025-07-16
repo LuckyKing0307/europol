@@ -1893,6 +1893,12 @@ article{
     .like>img{
         width: 15px;
     }
+    .product_details{
+        margin-top: 10px;
+    }
+    .sale_price>span{
+        font-size: 15px;
+    }
     .action>div{
         font-size: 13px;
     }
@@ -1900,7 +1906,7 @@ article{
         margin-top: 5px;
     }
     .basket img{
-        font-size: 13px;
+        width: 13px;
     }
     .sale_price{
         font-size: 20px;
