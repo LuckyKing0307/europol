@@ -93,7 +93,7 @@
       <div class="address-card" data-index="${i}">
         <strong>${b.title}</strong><br>
         Ориентир.: ${b.hint}<br>
-        Тел.: ${b.phone}<br>
+        Тел.:  <a href="tel:${b.phone}">${b.phone}</a><br>
         <button class="show-btn">Показать на карте</button>
       </div>
     `).join('');
