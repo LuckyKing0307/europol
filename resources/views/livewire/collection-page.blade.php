@@ -2,7 +2,6 @@
 <section>
     @livewire('catalog-novigation')
     @livewire('components.filtration')
-    {{$this->brand.'aaaaaaaaaaaaaaaaa'}}
     @if (!empty($this->activeFilters))
         <div class="mb-6 flex flex-wrap items-center gap-2">
             @foreach ($this->activeFilters as $filterId)
