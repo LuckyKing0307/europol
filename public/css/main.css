@@ -1894,7 +1894,7 @@ article{
     .product_info_text{
         font-size: 8px;
     }
-    .product_medium_img img{
+    .product_info_text img{
         width: 5px;
     }
     .product_title{
