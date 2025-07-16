@@ -820,6 +820,9 @@ img {
 	color: #fff;
 }
 
+.form_req{
+    width: 50%;
+}
 @media screen and (max-width: 1024px) {
 	.blogs__list {
 		grid-template-columns: repeat(2, 1fr);
@@ -919,13 +922,19 @@ img {
 	.warranty-contact {
 		padding: 0px 0 50px 0;
 	}
-
+    .form_req{
+        width: 100%;
+    }
 	.warranty-contact__title,
 	.b2b-contact__title,
 	.warranty-contact__title {
 		margin-bottom: 10px;
 		font-size: 24px;
+        padding: 20px;
 	}
+    .b2b-contact__title, .warranty-contact__title{
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {

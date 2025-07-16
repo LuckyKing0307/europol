@@ -3,7 +3,7 @@
     @enquiry-sent.window="
         $dispatch('notify', {text: 'Спасибо! Ваша заявка принята.'});
     "
-    class="max-w-sm p-6 space-y-4" style="width: 50%; max-width: none;"
+    class="max-w-sm p-6 space-y-4 form_req" style="max-width: none;"
 >
 
     <div class="container">

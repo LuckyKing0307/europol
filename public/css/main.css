@@ -1933,4 +1933,10 @@ article{
     .mob_logo svg{
         width: 100%;
     }
+    .footer{
+        margin-top: 20px;
+    }
+    .footer__col svg{
+        width: 50%;
+    }
 }
