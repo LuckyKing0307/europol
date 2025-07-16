@@ -87,7 +87,9 @@ class CollectionPage extends Component
             $prod_ids = ProductCharacteristic::whereIn('value', $this->activeFilters)
                 ->pluck('product_id')
                 ->toArray();
-            $query->whereIn('lunar_products.id', $prod_ids);
+            $query->whereExists(function ($q) use ($prod_ids) {
+                $q->whereIn('lunar_products.id', $prod_ids);
+            });
         }
         if (!is_null($this->minPrice)) {
             $query->whereHas('variants.basePrices', function ($q) {
