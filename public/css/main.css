@@ -197,7 +197,7 @@ header{
 .check_box{
     display: flex;
     justify-content: space-between;
-    max-width: 50%;
+    max-width: 100%;
     min-width: 20%;
 }
 /* Скрываем стандартный чекбокс */

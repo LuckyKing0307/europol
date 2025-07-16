@@ -37,15 +37,17 @@
                 <h3 class="text-lg font-semibold mb-2">{{$key}}</h3>
                 <ul class="space-y-1">
                     @foreach ($values as $value)
-                        <li>
-                            <label class="flex items-center gap-2 check_box">
-                                {{ $value }}
-                                <input type="checkbox" wire:model.live="selectedOptions" value="{{ $value }}">
-                                <span class="flex items-center gap-2 switch">
-                                    <span class="slider"></span>
-                                </span>
-                            </label>
-                        </li>
+                        @if($value!='')
+                            <li>
+                                <label class="flex items-center gap-2 check_box">
+                                    {{ $value }}
+                                    <input type="checkbox" wire:model.live="selectedOptions" value="{{ $value }}">
+                                    <span class="flex items-center gap-2 switch">
+                                        <span class="slider"></span>
+                                    </span>
+                                </label>
+                            </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
