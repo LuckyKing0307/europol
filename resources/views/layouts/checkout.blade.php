@@ -55,11 +55,11 @@
 
 <script defer>
     document.addEventListener('DOMContentLoaded', function() {
-        setInterval(function(){
+        setTimeout(function(){
             amoSocialButton('onChatReady', function () {
                 amoSocialButton('runChatShow');
             });
-        }, 100); // небольшая задержка для надёжности
+        }, 5000); // небольшая задержка для надёжности
     });
     // Открытие AmoCRM чата по клику
     document.getElementById('customChatButton').addEventListener('click', function (e) {

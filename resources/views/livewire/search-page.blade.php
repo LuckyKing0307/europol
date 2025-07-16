@@ -5,7 +5,7 @@
         <h1 class="text-3xl font-bold">
             {{ __('search.result') }}
             @if (isset($term))
-                for <u>{{ $term }}</u>
+                Для <u style="color: white;">{{ $term }}</u>
             @endif
         </h1>
 

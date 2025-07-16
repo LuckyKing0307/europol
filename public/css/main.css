@@ -1786,7 +1786,16 @@ article{
     .add_to_cart_wrapper{
         max-width: 100%;
     }
-    .product-slider,.block_text,.block_title,.product,.popular_slide{
+    .block_title{
+        padding-left: 20px;
+        font-size: 26px;
+
+    }
+    .block_text{
+        padding-left: 20px;
+        font-size: 16px;
+    }
+    .product-slider,.block_text,.product,.popular_slide{
         padding: 20px !important;
     }
     .popular_text{
@@ -1841,7 +1850,7 @@ article{
         justify-content: center;
     }
     .menu_bar{
-        background: #fff;
+        background: linear-gradient(270.8deg, #181818 44.56%, #2A2A2A 100%);
         position: fixed;
         top: 0;
         left: 0;
@@ -1904,6 +1913,10 @@ article{
         width: 100%;
         display: flex;
         justify-content: center;
+        padding: 10px;
+    }
+    .category-slider{
+        overflow: hidden !important;
     }
     .main_pc_menu{
         display: none;
