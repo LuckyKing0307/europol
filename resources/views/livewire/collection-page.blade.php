@@ -60,6 +60,8 @@
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-        @livewire('components.brands-strip')
+        <div class="" wire:ignore>
+            @livewire('components.brands-strip')
+        </div>
     </div>
 </section>
