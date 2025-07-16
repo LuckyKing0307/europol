@@ -65,6 +65,9 @@ $info = [
             <div class="basket" onclick="openCart('cart_{{$product->variants->first()->id}}')">
                 <img src="{{asset('img/card.svg')}}" alt="Корзина">В корзину
             </div>
+            <livewire:components.add-to-cart :purchasable="$product->variants->first()"
+                                             :productId="$product->id"
+                                             :wire:key="$product->variants->first()->id">
             <livewire:components.like-button :productId="$product->id"
                                              :wire:key="$product->variants->first()->id">
         </div>
