@@ -12,7 +12,7 @@
     <div class="gap-4">
         <button type="submit"
                 class="add_to_cart_btn w-full px-6 py-4 text-sm font-medium text-center text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 add_tocart"
-                wire:click.prevent="addToCart">
+                wire:click.prevent="addToCart" onclick="closeFilter('cart_{{ $productId }}')">
             {{ __('cart.add') }}
         </button>
     </div>
