@@ -43,23 +43,7 @@
     </div>
     @endif
 
-    <div class="mx-auto max-w-screen-2xl content_block">
-{{--        <div class="block_content">--}}
-{{--            <div class="sm:w-full lg:w-1/2 flex justify-center">--}}
-{{--                <div class="w-full max-w-md hidden_type">--}}
-{{--                    <!-- Обёртка Swiper -->--}}
-{{--                    <div class="swiper brand-slider">--}}
-{{--                        <div class="swiper-wrapper">--}}
-{{--                            <div class="brand_wrapper">--}}
-{{--                                <img src="" alt="">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="swiper-scrollbar mt-4"></div>--}}
-{{--                    </div>--}}
-
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+    <div class="mx-auto max-w-screen-2xl content_block" wire:key="brands-strip">
         @livewire('components.brands-strip')
     </div>
 </section>
