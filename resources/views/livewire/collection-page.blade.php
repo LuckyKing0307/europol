@@ -44,6 +44,6 @@
     @endif
 
     <div class="mx-auto max-w-screen-2xl content_block" wire:key="brands-strip">
-        @livewire('components.brands-strip')
+        <livewire:components.brands-strip />
     </div>
 </section>
