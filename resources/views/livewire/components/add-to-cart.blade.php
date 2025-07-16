@@ -1,4 +1,4 @@
-<div class="add_to_cart cart_{{ $productId }}">
+<div class="add_to_cart cart_{{ $productId }}" wire:ignore:self>
     <div class="product_data-qty">
         <button class="product_data-btn product_data-btn--minus" wire:click="decrement">−</button>
         <div class="product_data-qty-value">
