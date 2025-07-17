@@ -7,6 +7,7 @@ use AmoCRM\Collections\ContactsCollection;
 use AmoCRM\Collections\CustomFieldsValuesCollection;
 use AmoCRM\Collections\Leads\LeadsCollection;
 use AmoCRM\Collections\NotesCollection;
+use AmoCRM\Exceptions\AmoCRMApiNoContentException;
 use AmoCRM\Filters\ContactsFilter;
 use AmoCRM\Models\ContactModel;
 use AmoCRM\Models\CustomFieldsValues\MultitextCustomFieldValuesModel;
@@ -112,7 +113,11 @@ class AmoController extends Controller
         $filter = new ContactsFilter();
         $filter->setQuery($phone); // поиск похожих
 
-        $contacts = $this->client->contacts()->get($filter);
+        try {
+            $contacts = $this->client->contacts()->get($filter);
+        } catch (AmoCRMApiNoContentException) {
+            return null; // 👈 ничего не найдено — это ок
+        }
 
         foreach ($contacts as $contact) {
             $fields = $contact->getCustomFieldsValues();
