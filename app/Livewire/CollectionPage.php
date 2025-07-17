@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Product;
 use App\Models\ProductCharacteristic;
+use App\Services\FacebookConversionService;
 use App\Traits\FetchesUrls;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
@@ -137,6 +138,19 @@ class CollectionPage extends Component
 
     public function render(): View
     {
+        $fb = new FacebookConversionService();
+        $fb->sendEvent([
+            'event_name' => 'ViewContent',
+            'event_time' => time(),
+            'action_source' => 'website',
+            'user_data' => [
+                'client_ip_address' => request()->ip(),
+                'client_user_agent' => request()->userAgent(),
+            ],
+            'custom_data' => [
+                'content_type' => 'collections',
+            ],
+        ]);
         return view('livewire.collection-page');
     }
 }

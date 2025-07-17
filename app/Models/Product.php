@@ -23,7 +23,7 @@ class Product extends LunarProduct
     {
         return 'id'; // или что ты используешь как primary key
     }
-    public function characteristics(): HasMany
+    public function characteristics($limiy = null): HasMany
     {
         return $this->hasMany(ProductCharacteristic::class);
     }
