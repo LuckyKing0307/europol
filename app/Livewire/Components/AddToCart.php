@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Components;
 
+use App\Services\FacebookConversionService;
 use Illuminate\View\View;
 use Livewire\Component;
 use Lunar\Base\Purchasable;
@@ -47,6 +48,7 @@ class AddToCart extends Component
     }
     public function addToCart(): void
     {
+        $fb = new FacebookConversionService();
         $this->validate();
 
         if ($this->purchasable->stock < $this->quantity) {
@@ -57,6 +59,16 @@ class AddToCart extends Component
 
         CartSession::manager()->add($this->purchasable, $this->quantity);
         $this->dispatch('add-to-cart');
+
+        $fb->sendEvent([
+            'event_name' => 'AddToCart',
+            'event_time' => time(),
+            'action_source' => 'website',
+            'user_data' => [
+                'client_ip_address' => request()->ip(),
+                'client_user_agent' => request()->userAgent(),
+            ],
+        ]);
     }
 
     public function render(): View
