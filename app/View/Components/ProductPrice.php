@@ -23,10 +23,9 @@ class ProductPrice extends Component
     public function __construct($product = null, $variant = null)
     {
         try {
-            info($product->id);
             $var = ProductVariant::where(['product_id' => $product->id])->first();
-            info($var->id);
             $this->price = Price::where(['priceable_id' => $var->id])->first();
+            info($this->price);
         } catch (\Lunar\Exceptions\MissingCurrencyPriceException $e) {
             $this->price = null;
             // или какая-то дефолтная цена
