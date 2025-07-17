@@ -3,7 +3,6 @@
 namespace App\View\Components;
 
 use Exception;
-use Illuminate\Support\Facades\Http;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 use Lunar\Facades\Pricing;
@@ -13,7 +12,6 @@ use Lunar\Models\ProductVariant;
 class ProductPrice extends Component
 {
     public ?Price $price = null;
-    public $rate = null;
 
     public ?ProductVariant $variant = null;
 
@@ -22,9 +20,8 @@ class ProductPrice extends Component
      *
      * @return void
      */
-    public function __construct($product = null, $variant = null, $rate=1)
+    public function __construct($product = null, $variant = null)
     {
-        $this->rate = $rate;
         try {
             $this->price = Pricing::for(
                 $variant ?: $product->variants->first()

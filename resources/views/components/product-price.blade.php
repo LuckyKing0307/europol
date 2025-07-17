@@ -1,3 +1,3 @@
 <span {{ $attributes }}>
-    {{ $price ? $price->price->price : '0,00 UZS' }}
+    {{ $price ? $price->price->formatted() : '0,00 UZS' }}
 </span>
