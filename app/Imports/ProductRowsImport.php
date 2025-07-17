@@ -102,16 +102,28 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
                     'stock' => 0,
                 ]
             );
-            $price = Price::updateOrCreate(
-                ['priceable_id' => $variant->id],
-                [
-                    'price' => 0,
-                    'compare_price' => 0,
-                    'customer_group_id' => 1,
-                    'currency_id' => 1,
-                    'priceable_type' => 'product_variant'
-                ]
-            );
+            $price = Price::where(['priceable_id' => $variant->id]);
+            if($price->exists()){
+                Price::updateOrCreate(
+                    ['priceable_id' => $variant->id],
+                    [
+                        'customer_group_id' => 1,
+                        'currency_id' => 1,
+                        'priceable_type' => 'product_variant'
+                    ]
+                );
+            }else{
+                Price::updateOrCreate(
+                    ['priceable_id' => $variant->id],
+                    [
+                        'price' => 0,
+                        'compare_price' => 0,
+                        'customer_group_id' => 1,
+                        'currency_id' => 1,
+                        'priceable_type' => 'product_variant'
+                    ]
+                );
+            }
             for ($i=5;$i<=17;$i++){
                 if(isset($row[$i]) and $this->firstRow[$i]!='' and $this->firstRow[$i]!=null){
                     if (isset($row[$i]) and $row[$i]!=''){
