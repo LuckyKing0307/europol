@@ -31,6 +31,7 @@ class ImportProductsFromExcel implements ShouldQueue
         try {
             Excel::import(new ProductSheetsImport(Storage::path('public/'.$this->import->path)), Storage::path('public/'.$this->import->path));
         } catch (\Throwable $e) {
+            info($e->getMessage());
             $this->import->mark('failed', ['error' => $e->getMessage()]);
         }
     }
