@@ -21,7 +21,6 @@ class CollectionPage extends Component
     use FetchesUrls,WithPagination;
 
     public array $activeFilters = [];
-    public int $rate = 0;
     public ?int $selectedBrandId = null;
     public ?int $minPrice = null;
     public ?int $maxPrice = null;
@@ -117,8 +116,7 @@ class CollectionPage extends Component
         $usd = collect($response->json())
             ->firstWhere('Ccy', 'USD');
 
-        $this->rate = (float) $usd['Rate'];
-        return $this->rate;
+        return (float) $usd['Rate'];
     }
     public function getCollectionsProperty()
     {
