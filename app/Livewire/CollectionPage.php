@@ -111,7 +111,7 @@ class CollectionPage extends Component
     public function getCollectionsProperty()
     {
          $query = Product::with([
-            'variants.basePrices',
+            'variants.prices',
             'variants.productOptionValues.option',
             'defaultUrl',
             'thumbnail',
