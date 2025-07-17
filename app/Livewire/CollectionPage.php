@@ -7,6 +7,7 @@ use App\Models\ProductCharacteristic;
 use App\Services\FacebookConversionService;
 use App\Traits\FetchesUrls;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\On;
 use Livewire\WithPagination;
 use Illuminate\Support\Collection;
@@ -20,6 +21,7 @@ class CollectionPage extends Component
     use FetchesUrls,WithPagination;
 
     public array $activeFilters = [];
+    public int $rate = 0;
     public ?int $selectedBrandId = null;
     public ?int $minPrice = null;
     public ?int $maxPrice = null;
@@ -71,6 +73,13 @@ class CollectionPage extends Component
      */
     public function getProductsProperty(): mixed
     {
+
+        $response = Http::get('https://cbu.uz/uz/arkhiv-kursov-valyut/json/');
+
+        $usd = collect($response->json())
+            ->firstWhere('Ccy', 'USD');
+
+        $this->rate = (float) $usd['Rate'];
         $childIds = $this->url?->element->children()->pluck('id')->all();
         if (count($childIds)>0){
 

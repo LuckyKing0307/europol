@@ -22,14 +22,9 @@ class ProductPrice extends Component
      *
      * @return void
      */
-    public function __construct($product = null, $variant = null)
+    public function __construct($product = null, $variant = null, $rate=null)
     {
-        $response = Http::get('https://cbu.uz/uz/arkhiv-kursov-valyut/json/');
-
-        $usd = collect($response->json())
-            ->firstWhere('Ccy', 'USD');
-
-        $this->rate = (float) $usd['Rate'];
+        $this->rate = $rate;
         try {
             $this->price = Pricing::for(
                 $variant ?: $product->variants->first()
