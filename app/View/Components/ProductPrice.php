@@ -22,7 +22,7 @@ class ProductPrice extends Component
      *
      * @return void
      */
-    public function __construct($product = null, $variant = null, $rate=null)
+    public function __construct($product = null, $variant = null, $rate=1)
     {
         $this->rate = $rate;
         try {
