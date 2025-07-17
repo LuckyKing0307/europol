@@ -17,6 +17,7 @@
            href="{{ route('product.view', $product->defaultUrl->slug) }}">
             <span class="sku">SKU : {{$product->external_id}}</span>
             <div class="text-red-600 font-bold text-lg">
+                {{$rate}}
                 @if($rate)
                     <span class="sale_price"><x-product-price :product="$product" :rate="$rate"/></span>
                 @else
