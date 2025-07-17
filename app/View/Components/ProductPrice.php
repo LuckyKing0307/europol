@@ -25,7 +25,7 @@ class ProductPrice extends Component
         try {
             $var = ProductVariant::where(['product_id' => $product->id])->first();
             $this->price = Price::where(['priceable_id' => $var->id])->first();
-            info($this->price);
+            info($this->price->price);
         } catch (\Lunar\Exceptions\MissingCurrencyPriceException $e) {
             $this->price = null;
             // или какая-то дефолтная цена
