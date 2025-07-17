@@ -18,7 +18,7 @@
 
     </div>
     <div class="mt-8">
-        {{ $this->products ->links('components.pagination') }}
+        {{ $this->products->links('components.pagination') }}
     </div>
     @else
     <div class="max-w-screen-2xl px-4 py-12 mx-auto sm:px-6 lg:px-8">

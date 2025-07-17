@@ -73,13 +73,6 @@ class CollectionPage extends Component
      */
     public function getProductsProperty(): mixed
     {
-
-        $response = Http::get('https://cbu.uz/uz/arkhiv-kursov-valyut/json/');
-
-        $usd = collect($response->json())
-            ->firstWhere('Ccy', 'USD');
-
-        $this->rate = (float) $usd['Rate'];
         $childIds = $this->url?->element->children()->pluck('id')->all();
         if (count($childIds)>0){
 
@@ -116,6 +109,16 @@ class CollectionPage extends Component
             $query->where('brand_id', $this->brand);
         }
         return $query->paginate(16);
+    }
+    public function getRateProperty()
+    {
+        $response = Http::get('https://cbu.uz/uz/arkhiv-kursov-valyut/json/');
+
+        $usd = collect($response->json())
+            ->firstWhere('Ccy', 'USD');
+
+        $this->rate = (float) $usd['Rate'];
+        return $this->rate;
     }
     public function getCollectionsProperty()
     {
