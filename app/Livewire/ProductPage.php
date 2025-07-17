@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Services\FacebookConversionService;
 use App\Traits\FetchesUrls;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
@@ -19,7 +20,7 @@ class ProductPage extends Component
      */
     public array $selectedOptionValues = [];
 
-    public function mount($slug): void
+    public function mount($slug, FacebookConversionService $fb): void
     {
         $this->url = $this->fetchUrl(
             $slug,
@@ -36,7 +37,22 @@ class ProductPage extends Component
         $this->selectedOptionValues = $this->productOptions->mapWithKeys(function ($data) {
             return [$data['option']->id => $data['values']->first()->id];
         })->toArray();
-
+        $fb->sendEvent([
+            'event_name' => 'ViewContent',
+            'event_time' => time(),
+            'action_source' => 'website',
+            'user_data' => [
+                'client_ip_address' => request()->ip(),
+                'client_user_agent' => request()->userAgent(),
+            ],
+            'custom_data' => [
+                'content_name' => $this->url->element->name,
+                'content_ids' => [$this->url->element->id],
+                'content_type' => 'product',
+                'currency' => $this->variant->basePrices->first()?->currency->code ?? 'USD',
+                'value' => $this->variant->basePrices->first()?->price->value / 100 ?? 0,
+            ]
+        ]);
         if (! $this->variant) {
             abort(404);
         }
