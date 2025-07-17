@@ -20,6 +20,7 @@ class FacebookConversionService
         $response = Http::post("https://graph.facebook.com/v18.0/{$this->pixelId}/events", [
             'data' => [$eventData],
             'access_token' => $this->accessToken,
+            'test_event_code' => 'TEST86806'
         ]);
         info('FB RESPONSE', $response->json());
 
