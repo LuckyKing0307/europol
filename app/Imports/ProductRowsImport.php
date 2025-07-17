@@ -75,7 +75,7 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
             $guid = $row[3];
             $sku = $row[3];
             $name = $row[4];
-            $description = $row[18] ? $row[18] : $row['17'];
+            $description = isset($row[18]) ? $row[18] : $row['17'];
 
             $product = Product::updateOrCreate(
                 ['external_id' => $guid],
