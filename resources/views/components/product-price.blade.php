@@ -1,3 +1,7 @@
 <span {{ $attributes }}>
-    {{ $price ? ($price->price->value*$rate).',00 UZS' : '0,00 UZS' }}
+    @if($price && $price->price)
+        {{ number_format($price->price->value * $rate / 100, 2, ',', ' ') }} UZS
+    @else
+        0,00 UZS
+    @endif
 </span>
