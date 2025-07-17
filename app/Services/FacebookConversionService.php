@@ -21,6 +21,7 @@ class FacebookConversionService
             'data' => [$eventData],
             'access_token' => $this->accessToken,
         ]);
+        info('FB RESPONSE', $response->json());
 
         return $response->json();
     }

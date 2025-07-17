@@ -54,6 +54,8 @@ class ProductPage extends Component
             ],
             'test_event_code' => 'TEST86806'
         ]);
+
+
         if (! $this->variant) {
             abort(404);
         }
