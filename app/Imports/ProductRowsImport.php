@@ -113,16 +113,18 @@ class ProductRowsImport implements ToModel, WithChunkReading, ShouldQueue, WithS
                 ]
             );
             for ($i=5;$i<=17;$i++){
-                if($this->firstRow[$i]!='' and $this->firstRow[$i]!=null){
-                    ProductCharacteristic::updateOrCreate(
-                        [
-                            'product_id' => $product->id,
-                            'key' => $this->firstRow[$i],
-                        ],
-                        [
-                            'value' => $row[$i],
-                        ]
-                    );
+                if(isset($row[$i]) and $this->firstRow[$i]!='' and $this->firstRow[$i]!=null){
+                    if (isset($row[$i]) and $row[$i]!=''){
+                        ProductCharacteristic::updateOrCreate(
+                            [
+                                'product_id' => $product->id,
+                                'key' => $this->firstRow[$i],
+                            ],
+                            [
+                                'value' => $row[$i],
+                            ]
+                        );
+                    }
                 }
             }
             $product->collections()->syncWithoutDetaching([$collection->id]);
