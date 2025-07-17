@@ -17,7 +17,7 @@
            href="{{ route('product.view', $product->defaultUrl->slug) }}">
             <span class="sku">SKU : {{$product->external_id}}</span>
             <div class="text-red-600 font-bold text-lg">
-                <span class="sale_price"><x-product-price :product="$product" :rate="$this->rate"/></span>
+                <span class="sale_price"><x-product-price :product="$product" :rate="$rate"/></span>
             </div>
             <div class="text-sm font-medium mb-2 product_title">
                 {{$product->translateAttribute('name')}}
