@@ -12,6 +12,7 @@ use Lunar\Models\ProductVariant;
 class ProductPrice extends Component
 {
     public ?Price $price = null;
+    public $rate = 0;
 
     public ?ProductVariant $variant = null;
 
@@ -20,8 +21,9 @@ class ProductPrice extends Component
      *
      * @return void
      */
-    public function __construct($product = null, $variant = null)
+    public function __construct($product = null, $variant = null, $rate = 1)
     {
+        $this->rate = $rate;
         try {
             $this->price = Pricing::for(
                 $variant ?: $product->variants->first()
