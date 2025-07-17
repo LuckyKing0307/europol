@@ -1,4 +1,4 @@
-@props(['product'])
+@props(['product','rate'])
 <div class="swiper-slide product p-4">
     <a class="rounded-lg text-center product_medium_img"
        href="{{ route('product.view', $product->defaultUrl->slug) }}">
