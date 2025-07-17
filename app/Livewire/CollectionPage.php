@@ -73,6 +73,13 @@ class CollectionPage extends Component
      */
     public function getProductsProperty(): mixed
     {
+
+        $response = Http::get('https://cbu.uz/uz/arkhiv-kursov-valyut/json/');
+
+        $usd = collect($response->json())
+            ->firstWhere('Ccy', 'USD');
+
+        $this->rate = (float) $usd['Rate'];
         $childIds = $this->url?->element->children()->pluck('id')->all();
         if (count($childIds)>0){
 
