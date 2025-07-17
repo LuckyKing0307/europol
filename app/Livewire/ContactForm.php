@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Http\Controllers\AmoController;
 use App\Models\Enquiry;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
@@ -18,7 +19,6 @@ class ContactForm extends Component
         return [
             'name'    => 'required|min:2',
             'phone'   => 'nullable|regex:/^[0-9\s\+\-\(\)]+$/',
-            'email'   => 'nullable|email',
             'message' => 'nullable|min:3',
         ];
     }
@@ -27,17 +27,10 @@ class ContactForm extends Component
     {
         $this->validate();
 
-        $enquiry = Enquiry::create($this->only(['name', 'phone', 'email', 'message']));
+        $enquiry = Enquiry::create($this->only(['name', 'phone', 'message']));
 
-        // (необязательно) отсылка уведомления на почту администратора
-//        Mail::raw(
-//            "Новая заявка #{$enquiry->id}\nИмя: {$enquiry->name}\nТелефон: {$enquiry->phone}\nE-mail: {$enquiry->email}\nСообщение:\n{$enquiry->message}",
-//            fn ($msg) => $msg
-//                ->to('admin@example.com')   // ←
-//                ->subject('Новая заявка с сайта')
-//        );
-
-        $this->reset(['name', 'phone', 'email', 'message']);
+        (new AmoController())->addContact($enquiry->name,$enquiry->phone,$enquiry->message);
+        $this->reset(['name', 'phone', 'message']);
         $this->dispatch('enquiry-sent');
     }
 

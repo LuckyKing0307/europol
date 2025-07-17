@@ -134,17 +134,15 @@ class AmoController extends Controller
     public function pipes()
     {
         //1782623
-        $customFields = $this->client->customFields('contacts')->get();
-        foreach ($customFields as $field) {
-            if ($field->getName() === 'Телефон') { // 👈 именно по имени поля
-                echo "📞 Field ID: {$field->getId()}" . PHP_EOL;
+        $pipelines = $this->client->pipelines()->get();
 
-                foreach ($field->getEnums() ?? [] as $enum) {
-                    echo "- Enum ID: {$enum->getId()}, Code: {$enum->getCode()}" . PHP_EOL;
-                }
+        foreach ($pipelines as $pipeline) {
+            echo "PIPELINE: " . $pipeline->getName() . " | ID: " . $pipeline->getId() . PHP_EOL;
+
+            foreach ($pipeline->getStatuses() as $status) {
+                echo "- STAGE: " . $status->getName() . " | ID: " . $status->getId() . PHP_EOL;
             }
         }
-
     }
 
 }
