@@ -117,13 +117,13 @@ class CollectionPage extends Component
             'thumbnail',
         ]);
         if (!is_null($this->minPrice)) {
-            $query->whereHas('variants.basePrices', function ($q) {
+            $query->whereHas('variants.prices', function ($q) {
                 $q->where('price', '>=', $this->minPrice);
             });
         }
 
         if (!is_null($this->maxPrice)) {
-            $query->whereHas('variants.basePrices', function ($q) {
+            $query->whereHas('variants.prices', function ($q) {
                 $q->where('price', '<=', $this->maxPrice);
             });
         }
