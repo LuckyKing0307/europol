@@ -576,7 +576,7 @@ input:checked + .switch>.slider:before {
     background-size: cover;
 }
 .collection-grid{
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .language_option img{
     border-radius: 50%;
