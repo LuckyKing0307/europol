@@ -52,7 +52,7 @@ class ProductPage extends Component
                 'currency' => $this->variant->basePrices->first()?->currency->code ?? 'USD',
                 'value' => $this->variant->basePrices->first()?->price->value / 100 ?? 0,
             ],
-            'test_event_code' => 'TEST123ABC'
+            'test_event_code' => 'TEST86806'
         ]);
         if (! $this->variant) {
             abort(404);
