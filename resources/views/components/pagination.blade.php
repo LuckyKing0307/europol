@@ -39,9 +39,9 @@
         {{-- Right part (second half) --}}
         @foreach ($allPages->slice($half) as $page => $url)
             @if ($page == $current)
-                <span class="rounded-full border p-2 font-bold text-blue-600">{{ $page }}</span>
+                <span class="rounded-full border p-2 font-bold text-blue-600" style="color: white;">{{ $page }}</span>
             @else
-                <button wire:click="gotoPage({{ $page }})" class="p-2 hover:text-blue-500 texted_btn">{{ $page }}</button>
+                <button wire:click="gotoPage({{ $page }})" class="p-2 hover:text-blue-500 texted_btn" style="color: white;">{{ $page }}</button>
             @endif
         @endforeach
 
