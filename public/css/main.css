@@ -1368,6 +1368,7 @@ article{
     outline: none;
     width: 100%;
     background-color: transparent;
+    color: #070505;
 }
 .warranty__form {
     display: flex;
