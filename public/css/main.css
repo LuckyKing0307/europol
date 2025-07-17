@@ -442,6 +442,7 @@ input:checked + .switch>.slider:before {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: white;
 }
 .title{
     width: 120%;
