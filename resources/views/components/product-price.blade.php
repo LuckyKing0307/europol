@@ -1,3 +1,3 @@
 <span {{ $attributes }}>
-    {{ $price ? $price->price->value : '0,00 UZS' }}
+    {{ $price ? $product->variants->first()->price : '0,00 UZS' }}
 </span>
