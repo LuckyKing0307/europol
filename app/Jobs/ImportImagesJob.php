@@ -84,7 +84,7 @@ class ImportImagesJob implements ShouldQueue
                 Log::info("У товара {$dir} нет файлов в архиве");
                 continue;
             }
-
+            $product->first()->clearMediaCollection('images');
             foreach ($files as $index => $file) {
                 $product->first()
                     ->addMedia($file)
