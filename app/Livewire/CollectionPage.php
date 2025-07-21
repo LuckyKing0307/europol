@@ -67,10 +67,6 @@ class CollectionPage extends Component
     {
         return $this->activeFilters;
     }
-    public function getPageProperty(): mixed
-    {
-        return $this->page;
-    }
     /**
      * Computed property to return the collection.
      */
@@ -165,8 +161,6 @@ class CollectionPage extends Component
                 'content_type' => 'collections',
             ],
         ]);
-        return view('livewire.collection-page', [
-            'currentPage' => $this->page ?? 1,
-        ]);
+        return view('livewire.collection-page');
     }
 }
