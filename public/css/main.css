@@ -970,7 +970,11 @@ input:checked + .switch>.slider:before {
     margin-top: 21px;
     text-align: center;
 }
-.product_medium_img img{
+.product_medium_img{
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    width: 99%;
+    display: block;
 }
 .catalog_list p{
     font-weight: 400;
