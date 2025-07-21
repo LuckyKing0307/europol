@@ -16,7 +16,7 @@
         </div>
 
     </div>
-    <div class="mt-8" wire:key="page-{{ $currentPage }}">
+    <div class="mt-8" wire:key="page-{{ $this->page }}">
         {{ $this->products->links('components.pagination') }}
     </div>
     @else
