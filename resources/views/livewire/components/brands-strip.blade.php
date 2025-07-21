@@ -12,8 +12,9 @@
                                 @if ($brand->thumbnail)
                                     <img src="{{ $brand->thumbnail->getUrl('medium') }}" alt="{{ $brand->name }}"
                                          class="max-h-16 object-contain m-auto">
+                                @else
+                                    <p class="brand_text" style="color: #1D1D1D;">{{ $brand->name }}</p>
                                 @endif
-                                <p class="brand_text" style="color: #1D1D1D;">{{ $brand->name }}</p>
                             </a>
                             @endforeach
                     </div>
@@ -24,19 +25,21 @@
         </div>
     </div>
 </div>
-<script>
-    if (document.querySelector('.brand-slider')) {
-        new Swiper('.brand-slider', {
-            slidesPerView: 6,
-            freeMode: true,
-            grabCursor: true,
-            spaceBetween: 20,
-            slidesOffsetAfter: 150,
-            breakpoints: {
-                320: {slidesPerView: 2, slidesOffsetAfter: 50},
-                640: {slidesPerView: 3, slidesOffsetAfter: 100},
-                1024: {slidesPerView: 6, slidesOffsetAfter: 150}
-            }
-        });
-    }
-</script>
+@push('scripts')
+    <script>
+        if (document.querySelector('.brand-slider')) {
+            new Swiper('.brand-slider', {
+                slidesPerView: 6,
+                freeMode: true,
+                grabCursor: true,
+                spaceBetween: 20,
+                slidesOffsetAfter: 150,
+                breakpoints: {
+                    320: {slidesPerView: 2, slidesOffsetAfter: 50},
+                    640: {slidesPerView: 3, slidesOffsetAfter: 100},
+                    1024: {slidesPerView: 6, slidesOffsetAfter: 150}
+                }
+            });
+        }
+    </script>
+@endpush
