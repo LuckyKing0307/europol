@@ -150,36 +150,38 @@
             </nav>
         </div>
     </div>
-    <script>
-        const catalog = document.querySelector('.menu_block');
-        function toggleCatalog() {
-            catalog.classList.toggle('hidden');
-            catalog.classList.toggle('block');
-        }
-
-        function openMenu(){
-            catalog.classList.remove('hidden');
-            catalog.classList.add('block');
-        }
-        document.addEventListener('click', (e) => {
-            if (!e.target.classList.contains('menu_block') && !e.target.classList.contains('menu_btn')) {
-                catalog.classList.remove('block');
-                catalog.classList.add('hidden');
+    @push('scripts')
+        <script>
+            const catalog = document.querySelector('.menu_block');
+            function toggleCatalog() {
+                catalog.classList.toggle('hidden');
+                catalog.classList.toggle('block');
             }
-        });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                toggleCatalog();
+            function openMenu(){
+                catalog.classList.remove('hidden');
+                catalog.classList.add('block');
             }
-        });
-        fetch('https://ipapi.co/json/')
-            .then(r => r.json())
-            .then(data => {
-            const location =
-            `${data.city}, ${data.country_name}`;
-                document.querySelector('#tashkent').innerText = location;
-        })
-        .catch(() => console.log('не смогли найти'));
-    </script>
+            document.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('menu_block') && !e.target.classList.contains('menu_btn')) {
+                    catalog.classList.remove('block');
+                    catalog.classList.add('hidden');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    toggleCatalog();
+                }
+            });
+            fetch('https://ipapi.co/json/')
+                .then(r => r.json())
+                .then(data => {
+                    const location =
+                        `${data.city}, ${data.country_name}`;
+                    document.querySelector('#tashkent').innerText = location;
+                })
+                .catch(() => console.log('не смогли найти'));
+        </script>
+    @endpush
 </header>

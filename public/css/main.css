@@ -1370,6 +1370,44 @@ article{
     background-color: transparent;
     color: #070505;
 }
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+.logo-wrapper {
+    width: 300px;
+    animation: shineMove 2.5s linear infinite;
+    mask-image: linear-gradient(90deg, transparent 30%, white 50%, transparent 70%);
+    mask-size: 200% 100%;
+    mask-repeat: no-repeat;
+}
+
+.gold-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    fill: url(#gold-gradient);
+    mask-image: inherit;
+    mask-size: inherit;
+    mask-repeat: inherit;
+    mask-position: inherit;
+}
+
+@keyframes shineMove {
+    0% {
+        mask-position: -200% 0;
+    }
+    100% {
+        mask-position: 200% 0;
+    }
+}
 .warranty__form {
     display: flex;
     flex-direction: column;
