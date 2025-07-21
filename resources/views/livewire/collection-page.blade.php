@@ -31,7 +31,7 @@
             @endforeach
         </div>
     </div>
-    <div class="mt-8" wire:key="page-123{{$this->products->currentPage()}}">
+    <div class="mt-8" wire:key="page-123-{{$this->products->currentPage()}}">
         {{ $this->collections->links('components.pagination') }}
     </div>
     @endif
