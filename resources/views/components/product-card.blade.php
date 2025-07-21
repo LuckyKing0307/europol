@@ -28,7 +28,7 @@
             </div>
         </a>
 
-        <a class="rounded-lg text-center product_medium_img"
+        <a class="rounded-lg text-center"
            href="{{ route('product.view', $product->defaultUrl->slug) }}">
         <div class="product_info">
             @foreach($product->characteristics()->limit(4)->get()  as $product_info)
