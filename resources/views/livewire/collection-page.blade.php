@@ -16,7 +16,7 @@
         </div>
 
     </div>
-    <div class="mt-8">
+    <div class="mt-8" wire:key="page-{{ $page }}">
         {{ $this->products->links('components.pagination') }}
     </div>
     @else
@@ -41,11 +41,13 @@
     </div>
 </section>
 
-<script defer>
-    function openCart(e){
-        document.querySelector('.'+e).style.display = 'flex';
-    }
-    function closeFilter(e){
-        document.querySelector('.'+e).style.display = 'none';
-    }
-</script>
+@push('scripts')
+    <script defer>
+        function openCart(e){
+            document.querySelector('.'+e).style.display = 'flex';
+        }
+        function closeFilter(e){
+            document.querySelector('.'+e).style.display = 'none';
+        }
+    </script>
+@endpush
