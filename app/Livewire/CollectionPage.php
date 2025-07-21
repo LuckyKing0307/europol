@@ -61,11 +61,15 @@ class CollectionPage extends Component
         $this->minPrice = $filters['minPrice'] ?? null;
         $this->maxPrice = $filters['maxPrice'] ?? null;
 
-        $this->resetPage(); // сбрасываем пагинацию
+        $this->resetPage();
     }
     public function getActiveFiltersProperty()
     {
         return $this->activeFilters;
+    }
+    public function getPageProperty(): mixed
+    {
+        return $this->page;
     }
     /**
      * Computed property to return the collection.
@@ -161,6 +165,8 @@ class CollectionPage extends Component
                 'content_type' => 'collections',
             ],
         ]);
-        return view('livewire.collection-page');
+        return view('livewire.collection-page', [
+            'currentPage' => $this->page ?? 1,
+        ]);
     }
 }
