@@ -153,20 +153,20 @@
     </div>
     @push('scripts')
         <script>
-            const catalog = document.querySelector('.menu_block');
+            const catalog_sub_menu = document.querySelector('.menu_block');
             function toggleCatalog() {
-                catalog.classList.toggle('hidden');
-                catalog.classList.toggle('block');
+                catalog_sub_menu.classList.toggle('hidden');
+                catalog_sub_menu.classList.toggle('block');
             }
 
             function openMenu(){
-                catalog.classList.remove('hidden');
-                catalog.classList.add('block');
+                catalog_sub_menu.classList.remove('hidden');
+                catalog_sub_menu.classList.add('block');
             }
             document.addEventListener('click', (e) => {
                 if (!e.target.classList.contains('menu_block') && !e.target.classList.contains('menu_btn')) {
-                    catalog.classList.remove('block');
-                    catalog.classList.add('hidden');
+                    catalog_sub_menu.classList.remove('block');
+                    catalog_sub_menu.classList.add('hidden');
                 }
             });
 
