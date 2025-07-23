@@ -25,6 +25,7 @@
                                     <div class="flex items-center mt-2 space-x-2 text-sm">
                                         <button
                                             class="px-2 py-1  bg-gray-600 rounded hover:bg-gray-700"
+                                            style="color:#000;"
                                             wire:click="decreaseQuantity('{{ $line->id }}')"
                                             title="Уменьшить количество">–</button>
 
@@ -32,11 +33,13 @@
 
                                         <button
                                             class="px-2 py-1  bg-gray-600 rounded hover:bg-gray-700"
+                                            style="color:#000;"
                                             wire:click="increaseQuantity('{{ $line->id }}')"
                                             title="Увеличить количество">+</button>
 
                                         <button
                                             class="px-2 py-1  bg-red-500 rounded hover:bg-red-600"
+                                            style="color:#000;"
                                             wire:click="removeLine('{{ $line->id }}')"
                                             title="Удалить товар">✕</button>
                                     </div>
