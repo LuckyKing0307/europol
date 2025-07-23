@@ -73,7 +73,7 @@
                                                     class="w-16 p-2 text-xs transition-colors border border-gray-100 rounded-lg hover:border-gray-200"
                                                     type="number"
                                                     wire:model.live="lines.{{ $index }}.quantity"
-                                                    wire:blur="updateLines"
+                                                    wire:change="updateLines"
                                                 />
 
                                                 <p class="ml-2 text-xs">
