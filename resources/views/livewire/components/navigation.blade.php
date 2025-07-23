@@ -145,6 +145,7 @@
                 <a href="{{route('blogs.view')}}" class="text-sm font-medium transition hover:opacity-75">Блог</a>
 {{--                <a href="{{route('about.view')}}" class="text-sm font-medium transition hover:opacity-75">Для дизайнеров</a>--}}
                 <a href="{{route('warranty.view')}}" class="text-sm font-medium transition hover:opacity-75">Гарантия</a>
+                <a href="{{route('maps')}}" class="text-sm font-medium transition hover:opacity-75">Магазины</a>
 {{--                <a href="{{route('work.view')}}" class="text-sm font-medium transition hover:opacity-75">Вакансии</a>--}}
 {{--                <a href="{{route('about.view')}}" class="text-sm font-medium transition hover:opacity-75">Сотруднечество</a>--}}
             </nav>
