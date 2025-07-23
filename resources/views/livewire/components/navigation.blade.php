@@ -10,7 +10,7 @@
                 <div class="lang flex header-info">
                     {{--                @livewire('language-switcher')--}}
                     <div class="working-time">с 9:00 до 20:00 ежедневно</div>
-                    <a href="tel:+998901234567" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt="" style="margin-left: 10px;margin-right: 5px;"></span>+998 90 123 45 67</a>
+                    <a href="tel:+998555100102" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt="" style="margin-left: 10px;margin-right: 5px;"></span>+998 55-510-01-02</a>
                 </div>
             </div>
         </div>

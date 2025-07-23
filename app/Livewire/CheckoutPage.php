@@ -67,6 +67,35 @@ class CheckoutPage extends Component
     {
         $this->cart = CartSession::current();
     }
+    public function increaseQuantity($lineId)
+    {
+        $line = $this->cart->lines->firstWhere('id', $lineId);
+        if ($line) {
+            $line->update(['quantity' => $line->quantity + 1]);
+            $this->cart->calculate();
+            $this->refreshCart();
+        }
+    }
+
+    public function decreaseQuantity($lineId)
+    {
+        $line = $this->cart->lines->firstWhere('id', $lineId);
+        if ($line && $line->quantity > 1) {
+            $line->update(['quantity' => $line->quantity - 1]);
+            $this->cart->calculate();
+            $this->refreshCart();
+        }
+    }
+
+    public function removeLine($lineId)
+    {
+        $line = $this->cart->lines->firstWhere('id', $lineId);
+        if ($line) {
+            $line->delete();
+            $this->cart->calculate();
+            $this->refreshCart();
+        }
+    }
 
     public function determineCheckoutStep(): void
     {
@@ -88,6 +117,7 @@ class CheckoutPage extends Component
     public function refreshCart(): void
     {
         $this->cart = CartSession::current();
+        $this->cart->calculate();
     }
 
     public function getShippingOptionProperty()

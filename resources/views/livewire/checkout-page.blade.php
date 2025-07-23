@@ -1,7 +1,8 @@
 <div style="margin-top: 50px;">
     <div class="max-w-screen-xl mx-auto">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-start">
-            <div class="px-6 py-8 space-y-4 bg-white border border-gray-100 lg:sticky lg:top-8 rounded-xl lg:order-last">
+            <div
+                class="px-6 py-8 space-y-4 bg-white border border-gray-100 lg:sticky lg:top-8 rounded-xl lg:order-last">
                 <h3 class="font-medium">
                     {{ __('order.summary') }}
                 </h3>
@@ -10,16 +11,35 @@
                         @foreach ($cart->lines as $line)
                             <div class="flex items-center py-4" wire:key="cart_line_{{ $line->id }}">
                                 <img class="object-cover w-16 h-16 rounded"
-                                     src="{{ $line->purchasable->getThumbnail()->getUrl() }}" />
+                                     src="{{ $line->purchasable->getThumbnail()->getUrl() }}"/>
 
                                 <div class="flex-1 ml-4">
                                     <p class="text-sm font-medium max-w-[35ch]">
                                         {{ $line->purchasable->getDescription() }}
                                     </p>
 
-                                    <span class="block mt-1 text-xs text-gray-500">
+                                    <div class="mt-1 text-xs text-gray-500">
                                         {{ $line->quantity }} × {{ $line->subTotal->formatted() }}
-                                    </span>
+                                    </div>
+
+                                    <div class="flex items-center mt-2 space-x-2 text-sm">
+                                        <button
+                                            class="px-2 py-1 text-white bg-gray-600 rounded hover:bg-gray-700"
+                                            wire:click="decreaseQuantity('{{ $line->id }}')"
+                                            title="Уменьшить количество">–</button>
+
+                                        <span>{{ $line->quantity }}</span>
+
+                                        <button
+                                            class="px-2 py-1 text-white bg-gray-600 rounded hover:bg-gray-700"
+                                            wire:click="increaseQuantity('{{ $line->id }}')"
+                                            title="Увеличить количество">+</button>
+
+                                        <button
+                                            class="px-2 py-1 text-white bg-red-500 rounded hover:bg-red-600"
+                                            wire:click="removeLine('{{ $line->id }}')"
+                                            title="Удалить товар">✕</button>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach

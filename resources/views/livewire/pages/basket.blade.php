@@ -9,7 +9,7 @@
             <a href="{{route('collection.view.all')}}" class="basket__btn">Перейти в каталог</a>
             <p class="basket__subtitle">
                 Индивидуальный подбор товара по телефону
-                <a href="tel:+998901234567" class="basket__phone">998 90 123 45 67</a>
+                <a href="tel:+998901234567" class="basket__phone">998 55-510-01-02</a>
             </p>
         </div>
     </div>
