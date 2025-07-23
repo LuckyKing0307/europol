@@ -153,11 +153,7 @@
     </div>
     @push('scripts')
         <script>
-            if(catalog_sub_menu){
-                catalog_sub_menu = document.querySelector('.menu_block');
-            }else{
-                const catalog_sub_menu = document.querySelector('.menu_block');
-            }
+            let catalog_sub_menu = document.querySelector('.menu_block');
             function toggleCatalog() {
                 catalog_sub_menu.classList.toggle('hidden');
                 catalog_sub_menu.classList.toggle('block');
