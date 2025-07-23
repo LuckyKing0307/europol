@@ -1,10 +1,10 @@
 <div class="add_to_cart cart_{{ $productId }}">
     <div class="product_data-qty">
-        <button class="product_data-btn product_data-btn--minus" wire:click="decrement">−</button>
+        <button class="product_data-btn product_data-btn--minus minusBtn" wire:click="decrement">−</button>
         <div class="product_data-qty-value">
             {{ number_format($qty_float, 2, '.', ' ') }} м<sup>2</sup>
         </div>
-        <button class="product_data-btn product_data-btn--plus" wire:click="increment">+</button>
+        <button class="product_data-btn product_data-btn--plus plus-btn" wire:click="increment">+</button>
     </div>
     <div class="close_cart">
         <button id="close-filter" class="close-btn" onclick="closeFilter('cart_{{ $productId }}')">✕</button>

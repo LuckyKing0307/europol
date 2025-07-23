@@ -153,7 +153,6 @@
                 background: 'rgba(0, 0, 0, 0.8)',
                 margin: 24
             });
-            mediumZoom('.zoomable-image');
             console.log('aaaaaaaaaaaaa2')
         });
         let priceText = document.querySelector('.product_data-price-perm2 span').textContent;

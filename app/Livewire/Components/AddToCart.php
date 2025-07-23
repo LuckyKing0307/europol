@@ -52,7 +52,7 @@ class AddToCart extends Component
         $this->validate();
 
         if ($this->purchasable->stock < $this->quantity) {
-            $this->addError('quantity', 'The quantity exceeds the available stock.');
+            $this->addError('quantity', 'Извините, запрашиваемое количество товара недоступно в данный момент.');
 
             return;
         }
