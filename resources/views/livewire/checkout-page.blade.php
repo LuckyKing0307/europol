@@ -22,16 +22,16 @@
                                         {{ $line->quantity }} × {{ $line->subTotal->formatted() }}
                                     </div>
                                     <div class="flex justify-between">
-                                        <div class="flex items-center mt-2 space-x-2 text-sm">
+                                        <div class="flex items-center mt-2 space-x-2 text-sm justify-between " style="width: 50%;">
                                             <button
                                                 class="px-2 py-1  bg-gray-600 rounded hover:bg-gray-700 header_btn"
-                                                style="color:#000;"
+                                                style="color:#000; margin-left: 0;"
                                                 wire:click="decreaseQuantity('{{ $line->id }}')"
                                                 title="Уменьшить количество">–</button>
                                             <span>{{ $line->quantity }}</span>
                                             <button
                                                 class="px-2 py-1  bg-gray-600 rounded hover:bg-gray-700 header_btn"
-                                                style="color:#000;"
+                                                style="color:#000; margin-left: 0;"
                                                 wire:click="increaseQuantity('{{ $line->id }}')"
                                                 title="Увеличить количество">+</button>
                                         </div>
