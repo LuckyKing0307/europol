@@ -127,11 +127,27 @@
         document.querySelector('.amo-button').style.display = 'none';
     })
     document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function(){
+        const intervalId = setInterval(function () {
             amoSocialButton('onChatReady', function () {
                 amoSocialButton('runChatShow');
+
+                const customButton = document.getElementById('customChatButton');
+                const amoBtn = document.querySelector('.amo-button');
+
+                if (customButton && amoBtn) {
+                    customButton.style.display = 'none';
+                    amoBtn.style.setProperty('display', 'flex', 'important');
+                    amoBtn.style.width = '50px';
+                    amoBtn.style.height = '50px';
+
+                    // Очистка интервала после успешного выполнения
+                    clearInterval(intervalId);
+                    console.log('Интервал остановлен после успешного выполнения');
+                }
             });
-        }, 5000); // небольшая задержка для надёжности
+
+            console.log('Проверка...');
+        }, 1000);
     });
     // Открытие AmoCRM чата по клику
     document.getElementById('customChatButton').addEventListener('click', function (e) {
@@ -150,6 +166,7 @@
         document.querySelector('.amo-button').style.height = 0;
     });
 </script>
+@stack('scripts')
 </body>
 
 </html>

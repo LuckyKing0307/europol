@@ -5,13 +5,13 @@
                 <div class="images_block">
                     @if ($this->image)
                         <div class="aspect-w-1 aspect-h-1">
-                            <img class="object-cover main_img"
-                                 src="{{ $this->image->getUrl('large') }}"
+                            <img id="mainImage" class="object-cover main_img cursor-zoom-in"
+                                 src="{{ $this->image ? $this->image->getUrl('large') : asset('img/empty.png') }}"
                                  alt="{{ $this->product->translateAttribute('name') }}"/>
                         </div>
                     @else
-                        <div class="aspect-w-1 aspect-h-1">
-                            <img class="object-cover main_img"
+                        <div  class="aspect-w-1 aspect-h-1">
+                            <img class="object-cover main_img cursor-zoom-in"
                                  src="{{asset('img/empty.png') }}"
                                  alt="empty"/>
                         </div>
@@ -21,10 +21,13 @@
                         @foreach ($this->images as $image)
                             <div class="aspect-w-1 aspect-h-1"
                                  wire:key="image_{{ $image->id }}">
-                                <img loading="lazy"
-                                     class="object-cover "
-                                     src="{{ $image->getUrl('small') }}"
-                                     alt="{{ $this->product->translateAttribute('name') }}"/>
+                                <img
+                                    loading="lazy"
+                                    class="object-cover cursor-pointer thumbnail zoomable-image"
+                                    src="{{ $image->getUrl('small') }}"
+                                    data-full="{{ $image->getUrl('large') }}"
+                                    alt="{{ $this->product->translateAttribute('name') }}"
+                                    onclick="changeMainImage(this)">
                             </div>
                         @endforeach
                     </div>
@@ -140,55 +143,74 @@
         @livewire('components.review')
     </div>
 </section>
-<script>
-    let priceText = document.querySelector('.product_data-price-perm2 span').textContent;
-    // Оставить только число (заменяем запятую на точку, убираем всё кроме цифр и точки)
-    let floatValue = parseFloat(priceText.replace(',', '.').replace(/[^\d.]/g, ''));
-    // Настройки
-    const productData = {
-        pricePerM2: floatValue,           // цена за м2 (замени на свою!)
-        sumLabel: 'UZS',
-        minM2: 1.76,                // минимальное количество (размер упаковки)
-        stepM2: 1.76,               // шаг (размер упаковки)
-        maxM2: 50 * 1.76,           // максимум (по желанию)
-        startM2: 1.76,              // начальное значение
-    };
+@push('scripts')
+    <script src="https://unpkg.com/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script defer>
+        let zoom = '';
+        window.addEventListener('load', () => {
+            console.log('aaaaaaaaaaaaa1')
+            zoom = mediumZoom('#mainImage', {
+                background: 'rgba(0, 0, 0, 0.8)',
+                margin: 24
+            });
+            mediumZoom('.zoomable-image');
+            console.log('aaaaaaaaaaaaa2')
+        });
+        let priceText = document.querySelector('.product_data-price-perm2 span').textContent;
+        // Оставить только число (заменяем запятую на точку, убираем всё кроме цифр и точки)
+        let floatValue = parseFloat(priceText.replace(',', '.').replace(/[^\d.]/g, ''));
+        // Настройки
+        const productData = {
+            pricePerM2: floatValue,           // цена за м2 (замени на свою!)
+            sumLabel: 'UZS',
+            minM2: 1.76,                // минимальное количество (размер упаковки)
+            stepM2: 1.76,               // шаг (размер упаковки)
+            maxM2: 50 * 1.76,           // максимум (по желанию)
+            startM2: 1.76,              // начальное значение
+        };
 
-    let currentM2 = productData.startM2;
+        let currentM2 = productData.startM2;
 
-    // DOM-элементы
-    const qtyValueEl = document.getElementById('qty-value');
-    const totalPriceEl = document.getElementById('total-price');
+        // DOM-элементы
+        const qtyValueEl = document.getElementById('qty-value');
+        const totalPriceEl = document.getElementById('total-price');
 
-    // Кнопки
-    const plusBtn = document.getElementById('plus-btn');
-    const minusBtn = document.getElementById('minus-btn');
+        // Кнопки
+        const plusBtn = document.getElementById('plus-btn');
+        const minusBtn = document.getElementById('minus-btn');
 
-    // Обновление отображения
-    function updateProductDisplay() {
-        // Отображаем количество
-        qtyValueEl.innerHTML = `${currentM2.toFixed(2)} м<sup>2</sup>`;
-        // Цена округляется до целого
-        const total = productData.pricePerM2 * currentM2 / 1.76;
-        totalPriceEl.textContent = `${total.toLocaleString()} ${productData.sumLabel}`;
-    }
-
-    // Обработчики событий
-    plusBtn.addEventListener('click', function () {
-        if (currentM2 + productData.stepM2 <= productData.maxM2) {
-            currentM2 += productData.stepM2;
-            updateProductDisplay();
+        // Обновление отображения
+        function updateProductDisplay() {
+            // Отображаем количество
+            qtyValueEl.innerHTML = `${currentM2.toFixed(2)} м<sup>2</sup>`;
+            // Цена округляется до целого
+            const total = productData.pricePerM2 * currentM2 / 1.76;
+            totalPriceEl.textContent = `${total.toLocaleString()} ${productData.sumLabel}`;
         }
-    });
 
-    minusBtn.addEventListener('click', function () {
-        if (currentM2 - productData.stepM2 >= productData.minM2) {
-            currentM2 -= productData.stepM2;
-            updateProductDisplay();
+        // Обработчики событий
+        plusBtn.addEventListener('click', function () {
+            if (currentM2 + productData.stepM2 <= productData.maxM2) {
+                currentM2 += productData.stepM2;
+                updateProductDisplay();
+            }
+        });
+
+        minusBtn.addEventListener('click', function () {
+            if (currentM2 - productData.stepM2 >= productData.minM2) {
+                currentM2 -= productData.stepM2;
+                updateProductDisplay();
+            }
+        });
+
+        updateProductDisplay();
+        function changeMainImage(thumb) {
+            const fullUrl = thumb.getAttribute('data-full');
+            const mainImg = document.getElementById('mainImage');
+            mainImg.src = fullUrl;
+
+            zoom.detach();
+            zoom.attach('#mainImage');
         }
-    });
-
-    // Первый запуск
-    updateProductDisplay();
-
-</script>
+    </script>
+@endpush
