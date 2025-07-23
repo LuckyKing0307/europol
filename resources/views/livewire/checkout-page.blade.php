@@ -14,7 +14,7 @@
                                      src="{{ $line->purchasable->getThumbnail()->getUrl() }}"/>
 
                                 <div class="flex-1 ml-4">
-                                    <p class="text-sm font-medium max-w-[35ch]" style="color: #0a0a0a;">
+                                    <p class="text-sm font-medium max-w-[35ch]" style="color: #0a0a0a !important;">
                                         {{ $line->purchasable->getDescription() }}
                                     </p>
 
