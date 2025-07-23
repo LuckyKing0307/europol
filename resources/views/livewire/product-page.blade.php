@@ -180,9 +180,6 @@
 
         // Обновление отображения
         function updateProductDisplay() {
-            // Отображаем количество
-            qtyValueEl.innerHTML = `${currentM2.toFixed(2)} м<sup>2</sup>`;
-            // Цена округляется до целого
             const total = productData.pricePerM2 * currentM2 / 1.76;
             totalPriceEl.textContent = `${total.toLocaleString()} ${productData.sumLabel}`;
         }
