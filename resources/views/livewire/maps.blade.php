@@ -126,7 +126,7 @@
 
             const sub_placemark = new ymaps.Placemark(
                 [b.lat, b.lon],
-                { balloonContent: `<img src="/images/place/${b.id}.jpg" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
+                { balloonContent: `<img src="/images/place/${b.id}.jpg" style="height: 250px; margin: 0 auto;" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
                 { preset: 'islands#yellowDotIcon' }
             );
 
@@ -134,7 +134,7 @@
             sub_map.geoObjects.add(sub_placemark);
             const placemark = new ymaps.Placemark(
                 [b.lat, b.lon],
-                    { balloonContent: `<img src="/images/place/${b.id}.jpg" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
+                    { balloonContent: `<img src="/images/place/${b.id}.jpg" style="height: 250px; margin: 0 auto;" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
                 { preset: 'islands#yellowDotIcon' }
             );
             placemark.events.add('click', () => activateCard(i));
