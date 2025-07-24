@@ -126,7 +126,7 @@
 
             const sub_placemark = new ymaps.Placemark(
                 [b.lat, b.lon],
-                { balloonContent: `<img src="https://media.istockphoto.com/id/2037610555/photo/big-eyed-naughty-cat-looking-at-the-target-from-behind-the-marble-table.jpg?s=612x612&w=0&k=20&c=JEPwsOHRNumZPVwy_bvjGpeZ9ke4Pu4T9EiA8iyQ324=" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
+                { balloonContent: `<img src="/images/place/${b.title}.jpg" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
                 { preset: 'islands#yellowDotIcon' }
             );
 
@@ -134,7 +134,7 @@
             sub_map.geoObjects.add(sub_placemark);
             const placemark = new ymaps.Placemark(
                 [b.lat, b.lon],
-                { balloonContent: `<img src="https://media.istockphoto.com/id/2037610555/photo/big-eyed-naughty-cat-looking-at-the-target-from-behind-the-marble-table.jpg?s=612x612&w=0&k=20&c=JEPwsOHRNumZPVwy_bvjGpeZ9ke4Pu4T9EiA8iyQ324=" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
+                    { balloonContent: `<img src="/images/place/${b.title}.jpg" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
                 { preset: 'islands#yellowDotIcon' }
             );
             placemark.events.add('click', () => activateCard(i));
