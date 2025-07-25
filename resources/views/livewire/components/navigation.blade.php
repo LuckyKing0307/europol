@@ -5,7 +5,7 @@
             <div class="flex flex-1 items-center justify-between px-4 max-w-screen-2xl ">
                 <div class="lang flex header-info">
                     <div class="working-time"><img src="{{asset('img/clock.svg')}}" alt=""
-                                                   style="margin-left: 10px;margin-right: 5px;">с 9:00 до 22:00 ежедневно</div>
+                                                   style="margin-left: 10px;margin-right: 5px; width: 18px;">с 9:00 до 22:00 ежедневно</div>
                     <a href="tel:+998555100102" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt=""
                                                                         style="margin-left: 10px;margin-right: 5px;"></span>+998 55-510-01-02</a>
                 </div>
