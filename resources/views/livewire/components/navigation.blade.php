@@ -1,5 +1,4 @@
-<header class="relative border-b border-gray-100" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000"
-        style="position: relative; z-index: 100;">
+<header class="relative border-b border-gray-100" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" style="position: relative; z-index: 100;">
     <div class="sub-header ">
         <div class="max-w-screen-2xl mx-auto flex justify-end">
             <div class="flex" style="min-width: 10%;"></div>
@@ -13,8 +12,7 @@
                     {{--                @livewire('language-switcher')--}}
                     <div class="working-time">с 9:00 до 22:00 ежедневно</div>
                     <a href="tel:+998555100102" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt=""
-                                                                        style="margin-left: 10px;margin-right: 5px;"></span>+998
-                        55-510-01-02</a>
+                                                                        style="margin-left: 10px;margin-right: 5px;"></span>+998 55-510-01-02</a>
                 </div>
             </div>
         </div>
