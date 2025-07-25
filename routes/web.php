@@ -43,6 +43,9 @@ Route::get('/set-webhook',    [ChatController::class, 'setWebhook']);
 Route::get('/', Home::class)->name('home_page');
 Route::get('/test', \App\Livewire\CreatePost::class);
 
+Route::get('/warranty/print/{record}', function (\App\Models\MarketTalon $record) {
+    return view('print.warranty', compact('record'));
+})->name('warranty.print');
 Route::get('/about', \App\Livewire\Pages\About::class)->name('about.view');
 Route::get('/b2b', \App\Livewire\Pages\B2b::class)->name('b2b.view');
 Route::get('/basket', \App\Livewire\Pages\Basket::class)->name('basket.view');
