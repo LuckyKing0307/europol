@@ -123,43 +123,43 @@
         };
     </script>
 </head>
-<body>
-<div class="date_data">
+<body><div class="date_data">
     <div class="date">{{\Carbon\Carbon::now()->translatedFormat('d F Y, H:i')}}</div>
-    <div class="talon"><strong>Гарантийный Талон - </strong> {{ $record->id }}</div>
+    <div class="talon"><strong>Kafolat Taloni - </strong> {{ $record->id }}</div>
 </div>
 <div class="warranty">
-    <div class="title">Гарантийный Талон</div>
+    <div class="title">Kafolat Taloni</div>
 
     <div class="box">
         <div class="info">
-            <p><strong>Название продукта:</strong> {{ $record->product_name }}</p>
-            <p><strong>Номер заказа:</strong> {{ $record->order_id }}</p>
-            <p><strong>Номер телефона:</strong> {{ $record->phone_number }}</p>
-            <p><strong>Имя покупателя:</strong> {{ $record->customer_name }}</p>
-            <p><strong>Дата покупки:</strong> {{ \Carbon\Carbon::parse($record->bought_date)->translatedFormat('d F Y') }}</p>
-            <p><strong>Окончание гарантии:</strong> {{ \Carbon\Carbon::parse($record->bought_date)->addMonths((int) $record->warranty_period)->translatedFormat('d F Y') }}</p>
-            <p><strong>Статус:</strong>
+            <p><strong>Mahsulot nomi:</strong> {{ $record->product_name }}</p>
+            <p><strong>Buyurtma raqami:</strong> {{ $record->order_id }}</p>
+            <p><strong>Telefon raqami:</strong> {{ $record->phone_number }}</p>
+            <p><strong>Xaridor ismi:</strong> {{ $record->customer_name }}</p>
+            <p><strong>Sotib olingan sana:</strong> {{ \Carbon\Carbon::parse($record->bought_date)->translatedFormat('d F Y') }}</p>
+            <p><strong>Kafolat tugash sanasi:</strong> {{ \Carbon\Carbon::parse($record->bought_date)->addMonths((int) $record->warranty_period)->translatedFormat('d F Y') }}</p>
+            <p><strong>Status:</strong>
                 <span class="status">
         {{ \Carbon\Carbon::parse($record->bought_date)->addMonths((int) $record->warranty_period)->isPast()
-            ? 'Гарантия истекла'
-            : 'Гарантия работает'
+            ? 'Kafolat muddati tugagan'
+            : 'Kafolat amal qiladi'
         }}
     </span>
-            </p>        <p><strong>Примечание:</strong> {{ $record->some_letter }}</p>
+            </p>
+            <p><strong>Izoh:</strong> {{ $record->some_letter }}</p>
         </div>
 
-        <div class="section-title">Применимые условия гарантии:</div>
+        <div class="section-title">Kafolat shartlari:</div>
         <ul>
             @foreach($record->warranty_types as $type)
                 <li>{{$type}}</li>
             @endforeach
         </ul>
 
-        <div class="section-title">Компания не несет ответственности в следующих случаях:</div>
+        <div class="section-title">Quyidagi holatlarda kompaniya javobgar emas:</div>
         <ul class="danger-list">
-            <li>Agar mijoz o'zi tomonidan suv to'kib yuborsa</li>
-            <li>Metall yoki og'ir jihozlar bilan pol ustida yursa</li>
+            <li>Agar mijoz o‘zi tomondan suv to‘kib yuborsa</li>
+            <li>Metall yoki og‘ir jihozlar bilan pol ustida yurilsa</li>
             <li>Issiq pol (tepliy pol) harorati 35°C dan oshirib yuborilsa</li>
         </ul>
     </div>
