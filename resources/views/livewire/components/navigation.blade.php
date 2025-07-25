@@ -3,13 +3,9 @@
         <div class="max-w-screen-2xl mx-auto flex justify-end">
             <div class="flex" style="min-width: 10%;"></div>
             <div class="flex flex-1 items-center justify-between px-4 max-w-screen-2xl ">
-                <div class="flex header-info">
-                    <div class="location"><span><img src="{{asset('img/location.svg')}}" alt=""></span><span
-                            id="tashkent" class="ml-2">Ташкент</span></div>
-                    <a href="{{route('maps')}}" class="shops">Магазины</a>
-                </div>
                 <div class="lang flex header-info">
-                    <div class="working-time">с 9:00 до 22:00 ежедневно</div>
+                    <div class="working-time"><img src="{{asset('img/clock.svg')}}" alt=""
+                                                   style="margin-left: 10px;margin-right: 5px;">с 9:00 до 22:00 ежедневно</div>
                     <a href="tel:+998555100102" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt=""
                                                                         style="margin-left: 10px;margin-right: 5px;"></span>+998 55-510-01-02</a>
                 </div>
@@ -67,13 +63,11 @@
                                       d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                         </button>
-                        <ul x-on:click.away="mobileMenu = false"
-                            class="p-6 space-y-4 border border-gray-100 shadow-xl mobmenue">
+                        <ul x-on:click.away="mobileMenu = false" class="p-6 space-y-4 border border-gray-100 shadow-xl mobmenue">
                             <x-header.search class="max-w-sm mr-4"/>
                             @foreach ($this->collections as $root)
                                 @if($root->id>=53)
-                                    <livewire:components.collection-node :node="$root" :level="0"
-                                                                         :key="'node-'.$root->id"/>
+                                    <livewire:components.collection-node :node="$root" :level="0" :key="'node-'.$root->id"/>
                                 @endif
                             @endforeach
                         </ul>
@@ -137,26 +131,15 @@
         <div class="flex" style="min-width: 10%;"></div>
         <div class="flex flex-1 items-center justify-between h-16 px-4 max-w-screen-2xl">
             <nav class="hidden lg:gap-4 lg:flex nav_data">
-                {{--            @foreach ($this->collections as $collection)--}}
-                {{--                <a class="text-sm font-medium transition hover:opacity-75"--}}
-                {{--                   href="{{ route('collection.view', $collection->defaultUrl->slug) }}"--}}
-                {{--                   wire:navigate--}}
-                {{--                >--}}
-                {{--                    {{ $collection->translateAttribute('name') }}--}}
-                {{--                </a>--}}
-                {{--            @endforeach--}}
                 <a href="{{route('home_page')}}" class="text-sm font-medium transition hover:opacity-75">Главная</a>
                 <a href="https://uzbekistan360.uz/ru/location/europolmke"
                    class="text-sm font-medium transition hover:opacity-75" target="_blank">3D тур</a>
                 <a href="{{route('about.view')}}" class="text-sm font-medium transition hover:opacity-75">О компании</a>
                 <a href="{{route('work.view')}}" class="text-sm font-medium transition hover:opacity-75">Проекты</a>
                 <a href="{{route('blogs.view')}}" class="text-sm font-medium transition hover:opacity-75">Блог</a>
-                {{--                <a href="{{route('about.view')}}" class="text-sm font-medium transition hover:opacity-75">Для дизайнеров</a>--}}
                 <a href="{{route('warranty.view')}}"
                    class="text-sm font-medium transition hover:opacity-75">Гарантия</a>
                 <a href="{{route('maps')}}" class="text-sm font-medium transition hover:opacity-75">Магазины</a>
-                {{--                <a href="{{route('work.view')}}" class="text-sm font-medium transition hover:opacity-75">Вакансии</a>--}}
-                {{--                <a href="{{route('about.view')}}" class="text-sm font-medium transition hover:opacity-75">Сотруднечество</a>--}}
             </nav>
         </div>
     </div>
@@ -165,24 +148,20 @@
             if (!window._catalog_script_initialized) {
                 window._catalog_script_initialized = true;
                 let catalog_sub_menu = document.querySelector('.menu_block');
-
                 function toggleCatalog() {
                     catalog_sub_menu.classList.toggle('hidden');
                     catalog_sub_menu.classList.toggle('block');
                 }
-
                 function openMenu() {
                     catalog_sub_menu.classList.remove('hidden');
                     catalog_sub_menu.classList.add('block');
                 }
-
                 document.addEventListener('click', (e) => {
                     if (!e.target.classList.contains('menu_block') && !e.target.classList.contains('menu_btn')) {
                         catalog_sub_menu.classList.remove('block');
                         catalog_sub_menu.classList.add('hidden');
                     }
                 });
-
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape') {
                         toggleCatalog();
@@ -198,6 +177,5 @@
                     .catch(() => console.log('не смогли найти'));
             }
         </script>
-
     @endpush
 </header>
