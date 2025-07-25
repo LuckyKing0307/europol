@@ -263,6 +263,11 @@ header{
     width: 100%;
     margin-bottom: 20px;
 }
+.header-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 .header-info *{
     display: flex;
     align-items: center;
@@ -1191,6 +1196,7 @@ input:checked + .switch>.slider:before {
     height: 80px;
     margin-top: 40px;
     color: white;
+    text-transform: uppercase;
 }
 .before-after-block{
     width: 100%;
