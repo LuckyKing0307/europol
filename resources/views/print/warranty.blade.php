@@ -117,10 +117,10 @@
     </style>
 
     <script>
-        // window.onload = () => {
-        //     window.print();
-        //     window.onafterprint = () => window.close();
-        // };
+        window.onload = () => {
+            window.print();
+            window.onafterprint = () => window.close();
+        };
     </script>
 </head>
 <body>
