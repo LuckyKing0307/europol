@@ -5,6 +5,10 @@
     font-weight: 400;
     font-style: normal;
 }
+body {
+    transform: scale(0.9); /* Увеличение на 20% */
+    transform-origin: top left; /* Точка, откуда масштабируется */
+}
 @font-face {
     font-family: 'Maxima Nouva';
     src: url('../fonts/Maxima/MaximaNouva-Bold.ttf') format('truetype');
