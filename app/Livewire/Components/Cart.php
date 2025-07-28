@@ -93,7 +93,13 @@ class Cart extends Component
 
     public function handleAddToCart(): void
     {
+        $this->validate();
+
+        CartSession::updateLines(
+            collect($this->lines)
+        );
         $this->mapLines();
+        $this->dispatch('cartUpdated');
         $this->linesVisible = true;
     }
 
