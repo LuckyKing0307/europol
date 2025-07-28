@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -31,7 +32,15 @@ class SearchPage extends Component
     {
         return Product::search($this->term)->paginate(16);
     }
+    public function getRateProperty()
+    {
+        $response = Http::get('https://cbu.uz/uz/arkhiv-kursov-valyut/json/');
 
+        $usd = collect($response->json())
+            ->firstWhere('Ccy', 'USD');
+
+        return (float) $usd['Rate'];
+    }
     public function render(): View
     {
         return view('livewire.search-page');
