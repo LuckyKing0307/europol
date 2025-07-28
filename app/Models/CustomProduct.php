@@ -13,11 +13,6 @@ class CustomProduct extends LunarProduct
     protected $table = 'products';
 
     use Searchable;
-
-    public function makeAllSearchableUsing(Builder $query): Builder
-    {
-        return $query;
-    }
     public function getScoutKey(): mixed
     {
         return $this->getKey(); // или $this->id
