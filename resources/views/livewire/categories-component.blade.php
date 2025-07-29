@@ -19,31 +19,31 @@
             </div>
         </div>
     </div>
-    <div class="prices">
-        <div class="price">
-            <div class="price_content">
-                <h4 class="price_title">17 000+</h4>
-                <p class="price_text">счастливых клиентов по всему Узбекистану</p>
-            </div>
-            <div class="price_content">
-                <h4 class="price_title">110+</h4>
-                <p class="price_text">Сотрудников производства</p>
-            </div>
-        </div>
-        <div class="price">
-            <div class="price_content">
-                <h4 class="price_title">1100m+</h4>
-                <p class="price_text">Производственная площадь</p>
-            </div>
-            <div class="price_content">
-                <h4 class="price_title">15+</h4>
-                <p class="price_text">Годы рабочего стажа</p>
-            </div>
-        </div>
-        <div class="grade">
-            <img src="{{asset('img/cuboc.svg')}}" alt="Кубок">
-        </div>
-    </div>
+{{--    <div class="prices">--}}
+{{--        <div class="price">--}}
+{{--            <div class="price_content">--}}
+{{--                <h4 class="price_title">17 000+</h4>--}}
+{{--                <p class="price_text">счастливых клиентов по всему Узбекистану</p>--}}
+{{--            </div>--}}
+{{--            <div class="price_content">--}}
+{{--                <h4 class="price_title">110+</h4>--}}
+{{--                <p class="price_text">Сотрудников производства</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="price">--}}
+{{--            <div class="price_content">--}}
+{{--                <h4 class="price_title">1100m+</h4>--}}
+{{--                <p class="price_text">Производственная площадь</p>--}}
+{{--            </div>--}}
+{{--            <div class="price_content">--}}
+{{--                <h4 class="price_title">15+</h4>--}}
+{{--                <p class="price_text">Годы рабочего стажа</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="grade">--}}
+{{--            <img src="{{asset('img/cuboc.svg')}}" alt="Кубок">--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </div>
 
 <script>
