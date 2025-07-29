@@ -3,7 +3,7 @@
 @endpush
 <section class="about max-w-screen-2xl mx-auto">
     <div class="about__content">
-        <div class="container">
+        <div class="">
             <h1 class="about__title">О компании Europol</h1>
             <div class="about__descr">
                 <p>
