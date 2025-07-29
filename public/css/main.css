@@ -444,7 +444,7 @@ input:checked + .switch>.slider:before {
     width:50%;height:800px;overflow:hidden;position:relative;
 }
 .content{
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
