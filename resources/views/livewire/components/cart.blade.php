@@ -132,6 +132,7 @@
                     <a class="inline-block text-sm font-medium text-gray-600 underline hover:text-gray-500"
                        href="{{ url('/') }}">
                         {{ __('cart.continue') }}
+
                     </a>
                 </div>
             @endif
