@@ -44,7 +44,7 @@
 @push('scripts')
     <script defer>
         Livewire.on('paginationChanged', ({ page }) => {
-            console.log('Страница изменена:', page);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         function openCart(e){
             document.querySelector('.'+e).style.display = 'flex';
