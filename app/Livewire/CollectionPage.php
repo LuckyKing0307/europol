@@ -47,6 +47,10 @@ class CollectionPage extends Component
             }
         }
     }
+    public function updatedPage($value)
+    {
+        $this->dispatch('paginationChanged', page: $value);
+    }
     /**
      * Computed property to return the collection.
      */

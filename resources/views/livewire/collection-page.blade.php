@@ -43,12 +43,8 @@
 
 @push('scripts')
     <script defer>
-        document.addEventListener('livewire:load', () => {
-            // Прокрутка к началу страницы
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        Livewire.on('paginationChanged', ({ page }) => {
+            console.log('Страница изменена:', page);
         });
         function openCart(e){
             document.querySelector('.'+e).style.display = 'flex';
