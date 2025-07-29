@@ -46,7 +46,7 @@
     </div>
     <div class="about-aim about__aim">
         <h2 class="about-aim__title">-1000+ моделей покрытий в наличии</h2>
-        <div class="about-services__card" style="max-width: 100%; display: flex; justify-content: space-around; ">
+        <div class="about-services__card" style="max-width: 100%; display: flex; justify-content: space-between; ">
             <img src="{{ asset('img/sclad1.webp') }}" alt="Фото со склада" style="width: 40%;"/>
             <img src="{{ asset('img/sclad2.webp') }}" alt="Фото со склада" style="width: 40%;"/>
         </div>
