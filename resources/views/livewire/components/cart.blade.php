@@ -55,7 +55,7 @@
                                     @endif
 
                                     <div class="flex-1 ml-4">
-                                        <p class="max-w-[20ch] text-sm font-medium" style="color: black;">
+                                        <p class="max-w-[20ch] text-sm font-medium" style="color: black !important;">
                                             {{ $line['description'] }}
                                         </p>
                                         <span class="block mt-1 text-xs text-gray-500">
@@ -116,19 +116,19 @@
                     </a>
 
                     <a class="inline-block text-sm font-medium text-gray-600 underline hover:text-gray-500"
-                       href="{{ url('/') }}" style="color: black;">
+                       href="{{ url('/') }}" style="color: black !important;">
                         {{ __('cart.continue') }}
                     </a>
                 </div>
             @else
                 <p class="py-4 text-lg font-medium text-center text-gray-500 basket_empty">
                     {{ __('cart.empty_title') }} <br>
-                    <span class="py-4 text-lg font-medium text-center text-gray-500"  style="color: black;">
+                    <span class="py-4 text-lg font-medium text-center text-gray-500"  style="color: black !important;">
                         {{ __('cart.empty_subtitle') }}
                     </span>
                 </p>
 
-                <div class="mt-4 space-y-4 text-center"  style="color: black;">
+                <div class="mt-4 space-y-4 text-center"  style="color: black !important;">
                     <a class="inline-block text-sm font-medium text-gray-600 underline hover:text-gray-500"
                        href="{{ url('/') }}">
                         {{ __('cart.continue') }}
