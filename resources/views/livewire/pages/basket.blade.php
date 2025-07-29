@@ -1,7 +1,7 @@
 @push('page-styles')
     <link href="{{ asset('css/pages_style.css') }}" rel="stylesheet">
 @endpush
-<section class="basket max-w-screen-2xl mx-auto">
+<section class="basket max-w-screen-xl mx-auto">
     <div class="basket__wrapper">
         <div class="container">
             <img src="{{ asset('img/cart.png') }}" class="basket__img" alt="Корзина" height="211" width="229" />

@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-screen-2xl content_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
+<section class="mx-auto max-w-screen-xl content_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
     <div class="block_title" style="text-align: center;">Отзывы клиентов</div>
     <div class="flex information justify-between align-middle">
         <div class="review_text">Мы можем долго рассказывать о качестве сервиса и надёжности продукции, но лучше нас это делают те, кто уже выбрал Europol. Ниже — живые отзывы из Яндекс.Карт от настоящих клиентов: оценка, комментарии, впечатления после монтажа и эксплуатации. Пролистайте, чтобы убедиться сами, а если вы уже с нами — оставьте свой отклик и помогите другим сделать правильный выбор.</div>

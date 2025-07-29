@@ -1,8 +1,8 @@
 <header class="relative border-b border-gray-100" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" style="position: relative; z-index: 100;">
     <div class="sub-header ">
-        <div class="max-w-screen-2xl mx-auto flex justify-end">
+        <div class="max-w-screen-xl mx-auto flex justify-end">
             <div class="flex" style="min-width: 10%;"></div>
-            <div class="flex flex-1 items-center justify-between px-4 max-w-screen-2xl ">
+            <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl ">
                 <div class="lang flex header-info">
                     <div class="working-time"><img src="{{asset('img/clock.svg')}}" alt=""
                                                    style="margin-left: 10px;margin-right: 5px; width: 18px;">с 9:00 до 22:00 ежедневно</div>
@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <div class="max-w-screen-2xl mx-auto flex justify-end">
+    <div class="max-w-screen-xl mx-auto flex justify-end">
         <div class="flex items-center" style="max-width: 10%;">
             <a class="flex items-center flex-shrink-0 logo_item" style="max-width: 100%;"
                href="{{ url('/') }}"
@@ -23,7 +23,7 @@
                 <x-brand.logo class="w-auto h-6 text-indigo-600"/>
             </a>
         </div>
-        <div class="flex flex-1 items-center justify-between px-4 max-w-screen-2xl menu_bar">
+        <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl menu_bar">
             <div x-data="{ mobileMenu: false }">
                 <button x-on:click="mobileMenu = !mobileMenu"
                         class="grid flex-shrink-0 w-16 h-16 border-gray-100 lg:hidden">
@@ -127,9 +127,9 @@
         </div>
     </div>
 
-    <div class="max-w-screen-2xl mx-auto flex justify-end main_pc_menu">
+    <div class="max-w-screen-xl mx-auto flex justify-end main_pc_menu">
         <div class="flex" style="min-width: 10%;"></div>
-        <div class="flex flex-1 items-center justify-between h-16 px-4 max-w-screen-2xl">
+        <div class="flex flex-1 items-center justify-between h-16 px-4 max-w-screen-xl">
             <nav class="hidden lg:gap-4 lg:flex nav_data">
                 <a href="{{route('home_page')}}" class="text-sm font-medium transition hover:opacity-75">Главная</a>
                 <a href="https://uzbekistan360.uz/ru/location/europolmke"
