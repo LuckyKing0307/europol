@@ -2,7 +2,7 @@
     <link href="{{ asset('css/pages_style.css') }}" rel="stylesheet">
 @endpush
 <section class="about max-w-screen-2xl mx-auto">
-    <div class="about__content">
+    <div class="about__content flex">
         <div class="">
             <h1 class="about__title">О компании Europol</h1>
             <div class="about__descr">
@@ -51,12 +51,12 @@
             <img src="{{ asset('img/sclad2.webp') }}" alt="Фото со склада" style="width: 40%;"/>
         </div>
         <div class="about-services__card" style="max-width: 100%; display: flex; align-items: center;">
+            <img src="{{ asset('img/albert.webp') }}" alt="Фото со склада"  style="width: 20%;"/>
             <p class="about-services__descr">
                 -Партнёрство с крупнейшими застройщиками страны: Modera Towers, Murad Buildings и др. <br>
                 -Менеджеры с опытом до 10 лет — знают каждую коллекцию в деталях <br>
                 -Бесплатный выезд дизайнера на объект (Альберт-15 лет опыта работы)— помогает оценить стяжку, подобрать нужный формат, текстуру и покрытие под ваш интерьер
             </p>
-            <img src="{{ asset('img/albert.webp') }}" alt="Фото со склада"  style="width: 50%;"/>
         </div>
     </div>
 </section>
