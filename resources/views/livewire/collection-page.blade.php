@@ -43,7 +43,7 @@
 
 @push('scripts')
     <script defer>
-        document.addEventListener('livewire:navigated', () => {
+        document.addEventListener('livewire:load', () => {
             // Прокрутка к началу страницы
             window.scrollTo({
                 top: 0,
