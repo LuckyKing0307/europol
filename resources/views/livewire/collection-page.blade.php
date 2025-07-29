@@ -43,6 +43,13 @@
 
 @push('scripts')
     <script defer>
+        document.addEventListener('livewire:navigated', () => {
+            // Прокрутка к началу страницы
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
         function openCart(e){
             document.querySelector('.'+e).style.display = 'flex';
         }
