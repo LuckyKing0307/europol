@@ -31,6 +31,14 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="w-full">
+                        <div class="product-specs">
+                            <h2 class="product-specs__title">О товаре</h2>
+                            <div class="prose content">
+                                {!! $this->product->translateAttribute('description') !!}
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="boy_class">
                     <p class="mt-1 text-sm text-gray-500">
@@ -128,14 +136,6 @@
                                 @endforeach
                             </div>
                         @endif
-                    </div>
-                </div>
-            </div>
-            <div class="max-w-screen-2xl">
-                <div class="product-specs">
-                    <h2 class="product-specs__title">О товаре</h2>
-                    <div class="prose content">
-                        {!! $this->product->translateAttribute('description') !!}
                     </div>
                 </div>
             </div>
