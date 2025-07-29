@@ -483,7 +483,9 @@ img {
 	max-width: 650px;
 	line-height: 150%;
 }
-
+.about__img{
+    width: 40%;
+}
 .about__img,
 .b2b__img {
 	position: absolute;
