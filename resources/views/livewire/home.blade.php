@@ -3,16 +3,16 @@
     <x-welcome-banner />
     @livewire('categories-component')
 {{--    @livewire('top-sales')--}}
-    <section class="mx-auto max-w-screen-xl content_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
+    <section class="mx-auto max-w-screen-xl content_block">
         <div class="block_title" style="text-align: center;">{{ __('why_choose_us.title') }}</div>
         <div class="information">
-            <h3 class="info_block_title">ШИРОКИЙ ВЫБОР НАПОЛЬНЫХ ПОКРЫТИЙ</h3>
-            <div class="info_block">
+            <h3 class="info_block_title" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">ШИРОКИЙ ВЫБОР НАПОЛЬНЫХ ПОКРЫТИЙ</h3>
+            <div class="info_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
                 <img src="{{ asset('img/1.webp') }}" alt="">
                 <p class="info_block_text">Продаем только официальные бренды европейских производителей. Более 1000 моделей в наличии. Найдем подходящий пол именно под ваш дизайн интерьера. И Подберем подходящий пол под любой дизайн: классика, сканди, минимализм, арт-деко, модерн.</p>
             </div>
-            <h3 class="info_block_title">Качество проверенное годами</h3>
-            <div class="info_block">
+            <h3 class="info_block_title" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">Качество проверенное годами</h3>
+            <div class="info_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
                 <p class="info_block_text">— Haro — полы, признанные №1 в Германии и со 150 летней историей <br>
                     — Coswick — выбор дизайнеров интерьера в США и Канаде <br>
                     — Quick-Step — бельгийский лидер с инновационными замками. <br>
@@ -20,8 +20,8 @@
                 </p>
                 <img src="{{ asset('img/2.webp') }}" alt="">
             </div>
-            <h3 class="info_block_title">Профессиональная консультация</h3>
-            <div class="info_block">
+            <h3 class="info_block_title" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">Профессиональная консультация</h3>
+            <div class="info_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
                 <img src="{{ asset('img/3.webp') }}" alt="">
                 <p class="info_block_text">Это не просто консультация. Это реальная профессиональная помощь на уровне вашего проекта и в точных расчетах, честных рекомендациях.
                     <br><br>
@@ -32,8 +32,8 @@
                     Мы не просто «поможем выбрать». Мы найдем оптимальное решение, в котором вам будет комфортно жить.
                 </p>
             </div>
-            <h3 class="info_block_title">Доставка</h3>
-            <div class="info_block">
+            <h3 class="info_block_title" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">Доставка</h3>
+            <div class="info_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
                 <p class="info_block_text">Используем собственную логистику, поэтому вы точно знаете сроки. Бесплатно доставим по г.Ташкент паркет, ламинат, ковролин, линолеум Европейских брендов. Все товары в наличии на складе. Имеется также доставка по Узбекистану.
                 </p>
                 <img src="{{ asset('img/4.webp') }}" alt="">
