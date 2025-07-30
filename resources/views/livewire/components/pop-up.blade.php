@@ -12,18 +12,23 @@
             <p>Как вы о нас узнали?</p>
             <div class="image-radio-options">
                 <label class="image-radio-option">
-                    <input type="radio" wire:model="q1" name="q1" value="Google" class="hidden">
-                    <img src="/images/google.png" alt="Google">
+                    <input type="radio" wire:model="q1" name="q1" value="Детская" class="hidden">
+                    <img src="{{asset('popup/detskaya.png')}}" alt="Детская">
                 </label>
 
                 <label class="image-radio-option">
-                    <input type="radio" wire:model="q1" name="q1" value="Instagram" class="hidden">
-                    <img src="/images/instagram.png" alt="Instagram">
+                    <input type="radio" wire:model="q1" name="q1" value="Кухня" class="hidden">
+                    <img src="{{asset('popup/kitchen.png')}}" alt="Кухня">
+                </label>
+
+                <label class="image-radio-option">
+                    <input type="radio" wire:model="q1" name="q1" value="Офис" class="hidden">
+                    <img src="{{asset('popup/ofice.png')}}" alt="Офис">
                 </label>
 
                 <label class="image-radio-option">
                     <input type="radio" wire:model="q1" name="q1" value="Друзья" class="hidden">
-                    <img src="/images/friends.png" alt="Друзья">
+                    <img src="{{asset('popup/gostinnaya.png')}}" alt="Друзья">
                 </label>
             </div>
         </div>
