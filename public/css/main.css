@@ -621,15 +621,24 @@ input:checked + .switch>.slider:before {
 }
 .pop_up-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: #1D1D1D;
-    align-items: center; z-index: 1000;
+    background: rgba(0,0,0,0.6); display: flex; justify-content: center;
+    align-items: center; z-index: 10000;
 }
 
 .pop_up-modal {
-    background: #fff; padding: 30px; border-radius: 12px; width: 600px;
+    background: #1D1D1D;border-radius: 12px; width: 600px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2); position: relative;
 }
-
+.pop_up_sub_modal{
+    padding: 30px;
+    padding-top: 0;
+}
+.pop_up_sub_text{
+    font-size: 12px;
+    font-weight: 400;
+    color: gray;
+    padding: 10px 0;
+}
 .pop_up-step { display: block; }
 [x-cloak] {
     display: none !important;
@@ -640,7 +649,24 @@ input:checked + .switch>.slider:before {
     background: #595959;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-top: 20px;
     overflow: hidden;
+}
+.pop_up_exit{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
+.select_pop_up{
+    font-size: 12px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    text-align: center;
 }
 
 .pop_up-progress-fill {
@@ -655,8 +681,9 @@ input:checked + .switch>.slider:before {
 }
 
 .pop_up-button {
+    width: 40%;
     padding: 10px 16px; border: none; border-radius: 6px;
-    background: #3b82f6; color: #fff; cursor: pointer;
+    background: #DBB875; color: #fff; cursor: pointer;
 }
 
 .pop_up-button[disabled] {
@@ -664,24 +691,64 @@ input:checked + .switch>.slider:before {
 }
 
 .pop_up-close-btn {
-    position: absolute; top: 10px; right: 15px; font-size: 18px;
+    position: absolute; top: -20px; right: -20px; font-size: 18px;
     background: none; border: none; cursor: pointer;
+    color: white;
 }
 
 .pop_up-input {
-    width: 100%; padding: 10px; margin-top: 10px; box-sizing: border-box;
+    width: 100%; padding: 10px; margin-top: 15px; box-sizing: border-box;
+    border: none;
+    background: none;
+    color: #fff;
+    border-bottom: 1px solid #424242;
 }
-
+input{
+    outline: none !important;
+    box-shadow:none !important;;
+}
+input:focus {
+    outline: none !important;;
+    box-shadow:none !important;;
+}
+.pop_up-input::placeholder{
+    color: #fff;
+}
+.pop_up-input:focus {
+    border-bottom: 1px solid #DBB875;
+}
 .pop_up-label {
     display: block; margin-top: 10px; cursor: pointer;
 }
 .image-radio-options {
     display: flex;
     gap: 16px;
-    justify-content: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    height: 250px;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
 }
-
+.image-radio-options::after {
+    content: "";
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(to top, rgba(29, 29, 29, 1), transparent);
+    pointer-events: none;
+    z-index: 1;
+    backdrop-filter: blur(4px); /* Можно убрать, если не нужно */
+}
+.pop_up_title,.pop_up_text{
+    color: #fff;
+}
 .image-radio-option {
+    width: 30%;
     cursor: pointer;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -690,15 +757,15 @@ input:checked + .switch>.slider:before {
 }
 
 .image-radio-option img {
-    width: 100px; /* настрой под нужный размер */
+    max-width: 150px; /* настрой под нужный размер */
     height: auto;
     display: block;
+    margin: 0 auto;
+    border-radius: 8px;
 }
-
 .image-radio-option input:checked + img {
     border: 2px solid #e2c591; /* выделение выбранного */
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    border-radius: 8px;
 }
 .block_text{
     font-weight: 400;
@@ -2022,15 +2089,39 @@ article{
 
     .pop_up-modal {
         width: 90%;
-        padding: 20px;
     }
-
+    .pop_up-buttons{
+        flex-wrap: wrap;
+    }
+    .pop_up_text{
+        font-size: 12px;
+    }
+    .pop_up-progress-bar{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #customChatButton{
+        width: 90%;
+    }
+    .pop_up_sub_modal{
+        padding: 10px;
+        padding-top: 0;
+    }
+    .image-radio-option img{
+        margin: 0 auto;
+    }
+    .pop_up_exit{
+        padding: 0 10px;
+    }
     .pop_up-button {
-        flex: 1;
+        width: 100%;
         font-size: 14px;
+        margin-top: 10px;
         padding: 10px;
     }
-
+    .image-radio-option{
+        width: 30%;
+    }
     .pop_up-close-btn {
         font-size: 20px;
     }
