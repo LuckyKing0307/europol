@@ -2,21 +2,32 @@
     <div class="pop_up-modal">
         <button class="pop_up-close-btn" @click="document.getElementById('modal').style.display = 'none'">×</button>
 
-        <!-- Прогресс-бар -->
         <div class="pop_up-progress-bar">
             <div class="pop_up-progress-fill" :style="{ width: ((currentStep - 1) / 3 * 100) + '%' }"></div>
         </div>
-
-        <!-- Шаг 1 -->
+        <h3>Идеальный пол для любого помещения</h3>
+        <p>Ответьте на 4 вопроса и получите идеальный вариант под Вас и скидку 10% на вашу 1 покупку!</p>
         <div class="pop_up-step" x-show="currentStep === 1" x-cloak>
             <h3>Вопрос 1:</h3>
             <p>Как вы о нас узнали?</p>
-            <label class="pop_up-label"><input type="radio" wire:model="q1" name="q1" value="Google"> Google</label>
-            <label class="pop_up-label"><input type="radio" wire:model="q1" name="q1" value="Instagram"> Instagram</label>
-            <label class="pop_up-label"><input type="radio" wire:model="q1" name="q1" value="Друзья"> Друзья</label>
+            <div class="image-radio-options">
+                <label class="image-radio-option">
+                    <input type="radio" wire:model="q1" name="q1" value="Google" class="hidden">
+                    <img src="/images/google.png" alt="Google">
+                </label>
+
+                <label class="image-radio-option">
+                    <input type="radio" wire:model="q1" name="q1" value="Instagram" class="hidden">
+                    <img src="/images/instagram.png" alt="Instagram">
+                </label>
+
+                <label class="image-radio-option">
+                    <input type="radio" wire:model="q1" name="q1" value="Друзья" class="hidden">
+                    <img src="/images/friends.png" alt="Друзья">
+                </label>
+            </div>
         </div>
 
-        <!-- Шаг 2 -->
         <div class="pop_up-step" x-show="currentStep === 2" x-cloak>
             <h3>Вопрос 2:</h3>
             <p>Что вам важно при выборе?</p>
@@ -25,7 +36,6 @@
             <label class="pop_up-label"><input type="radio" wire:model="q2" name="q2" value="Скорость доставки"> Скорость доставки</label>
         </div>
 
-        <!-- Шаг 3 -->
         <div class="pop_up-step" x-show="currentStep === 3" x-cloak>
             <h3>Вопрос 3:</h3>
             <p>Вы бы рекомендовали нас?</p>
@@ -34,7 +44,6 @@
             <label class="pop_up-label"><input type="radio" wire:model="q3" name="q3" value="Пока не знаю"> Пока не знаю</label>
         </div>
 
-        <!-- Шаг 4 -->
         <div class="pop_up-step" x-show="currentStep === 4" x-cloak>
             <h3>Ваш номер:</h3>
             <input type="text" placeholder="+998901234567" wire:model="phone" class="pop_up-input">
@@ -42,7 +51,6 @@
             <input type="text" placeholder="Алишер Авазов" wire:model="name" class="pop_up-input">
         </div>
 
-        <!-- Кнопки -->
         <div class="pop_up-buttons mt-4">
             <button class="pop_up-button" type="button" @click="if(currentStep > 1) currentStep--" x-bind:disabled="currentStep === 1">
                 Назад
