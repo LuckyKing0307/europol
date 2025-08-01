@@ -60,6 +60,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ad99ba7e-6736-4900-9db3-b2f246c8b1a8&lang=ru_RU" type="text/javascript"></script>
 </head>
 <!-- Yandex.Metrika counter -->
+<script>(function(){var dbpr=100;if(Math.random()*100>100-dbpr){var d="dbbRum",w=window,o=document,a=addEventListener,scr=o.createElement("script");scr.async=!0;w[d]=w[d]||[];w[d].push(["presampling",dbpr]);["error","unhandledrejection"].forEach(function(t){a(t,function(e){w[d].push([t,e])});});scr.src="https://cdn.debugbear.com/sP6EEzgCU2rl.js";o.head.appendChild(scr);}})()</script>
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){
