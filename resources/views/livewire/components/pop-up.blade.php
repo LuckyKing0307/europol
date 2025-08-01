@@ -15,36 +15,36 @@
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q1" name="q1" value="Гостиная" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/gostinnaya.png')}}" alt="Гостиная">
+                       <img loading="lazy" src="{{asset('popup/gostinnaya.webp')}}" alt="Гостиная">
                        <span class="select_pop_up">Гостиная</span>
                    </label>
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q1" name="q1" value="Детская" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/detskaya.png')}}" alt="Детская">
+                       <img loading="lazy" src="{{asset('popup/detskaya.webp')}}" alt="Детская">
                        <span class="select_pop_up">Детская</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q1" name="q1" value="Коммерческое помещение" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/ofice.png')}}" alt="Коммерческое помещение">
+                       <img loading="lazy" src="{{asset('popup/ofice.webp')}}" alt="Коммерческое помещение">
                        <span class="select_pop_up">Коммерческое помещение</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q1" name="q1" value="Кухня" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/kitchen.png')}}" alt="Кухня">
+                       <img loading="lazy" src="{{asset('popup/kitchen.webp')}}" alt="Кухня">
                        <span class="select_pop_up">Кухня</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q1" name="q1" value="Спальня" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/bedroom.png')}}" alt="Спальня">
+                       <img loading="lazy" src="{{asset('popup/bedroom.webp')}}" alt="Спальня">
                        <span class="select_pop_up">Спальня</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q1" name="q1" value="Прихожая" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/Прихож.png')}}" alt="Прихожая">
+                       <img loading="lazy" src="{{asset('popup/Прихож.webp')}}" alt="Прихожая">
                        <span class="select_pop_up">Прихожая</span>
                    </label>
                </div>
@@ -55,36 +55,36 @@
                <div class="image-radio-options">
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q2" name="q2" value="Белый" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/Beliy.png')}}" alt="Белый">
+                       <img loading="lazy" src="{{asset('popup/Beliy.webp')}}" alt="Белый">
                        <span class="select_pop_up">Белый</span>
                    </label>
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q2" name="q2" value="Натуральный" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/Naturalniy.png')}}" alt="Натуральный">
+                       <img loading="lazy" src="{{asset('popup/Naturalniy.webp')}}" alt="Натуральный">
                        <span class="select_pop_up">Натуральный</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q2" name="q2" value="Красный" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/krasniy.png')}}" alt="Красный">
+                       <img loading="lazy" src="{{asset('popup/krasniy.webp')}}" alt="Красный">
                        <span class="select_pop_up">Красный</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q2" name="q2" value="Коричневый" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/brown.png')}}" alt="Коричневый">
+                       <img loading="lazy" src="{{asset('popup/brown.webp')}}" alt="Коричневый">
                        <span class="select_pop_up">Коричневый</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q2" name="q2" value="Серый" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/gray.png')}}" alt="Серый">
+                       <img loading="lazy" src="{{asset('popup/gray.webp')}}" alt="Серый">
                        <span class="select_pop_up">Серый</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q2" name="q2" value="Черный" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/black.png')}}" alt="Черный">
+                       <img loading="lazy" src="{{asset('popup/black.webp')}}" alt="Черный">
                        <span class="select_pop_up">Черный</span>
                    </label>
                </div>
@@ -95,24 +95,24 @@
                <div class="image-radio-options">
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q3" name="q3" value="Паркет" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/Parket.png')}}" alt="Паркет">
+                       <img loading="lazy" src="{{asset('popup/Parket.webp')}}" alt="Паркет">
                        <span class="select_pop_up">Паркет</span>
                    </label>
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q3" name="q3" value="Ламинат" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/Laminate.png')}}" alt="Ламинат">
+                       <img loading="lazy" src="{{asset('popup/Laminate.webp')}}" alt="Ламинат">
                        <span class="select_pop_up">Ламинат</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q3" name="q3" value="ПВХ/SPC" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/pvx.png')}}" alt="ПВХ/SPC">
+                       <img loading="lazy" src="{{asset('popup/pvx.webp')}}" alt="ПВХ/SPC">
                        <span class="select_pop_up">ПВХ/SPC</span>
                    </label>
 
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q3" name="q3" value="Ковролин" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/kovrolin.png')}}" alt="Ковролин">
+                       <img loading="lazy" src="{{asset('popup/kovrolin.webp')}}" alt="Ковролин">
                        <span class="select_pop_up">Ковролин</span>
                    </label>
                </div>
