@@ -6,10 +6,10 @@
             <div id="floor-compare"
                  class="beer-slider rounded-3xl overflow-hidden"
                  data-beer-label="После" style="border-radius: 40px; overflow: hidden">
-                <img src="{{asset('img/before.png')}}" alt="Пол после ремонта">
+                <img loading="lazy" src="{{asset('img/before.webp')}}" alt="Пол после ремонта">
 
                 <div class="beer-reveal" data-beer-label="До">
-                    <img src="{{asset('img/after.png')}}" alt="Пол до ремонта">
+                    <img loading="lazy" src="{{asset('img/after.webp')}}" alt="Пол до ремонта">
                 </div>
             </div>
         </div>
