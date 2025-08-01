@@ -1,76 +1,17 @@
-/* Кастомная пагинация (точки) */
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-ExtraBoldItalic.ttf') format('truetype');
-    font-weight: 800;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-Thin.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Maxima Nouva';
-    src: url('../fonts/Maxima/MaximaNouva-ThinItalic.ttf') format('truetype');
-    font-weight: 100;
-    font-style: italic;
-}
 @font-face {
     font-family: 'SF Pro Display';
     src: url('../fonts/SF/SF-Pro-Display-Thin.otf') format('opentype');
     font-weight: 100;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'SF Pro Display';
     src: url('../fonts/SF/SF-Pro-Display-ThinItalic.otf') format('opentype');
     font-weight: 100;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -78,12 +19,14 @@
     src: url('../fonts/SF/SF-Pro-Display-Ultralight.otf') format('opentype');
     font-weight: 200;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'SF Pro Display';
     src: url('../fonts/SF/SF-Pro-Display-UltralightItalic.otf') format('opentype');
     font-weight: 200;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -91,12 +34,14 @@
     src: url('../fonts/SF/SF-Pro-Display-Light.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'SF Pro Display';
     src: url('../fonts/SF/SF-Pro-Display-LightItalic.otf') format('opentype');
     font-weight: 300;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -104,12 +49,14 @@
     src: url('../fonts/SF/SF-Pro-Display-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'SF Pro Display';
     src: url('../fonts/SF/SF-Pro-Display-RegularItalic.otf') format('opentype');
     font-weight: 400;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -117,12 +64,14 @@
     src: url('../fonts/SF/SF-Pro-Display-Medium.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'SF Pro Display';
     src: url('../fonts/SF/SF-Pro-Display-MediumItalic.otf') format('opentype');
     font-weight: 500;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -130,12 +79,14 @@
     src: url('../fonts/SF/SF-Pro-Display-Semibold.otf') format('opentype');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'SF Pro Display';
     src: url('../fonts/SF/SF-Pro-Display-SemiboldItalic.otf') format('opentype');
     font-weight: 600;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -143,12 +94,14 @@
     src: url('../fonts/SF/SF-Pro-Display-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 @font-face {
     font-family: 'SF Pro Display';
     src: url('../fonts/SF/SF-Pro-Display-BoldItalic.otf') format('opentype');
     font-weight: 700;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -2092,7 +2045,8 @@ article{
         width: 90%;
     }
     .pop_up-buttons{
-        flex-wrap: wrap;
+        flex-direction: column-reverse;
+
     }
     .pop_up_text{
         font-size: 12px;
