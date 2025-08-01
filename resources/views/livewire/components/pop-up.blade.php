@@ -145,11 +145,11 @@
 </div>
 
 @push('scripts')
-    <script>
+    <script defer>
         document.addEventListener('DOMContentLoaded', function () {
             setTimeout(()=>{
                 document.querySelector('.pop_up-overlay').style.display = 'flex';
-            },5000)
+            },15000)
         });
         function validateStep(step) {
             if (step === 1 && !document.querySelector('input[name="q1"]:checked')) {

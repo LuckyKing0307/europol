@@ -14,23 +14,23 @@
                 </p>
             </div>
         </div>
-        <img loading="lazy" src="{{ asset('img/alisher_avazov.jpg') }}" alt="О нас" class="about__img" />
+        <img src="{{ asset('img/alisher_avazov.jpg') }}" alt="О нас" class="about__img" />
     </div>
     <div class="about__services about-services">
         <h2 class="about-services__title">Сегодня Europol — это 8 шоурумов в Ташкенте</h2>
         <div class="container">
             <div class="about-services__card">
-                <img loading="lazy" src="{{ asset('img/1rm.webp')}}" alt="О нас" />
+                <img src="{{ asset('img/1rm.webp')}}" alt="О нас" />
             </div>
             <div class="about-services__card">
-                <img loading="lazy" src="{{ asset('img/2rm.webp') }}" alt="О нас" />
+                <img src="{{ asset('img/2rm.webp') }}" alt="О нас" />
 
             </div>
             <div class="about-services__card">
-                <img loading="lazy" src="{{ asset('img/3rm.webp') }}" alt="О нас" />
+                <img src="{{ asset('img/3rm.webp') }}" alt="О нас" />
             </div>
 {{--            <div class="about-services__card">--}}
-{{--                <img loading="lazy" src="{{ asset('img/about-5.png') }}" alt="О нас" />--}}
+{{--                <img src="{{ asset('img/about-5.png') }}" alt="О нас" />--}}
 {{--                <div class="about-services__txt">--}}
 {{--                    <h3 class="about-services__subtitle">Укладка и монтаж</h3>--}}
 {{--                    <p class="about-services__descr">Профессиональная укладка всех типов покрытий</p>--}}
@@ -41,17 +41,17 @@
     <div class="about-aim about__aim">
         <h2 class="about-aim__title"> -Официальные поставки от HARO, Coswick, Karelia, Quick-Step, Balsan и других европейских брендов</h2>
         <div class="about-services__card" style="max-width: 100%;">
-            <img loading="lazy" src="{{ asset('img/tovar.webp') }}" alt="О нас" />
+            <img src="{{ asset('img/tovar.webp') }}" alt="О нас" />
         </div>
     </div>
     <div class="about-aim about__aim">
         <h2 class="about-aim__title">-1000+ моделей покрытий в наличии</h2>
         <div class="about-services__card" style="max-width: 100%; display: flex; justify-content: space-between; ">
-            <img loading="lazy" src="{{ asset('img/sclad1.webp') }}" alt="Фото со склада" style="width: 40%;"/>
-            <img loading="lazy" src="{{ asset('img/sclad2.webp') }}" alt="Фото со склада" style="width: 40%;"/>
+            <img src="{{ asset('img/sclad1.webp') }}" alt="Фото со склада" style="width: 40%;"/>
+            <img src="{{ asset('img/sclad2.webp') }}" alt="Фото со склада" style="width: 40%;"/>
         </div>
         <div class="about-services__card" style="max-width: 100%; display: flex; align-items: center;">
-            <img loading="lazy" src="{{ asset('img/albert.webp') }}" alt="Фото со склада"  style="width: 20%;"/>
+            <img src="{{ asset('img/albert.webp') }}" alt="Фото со склада"  style="width: 20%;"/>
             <p class="about-services__descr">
                 -Партнёрство с крупнейшими застройщиками страны: Modera Towers, Murad Buildings и др. <br>
                 -Менеджеры с опытом до 10 лет — знают каждую коллекцию в деталях <br>
