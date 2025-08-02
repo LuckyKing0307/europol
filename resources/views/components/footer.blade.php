@@ -30,7 +30,7 @@
             </ul>
             <div class="footer__socials">
                 <!-- Вставь svg или иконки, если нужны другие, поменяй тут -->
-                <a href="https://t.me/europoluzb" class="footer__social" target="_blank"><img src="{{asset('img/telegram.svg')}}" alt=""></a>
+                <a href="https://t.me/europol_uzbekistan" class="footer__social" target="_blank"><img src="{{asset('img/telegram.svg')}}" alt=""></a>
                 <a href="https://www.instagram.com/europol.uzbekistan/" class="footer__social" target="_blank"><img src="{{asset('img/instagram.svg')}}" alt=""></a>
                 <a href="https://www.facebook.com/europol.uz" class="footer__social" target="_blank"><img src="{{asset('img/facebook.svg')}}" alt=""></a>
             </div>
