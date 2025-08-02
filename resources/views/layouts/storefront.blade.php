@@ -163,6 +163,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
 
 <script defer>
+    const interval = setInterval(() => {
+        const styleTag = [...document.querySelectorAll('style')]
+            .find(el => el.textContent.includes('.amo-livechat_chat'));
+
+        if (styleTag) {
+            styleTag.remove(); // удаляем стили виджета
+            clearInterval(interval);
+        }
+    }, 300);
     window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
         loader.style.opacity = '0';
