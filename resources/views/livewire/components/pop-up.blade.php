@@ -13,14 +13,14 @@
                <h3 class="pop_up_text">Для какого помещения нужно напольное покрытие?</h3>
                <div class="image-radio-options">
                    <label class="image-radio-option">
-                       <input type="radio" wire:model="q1" name="q1" value="Гостиная" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/gostinnaya.webp')}}" alt="Гостиная">
-                       <span class="select_pop_up">Гостиная</span>
+                       <input type="radio" wire:model="q1" name="q1" value="Квартира" class="hidden">
+                       <img loading="lazy" src="{{asset('popup/gost.webp')}}" alt="Квартира">
+                       <span class="select_pop_up">Квартира</span>
                    </label>
                    <label class="image-radio-option">
-                       <input type="radio" wire:model="q1" name="q1" value="Детская" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/detskaya.webp')}}" alt="Детская">
-                       <span class="select_pop_up">Детская</span>
+                       <input type="radio" wire:model="q1" name="q1" value="Дача(участок)" class="hidden">
+                       <img loading="lazy" src="{{asset('popup/docha.webp')}}" alt="Дача(участок)">
+                       <span class="select_pop_up">Дача(участок)</span>
                    </label>
 
                    <label class="image-radio-option">
