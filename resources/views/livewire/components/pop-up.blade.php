@@ -19,7 +19,7 @@
                    </label>
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q1" name="q1" value="Дача(участок)" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/docha.webp')}}" alt="Дача(участок)">
+                       <img loading="lazy" src="{{asset('popup/dacha.webp')}}" alt="Дача(участок)">
                        <span class="select_pop_up">Дача(участок)</span>
                    </label>
 
