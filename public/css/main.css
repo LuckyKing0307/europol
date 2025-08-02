@@ -645,8 +645,11 @@ input:checked + .switch>.slider:before {
 }
 
 .pop_up-close-btn {
-    position: absolute; top: -20px; right: -20px; font-size: 18px;
-    background: none; border: none; cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: absolute; top: -35px; right: 0; font-size: 18px;
+    background: #272727; border: none; cursor: pointer;
+    border-radius: 50%;
     color: white;
 }
 

@@ -12,7 +12,6 @@
            <div class="pop_up-step" x-show="currentStep === 1" x-cloak>
                <h3 class="pop_up_text">Для какого помещения нужно напольное покрытие?</h3>
                <div class="image-radio-options">
-
                    <label class="image-radio-option">
                        <input type="radio" wire:model="q1" name="q1" value="Гостиная" class="hidden">
                        <img loading="lazy" src="{{asset('popup/gostinnaya.webp')}}" alt="Гостиная">
@@ -28,24 +27,6 @@
                        <input type="radio" wire:model="q1" name="q1" value="Коммерческое помещение" class="hidden">
                        <img loading="lazy" src="{{asset('popup/ofice.webp')}}" alt="Коммерческое помещение">
                        <span class="select_pop_up">Коммерческое помещение</span>
-                   </label>
-
-                   <label class="image-radio-option">
-                       <input type="radio" wire:model="q1" name="q1" value="Кухня" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/kitchen.webp')}}" alt="Кухня">
-                       <span class="select_pop_up">Кухня</span>
-                   </label>
-
-                   <label class="image-radio-option">
-                       <input type="radio" wire:model="q1" name="q1" value="Спальня" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/bedroom.webp')}}" alt="Спальня">
-                       <span class="select_pop_up">Спальня</span>
-                   </label>
-
-                   <label class="image-radio-option">
-                       <input type="radio" wire:model="q1" name="q1" value="Прихожая" class="hidden">
-                       <img loading="lazy" src="{{asset('popup/Прихож.webp')}}" alt="Прихожая">
-                       <span class="select_pop_up">Прихожая</span>
                    </label>
                </div>
            </div>
