@@ -80,7 +80,7 @@
                                     </div>
                                     <a href="{{route('maps')}}" class="shops">Магазины</a>
                                 </div>
-                                {{ __('header.phone') }}: <br><a href="tel:+998723049843">+998 (55) 510-01-02</a>
+                                {{ __('header.phone') }}: <br><a href="tel:+998555100102">+998 (55) 510-01-02</a>
                             </div>
                             <div class="lang flex">
                                 @livewire('language-switcher')
