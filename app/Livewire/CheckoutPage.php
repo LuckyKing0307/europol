@@ -185,10 +185,6 @@ class CheckoutPage extends Component
             return "{$line->quantity}× «{$line->purchasable->getDescription()}» — {$line->subTotal->formatted()}";
         })->implode("\n");
 
-        $shipping = $this->cart->shippingAddress;
-        $amo = new AmoController();
-        $amo->createLead('Заказ с сайта от - ' . $this->shipping->first_name, $this->cart->total->value);
-
         $moysklad = new \App\Http\Controllers\MoySkladOrderController();
         $moysklad->createFromCart($this->shipping, $this->cart->lines);
 
