@@ -182,7 +182,7 @@ class CheckoutPage extends Component
     public function checkout()
     {
         $lines = $this->cart->lines->map(function($line) {
-            dd($line->purchasable->external_id);
+            dd($line->purchasable);
             return "{$line->quantity}× «{$line->purchasable->getDescription()}» — {$line->subTotal->formatted()}";
         })->implode("\n");
 
