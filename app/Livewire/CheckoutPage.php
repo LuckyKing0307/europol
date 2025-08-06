@@ -186,7 +186,7 @@ class CheckoutPage extends Component
         })->implode("\n");
 
         $shipping = $this->cart->shippingAddress;
-
+        dd($shipping.''.$lines);
         $amo = new AmoController();
         $amo->createLead('Заказ с сайта от - ' . $shipping->first_name, $this->cart->total->value);
 
