@@ -101,7 +101,7 @@ class MoySkladOrderController extends Controller
             'headers' => $this->headers(),
             'json' => [
                 'name' => $shipping->first_name . ' ' . $shipping->last_name,
-                'email' => $shipping->email,
+                'email' => '',
                 'phone' => $shipping->phone,
             ]
         ]);
