@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Http\Controllers\AmoController;
+use App\Models\Product;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
 use Livewire\Component;
@@ -182,7 +183,8 @@ class CheckoutPage extends Component
     public function checkout()
     {
         $lines = $this->cart->lines->map(function($line) {
-            dd($line->purchasable);
+            $product = Product::find($line->purchasable->product_id);
+            dd($product->external_id);
             return "{$line->quantity}× «{$line->purchasable->getDescription()}» — {$line->subTotal->formatted()}";
         })->implode("\n");
 
