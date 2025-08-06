@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use GuzzleHttp\Client;
@@ -62,7 +63,9 @@ class MoySkladOrderController extends Controller
             $productName = $line->purchasable->getDescription();
             $quantity = $line->quantity;
 
-            $product = $this->findProductByName($client, $productName);
+            $product = Product::find($line->purchasable->product_id);
+
+            $product = $this->findProductByName($client, $product->external_id);
 
             if (!$product) continue;
 
