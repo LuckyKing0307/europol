@@ -188,7 +188,9 @@ class CheckoutPage extends Component
 
         $moysklad = new \App\Http\Controllers\MoySkladOrderController();
         $moysklad->createFromCart($this->shipping, $this->cart->lines);
-
+        CartSession::forget(); // очищает сессию
+        $this->cart->lines()->delete(); // удаляет все строки из корзины
+        $this->cart->delete();
         return redirect()->route('checkout-success.view');
 
     }
