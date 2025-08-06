@@ -14,7 +14,7 @@
                 </p>
             </div>
         </div>
-        <img src="{{ asset('img/alisher_avazov.jpg') }}" alt="О нас" class="about__img" />
+        <img src="{{ asset('img/alisher a.webp') }}" alt="О нас" class="about__img" />
     </div>
     <div class="about__services about-services">
         <h2 class="about-services__title">Сегодня Europol — это 8 шоурумов в Ташкенте</h2>
