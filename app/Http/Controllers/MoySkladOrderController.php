@@ -77,17 +77,54 @@ class MoySkladOrderController extends Controller
         }
 
         if (!empty($positions)) {
-            dd(json_encode([
-                'name' => 'Заказ с сайта',
-                'agent' => ['meta' => $counterpartyMeta],
-                'positions' => $positions,
-            ]));
+//            dd(json_encode([
+//                'name' => 'Заказ с сайта',
+//                'agent' => ['meta' => $counterpartyMeta],
+//                'positions' => $positions,
+//            ]));
             $client->post("{$this->baseUrl}/entity/customerorder", [
                 'headers' => $this->headers(),
                 'json' => [
                     'name' => 'Заказ с сайта',
-                    'agent' => ['meta' => $counterpartyMeta],
+                    'agent' => [
+                        'meta' => $counterpartyMeta
+                    ],
+                    'organization' => [
+                        'meta' => [
+                            'href' => 'https://api.moysklad.ru/api/remap/1.2/entity/organization/13df5922-72a7-11f0-0a80-0411001478bc',
+                            'type' => 'organization',
+                            'mediaType' => 'application/json'
+                        ]
+                    ],
                     'positions' => $positions,
+
+                    // Если есть обязательные доп. поля — добавь сюда:
+                    'customFields' => [
+                        [
+                            'name' => 'Тип сделки',
+                            'value' => 'Розничная'
+                        ],
+                        [
+                            'name' => 'Кто продал',
+                            'value' => 'Сайт'
+                        ],
+                        [
+                            'name' => 'Доля (cashback)',
+                            'value' => 0
+                        ],
+                        [
+                            'name' => 'Дизайнер?',
+                            'value' => 'Нет'
+                        ],
+                        [
+                            'name' => 'Прораб',
+                            'value' => '—'
+                        ],
+                        [
+                            'name' => 'Уста',
+                            'value' => '—'
+                        ]
+                    ]
                 ]
             ]);
         }
