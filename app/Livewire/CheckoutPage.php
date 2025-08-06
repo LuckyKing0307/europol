@@ -188,10 +188,10 @@ class CheckoutPage extends Component
         $shipping = $this->cart->shippingAddress;
         dd($this->shipping.' '.$lines);
         $amo = new AmoController();
-        $amo->createLead('Заказ с сайта от - ' . $shipping->first_name, $this->cart->total->value);
+        $amo->createLead('Заказ с сайта от - ' . $this->shipping->first_name, $this->cart->total->value);
 
         $moysklad = new \App\Http\Controllers\MoySkladOrderController();
-        $moysklad->createFromCart($shipping, $this->cart->lines);
+        $moysklad->createFromCart($this->shipping, $this->cart->lines);
 
         return redirect()->route('checkout-success.view');
 

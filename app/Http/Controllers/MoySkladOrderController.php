@@ -89,7 +89,7 @@ class MoySkladOrderController extends Controller
     {
         $search = $client->get("{$this->baseUrl}/entity/counterparty", [
             'headers' => $this->headers(),
-            'query' => ['search' => $shipping->email]
+            'query' => ['search' => $shipping->contact_phone]
         ]);
 
         $data = json_decode($search->getBody(), true);
@@ -102,7 +102,7 @@ class MoySkladOrderController extends Controller
             'json' => [
                 'name' => $shipping->first_name . ' ' . $shipping->last_name,
                 'email' => '',
-                'phone' => $shipping->phone,
+                'phone' => $shipping->contact_phone,
             ]
         ]);
 
