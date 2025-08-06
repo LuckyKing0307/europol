@@ -82,7 +82,7 @@ class MoySkladOrderController extends Controller
                 $client->post("{$this->baseUrl}/entity/customerorder", [
                     'headers' => $this->headers(),
                     'json' => [
-                        'name' => 'Заказ с сайта',
+                        'name' => 'Заказ с сайта -'.now(),
                         'agent' => [
                             'meta' => $counterpartyMeta,
                         ],
