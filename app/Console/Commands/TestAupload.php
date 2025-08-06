@@ -43,10 +43,12 @@ class TestAupload extends Command
 
     function addNewProducts($link)
     {
+        $login = env('MOY_SKLAD_LOGIN');
+        $password = env('MOY_SKLAD_PASSWORD');
         $client = new \GuzzleHttp\Client();
         $response = $client->get($link, [
             'headers' => [
-                'Authorization' => 'Basic ' . base64_encode('admin@europol_uz:09031983iz'),
+                'Authorization' => 'Basic ' . base64_encode($login.':'.$password),
                 'Content-Type' => 'application/json;charset=utf-8',
                 'Accept-Encoding' => 'gzip'
             ],
