@@ -11,7 +11,7 @@
                         @foreach ($cart->lines as $line)
                             <div class="flex items-center py-4" wire:key="cart_line_{{ $line->id }}">
                                 <img class="object-cover w-16 h-16 rounded"
-                                     src="{{ $line->purchasable->getThumbnail()->getUrl() }}"/>
+                                     src="{{ $line->purchasable->getThumbnail()?->getUrl() }}"/>
 
                                 <div class="flex-1 ml-4">
                                     <p class="text-sm font-medium max-w-[35ch]" style="color: #0a0a0a !important;">

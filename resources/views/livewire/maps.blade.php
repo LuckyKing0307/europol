@@ -104,11 +104,17 @@
             zoom: 11,
             controls: ['zoomControl', 'fullscreenControl']
         });
-        // Группа для всех меток
         const clusterer = new ymaps.Clusterer({
-            preset: 'islands#invertedYellowClusterIcons',
-            clusterDisableClickZoom: false,
-            zoomMargin: 40
+            clusterIcons: [{
+                href: '/img/maps.svg',
+                size: [40, 40],
+                offset: [-20, -20] // центрирование иконки
+            }],
+            clusterIconContentLayout: ymaps.templateLayoutFactory.createClass(
+                '<div style="position: relative; width: 40px; height: 40px; text-align: center; line-height: 40px; font-weight: bold; color: black;"></div>'
+            ),
+            clusterIconContentOffset: [0, 0], // сместить текст в центр
+            clusterIconContentSize: [40, 40]
         });
 
         // Создаём метки и вешаем события
@@ -127,7 +133,12 @@
             const sub_placemark = new ymaps.Placemark(
                 [b.lat, b.lon],
                 { balloonContent: `<img src="/images/place/${b.id}.jpg" style="height: 250px; margin: 0 auto;" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
-                { preset: 'islands#yellowDotIcon' }
+                {
+                    iconImageHref: `/img/maps.svg`,
+                    iconLayout: 'default#imageWithContent',
+                    iconImageSize: [40, 40],
+                    iconImageOffset: [-20, -40],
+                }
             );
 
             sub_placemark.events.add('click', () => activateCard(i));
@@ -135,7 +146,12 @@
             const placemark = new ymaps.Placemark(
                 [b.lat, b.lon],
                     { balloonContent: `<img src="/images/place/${b.id}.jpg" style="height: 250px; margin: 0 auto;" alt=""><br><strong>${b.title}</strong><br>${b.hint}<br>${b.phone}` },
-                { preset: 'islands#yellowDotIcon' }
+                {
+                    iconLayout: 'default#imageWithContent',
+                    iconImageHref: '/img/maps.svg',
+                    iconImageSize: [40, 40],
+                    iconImageOffset: [-20, -40],
+                }
             );
             placemark.events.add('click', () => activateCard(i));
             clusterer.add(placemark);

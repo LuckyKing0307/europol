@@ -51,7 +51,6 @@ class CheckoutPage extends Component
 
         $this->shipping = $this->cart->shippingAddress ?: new CartAddress;
         $this->shipping->country_id = Country::where('iso3', 'UZB')->value('id');
-
         $this->rules = array_merge(
             $this->getAddressValidation('shipping'),
             [
@@ -182,31 +181,20 @@ class CheckoutPage extends Component
 
     public function checkout()
     {
-        // Защита от отсутствия billing
-        if (!$this->cart->billingAddress) {
-            $billingData = $this->shipping->only($this->shipping->getFillable());
-            $this->cart->setBillingAddress($billingData);
-        }
+        $lines = $this->cart->lines->map(function($line) {
+            return "{$line->quantity}× «{$line->purchasable->getDescription()}» — {$line->subTotal->formatted()}";
+        })->implode("\n");
 
-        $payment = Payments::cart($this->cart)->withData([
-            'payment_intent_client_secret' => $this->payment_intent_client_secret,
-            'payment_intent' => $this->payment_intent,
-        ])->authorize();
+        $shipping = $this->cart->shippingAddress;
 
-        if ($payment->success) {
-            $lines = $this->cart->lines->map(function($line) {
-                return "{$line->quantity}× «{$line->purchasable->getDescription()}» — {$line->subTotal->formatted()}";
-            })->implode("\n");
+        $amo = new AmoController();
+        $amo->createLead('Заказ с сайта от - ' . $shipping->first_name, $this->cart->total->value);
 
-            $shipping = $this->cart->shippingAddress;
-
-            $amo = new AmoController();
-            $amo->createLead('Заказ с сайта от - ' . $shipping->first_name, $this->cart->total->value);
-
-            return redirect()->route('checkout-success.view');
-        }
+        $moysklad = new \App\Http\Controllers\MoySkladOrderController();
+        $moysklad->createFromCart($shipping, $this->cart->lines);
 
         return redirect()->route('checkout-success.view');
+
     }
 
     protected function getAddressValidation(string $type): array
