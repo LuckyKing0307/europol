@@ -10,7 +10,7 @@ class MoySkladOrderController extends Controller
 {
     protected string $login;
     protected string $password;
-    protected string $baseUrl = 'https://online.moysklad.ru/api/remap/1.2';
+    protected string $baseUrl = 'https://api.moysklad.ru/api/remap/1.2';
 
     public function __construct()
     {
