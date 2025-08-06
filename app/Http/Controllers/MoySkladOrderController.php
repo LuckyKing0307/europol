@@ -77,6 +77,11 @@ class MoySkladOrderController extends Controller
         }
 
         if (!empty($positions)) {
+            dd([
+                'name' => 'Заказ с сайта',
+                'agent' => ['meta' => $counterpartyMeta],
+                'positions' => $positions,
+            ]);
             $client->post("{$this->baseUrl}/entity/customerorder", [
                 'headers' => $this->headers(),
                 'json' => [
