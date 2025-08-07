@@ -8,7 +8,7 @@
          alt="{{ $node['brand'] ? $node['brand']->name : $node->translateAttribute('name') }}"
          class="w-8 h-8 rounded object-cover" loading="lazy">
 
-    <a href="{{ route('collection.view', $node['brand'] ? $node['brand']->defaultUrl?->slug : $node->defaultUrl?->slug ) }}"
+    <a href="{{ $node['brand'] ? route('collection.view').'?brand='.$node['brand']->id : route('collection.view',$node->defaultUrl?->slug)}}"
        class="text-sm font-medium">{{ $node['brand'] ? $node['brand']->name : $node->translateAttribute('name')}}</a>
     @if (isset($node->brands))
         <ul x-show="open"
