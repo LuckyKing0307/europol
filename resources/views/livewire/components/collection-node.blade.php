@@ -1,7 +1,7 @@
 <li x-data="{ open: false }"
     @mouseenter="open = true"
     @mouseleave="open = false"
-    class="flex items-center gap-2 menu_li_data"  {{-- relative: якорь для absolute меню --}}
+    class="flex items-center gap-2 menu_li_data relative"  {{-- relative: якорь для absolute меню --}}
     wire:key="node-{{ $node['brand'] ? $node['brand']->id : $node->id}}"
 >
     <img src="{{ $node['brand'] ? $node['brand']->getFirstMediaUrl('images') : $node->getFirstMediaUrl('images') }}"

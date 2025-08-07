@@ -167,14 +167,14 @@
                         toggleCatalog();
                     }
                 });
-                fetch('https://ipapi.co/json/')
-                    .then(r => r.json())
-                    .then(data => {
-                        const location =
-                            `${data.city}, ${data.country_name}`;
-                        document.querySelector('#tashkent').innerText = location;
-                    })
-                    .catch(() => console.log('не смогли найти'));
+                // fetch('https://ipapi.co/json/')
+                //     .then(r => r.json())
+                //     .then(data => {
+                //         const location =
+                //             `${data.city}, ${data.country_name}`;
+                //         document.querySelector('#tashkent').innerText = location;
+                //     })
+                //     .catch(() => console.log('не смогли найти'));
             }
         </script>
     @endpush
