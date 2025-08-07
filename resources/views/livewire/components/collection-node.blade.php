@@ -25,6 +25,7 @@
             @endforeach
         </ul>
     @endif
+    {{isset($node['collections']) ? var_dump($node['collections']) : 1 }}
     @if (isset($node['collections']))
         <ul x-show="open"
             x-cloak
