@@ -27,7 +27,7 @@ class Navigation extends Component
      */
     public function getCollectionsProperty()
     {
-        $coll = Collection::with(['defaultUrl'])->get()->map(function ($collection) {
+        $coll = Collection::with(['defaultUrl'])->whereNull('parent_id')->get()->map(function ($collection) {
             $collection->brands = $collection->getBrands(); // добавляем свойство brands
             return $collection;
         });
