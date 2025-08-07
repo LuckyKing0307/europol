@@ -50,7 +50,7 @@ Route::get('/about', \App\Livewire\Pages\About::class)->name('about.view');
 Route::get('/b2b', \App\Livewire\Pages\B2b::class)->name('b2b.view');
 Route::get('/basket', \App\Livewire\Pages\Basket::class)->name('basket.view');
 Route::get('/blogs', \App\Livewire\Pages\Blogs::class)->name('blogs.view');
-Route::get('/blog', \App\Livewire\Pages\Blog::class)->name('blog.view');
+Route::get('/blog/{slug}', \App\Livewire\Pages\Blog::class)->name('blog.view');
 Route::get('/favorites', \App\Livewire\Pages\Favorites::class)->name('favorites.view');
 Route::get('/works', \App\Livewire\Pages\Works::class)->name('work.view');
 Route::get('/warranty', \App\Livewire\Pages\Warranty::class)->name('warranty.view');

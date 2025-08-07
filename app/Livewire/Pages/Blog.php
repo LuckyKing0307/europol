@@ -2,11 +2,31 @@
 
 namespace App\Livewire\Pages;
 
+use App\Models\SeoPage;
 use App\Services\FacebookConversionService;
 use Livewire\Component;
 
 class Blog extends Component
 {
+    public SeoPage $page;
+    public $relatedPosts;
+    public $nextPost;
+
+    public function mount($slug)
+    {
+        $this->page = SeoPage::where('slug', $slug)->firstOrFail();
+
+
+        $this->nextPost = SeoPage::where('slug', '!=', $slug)
+            ->inRandomOrder()
+            ->first();
+
+        $this->relatedPosts = SeoPage::where('slug', '!=', $slug)
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+    }
+
     public function render()
     {
         $fb = new FacebookConversionService();

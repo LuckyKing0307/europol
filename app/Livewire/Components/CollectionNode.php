@@ -7,7 +7,7 @@ use Lunar\Models\Collection;
 
 class CollectionNode extends Component
 {
-    public Collection $node;
+    public $node;
     public int $level = 0;
 
     public function render()

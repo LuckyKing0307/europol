@@ -27,7 +27,12 @@ class Navigation extends Component
      */
     public function getCollectionsProperty()
     {
-        return Collection::with(['defaultUrl'])->get()->toTree();
+        $coll = Collection::with(['defaultUrl'])->get()->map(function ($collection) {
+            $collection->brands = $collection->getBrands(); // добавляем свойство brands
+            return $collection;
+        });
+
+        return $coll;
     }
 
     public function render(): View
