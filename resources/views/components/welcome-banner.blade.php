@@ -1,8 +1,5 @@
 <section class="section pre-loader" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" style="background: none;">
     <div class="video-overlay"></div>
-        @if ($this->saleCollection)
-            <x-collection-sale />
-        @endif
 </section>
 
 
