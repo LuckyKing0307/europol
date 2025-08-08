@@ -38,7 +38,8 @@
         "mavsan/laravel-1c-protocol": "11",
         "meilisearch/meilisearch-php": "^1.13",
         "predis/predis": "^2.2",
-        "pusher/pusher-php-server": "^7.2"
+        "pusher/pusher-php-server": "^7.2",
+        "sentry/sentry-laravel": "^4.15"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
