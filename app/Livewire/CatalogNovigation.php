@@ -12,7 +12,7 @@ class CatalogNovigation extends Component
      */
     public function getCollectionsProperty()
     {
-        return Collection::with(['defaultUrl'])->get()->toTree();
+        return Collection::with(['defaultUrl'])->whereNull('parent_id')->get();
     }
 
     public function mount()
