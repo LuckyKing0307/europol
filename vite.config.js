@@ -8,4 +8,5 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.ttf'],
 });
