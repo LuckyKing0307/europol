@@ -36,21 +36,13 @@
 +1000 товаров в наличии.
 Полы для дома, бизнеса и жизни — с 2007 в Узбекистане.
 Даем официальную гарантию до 35 лет.">
-    <link
-        href="{{ asset('css/app.css') }}"
-        rel="stylesheet"
-    >
-    <link
-        href="{{ asset('css/main.css') }}"
-        rel="stylesheet"
-    >
     @stack('page-styles')
     <link
         rel="icon"
         href="{{ asset('icon.svg') }}"
     >
     @livewireStyles
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/app_main.css', 'resources/css/main.css'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
