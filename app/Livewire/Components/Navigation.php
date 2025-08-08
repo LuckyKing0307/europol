@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Components;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 use Livewire\Component;
 use Lunar\Models\Collection;
@@ -27,12 +28,13 @@ class Navigation extends Component
      */
     public function getCollectionsProperty()
     {
-        $coll = Collection::with(['defaultUrl'])->whereNull('parent_id')->get()->map(function ($collection) {
-            $collection->brands = $collection->getBrands(); // добавляем свойство brands
-            return $collection;
+        $cacheKey = 'collections';
+        return Cache::remember($cacheKey, now()->addDay(), function () {
+            Collection::with(['defaultUrl'])->whereNull('parent_id')->get()->map(function ($collection) {
+                $collection->brands = $collection->getBrands(); // добавляем свойство brands
+                return $collection;
+            });
         });
-
-        return $coll;
     }
 
     public function render(): View
