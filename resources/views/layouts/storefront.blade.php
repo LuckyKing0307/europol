@@ -11,7 +11,6 @@
     <meta property="og:description" content="Европейские напольные покрытия...">
     <link rel="icon" href="{{ asset('icon.svg') }}">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('page-styles')
     @livewireStyles
 
@@ -21,6 +20,7 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet';">
     <link rel="preload" href="https://unpkg.com/beerslider/dist/BeerSlider.css" as="style" onload="this.onload=null;this.rel='stylesheet';">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css" as="style" onload="this.onload=null;this.rel='stylesheet';">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BLYMWPZ7J"></script>
