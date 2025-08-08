@@ -1,5 +1,5 @@
 <div>
-    @livewire('components.pop-up')
+{{--    @livewire('components.pop-up')--}}
     <x-welcome-banner />
     @livewire('categories-component')
 {{--    @livewire('top-sales')--}}

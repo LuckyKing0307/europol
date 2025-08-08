@@ -35,7 +35,6 @@
         @else
             <span class="rounded-full border p-2 text-gray-400 cursor-not-allowed arrow_btn arrow_right"><img src="{{asset('img/arrow.svg')}}" alt=""></span>
         @endif
-ф
         {{-- Right part (second half) --}}
         @foreach ($allPages->slice($half) as $page => $url)
             @if ($page == $current)
