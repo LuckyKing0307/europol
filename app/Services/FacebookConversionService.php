@@ -11,8 +11,8 @@ class FacebookConversionService
 
     public function __construct()
     {
-        $this->pixelId = env('FACEBOOK_PIXEL_ID');
-        $this->accessToken = env('FACEBOOK_ACCESS_TOKEN');
+        $this->pixelId = config('services.facebook.pixel_id');
+        $this->accessToken = config('services.facebook.access_token');
     }
 
     public function sendEvent(array $eventData): array

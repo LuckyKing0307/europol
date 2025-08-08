@@ -19,6 +19,10 @@ return [
         'access_token' => env('AMO_ACCESS_TOKEN'),
         'base_domain' => env('AMO_BASE_DOMAIN'), // например: yourdomain.amocrm.ru
     ],
+    'facebook' => [
+        'pixel_id' => env('FACEBOOK_PIXEL_ID'),
+        'access_token' => env('FACEBOOK_ACCESS_TOKEN'),
+    ],
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
