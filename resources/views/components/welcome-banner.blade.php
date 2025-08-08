@@ -7,25 +7,25 @@
 
 
 @push('scripts')
-{{--    <script>--}}
-{{--        document.addEventListener("DOMContentLoaded", function () {--}}
-{{--            const catalog = document.querySelector(".pre-loader");--}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const catalog = document.querySelector(".pre-loader");
 
-{{--            const video = document.createElement("video");--}}
-{{--            video.src = "{{ asset('img/pre-view.mp4') }}";--}}
-{{--            video.autoplay = true;--}}
-{{--            video.muted = true;--}}
-{{--            video.loop = true;--}}
-{{--            video.playsInline = true; // для iOS--}}
-{{--            video.classList.add("bg-video");--}}
+            const video = document.createElement("video");
+            video.src = "{{ asset('img/pre-view.mp4') }}";
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true; // для iOS
+            video.classList.add("bg-video");
 
-{{--            catalog.prepend(video);--}}
-{{--            const header = document.querySelector('header');--}}
+            catalog.prepend(video);
+            const header = document.querySelector('header');
 
-{{--            if (header && section) {--}}
-{{--                const headerHeight = header.offsetHeight;--}}
-{{--                catalog.style.minHeight = `calc(100vh - ${headerHeight}px)`;--}}
-{{--            }--}}
-{{--        });--}}
-{{--    </script>--}}
+            if (header && section) {
+                const headerHeight = header.offsetHeight;
+                catalog.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+            }
+        });
+    </script>
 @endpush
