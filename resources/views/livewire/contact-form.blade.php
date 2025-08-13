@@ -10,15 +10,15 @@
         <div class="warranty-form__wrapper">
     <form wire:submit.prevent="submit" class="space-y-4 warranty__form">
         <input type="text" wire:model.defer="name" placeholder="Имя"
-               class="warranty-form__input" style="color:#fff;"/>
+               class="warranty-form__input contact_input" style="color:#fff;"/>
         @error('name') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
 
         <input type="text" wire:model.defer="phone" placeholder="Телефон"
-               class="warranty-form__input" style="color:#fff;"/>
+               class="warranty-form__input contact_input" style="color:#fff;"/>
         @error('phone') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
 
         <textarea rows="3" wire:model.defer="message" placeholder="Сообщение"
-                  class="warranty-form__textarea" style="color:#fff;"></textarea>
+                  class="warranty-form__textarea contact_input" style="color:#fff;"></textarea>
         @error('message') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
 
         <button type="submit"

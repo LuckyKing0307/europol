@@ -2034,6 +2034,9 @@ article{
     display:flex; justify-content:center; align-items:center;
     gap:12px; padding:12px 14px 16px;
 }
+.contact_input::placeholder {
+    color: white !important;
+}
 .cert__download{
     text-decoration:none;
     font-weight:700;
