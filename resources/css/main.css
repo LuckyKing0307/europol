@@ -1503,6 +1503,9 @@ article{
 .warranty-form__textarea::placeholder {
     color: #070505;
 }
+.blog_body{
+    display: flex;
+}
 .warranty-form__input,
 .warranty-form__textarea {
     border: none;
@@ -2333,6 +2336,12 @@ article{
     .collection-grid{
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0 !important;
+    }
+    .blog_blog{
+        width: 100%;
+    }
+    .blog_body{
+        display: block;
     }
     .section{
         background: #fff;
