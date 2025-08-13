@@ -22,7 +22,6 @@
                 <div class="text-xl" style="color: white;">{!! $page->content !!}</div>
             @if (!empty(json_decode($page->content_blocks,1)))
                     @foreach (json_decode($page->content_blocks,1) as $block)
-                        {{var_dump($block)}}
                         <div class="blog_body flex-row gap-6 my-10 {{ $block['image_position'] == 'left' ? 'flex-row-reverse' : '' }}">
                             @if (!empty($block['image']))
                                 <div class="w-1/2 blog_blog">

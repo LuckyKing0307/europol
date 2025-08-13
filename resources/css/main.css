@@ -145,6 +145,9 @@ body{
 .text-xl * {
     color: white;
 }
+.flex-row-reverse{
+    flex-direction: row-reverse !important;
+}
 *{
     color: #272727;
     box-sizing: border-box;
