@@ -142,6 +142,9 @@ body{
     font-family:  'SF Pro Display',sans-serif !important;
     color: white !important;
 }
+.text-xl * {
+    color: white;
+}
 *{
     color: #272727;
     box-sizing: border-box;
