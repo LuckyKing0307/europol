@@ -2,6 +2,12 @@
     <link href="{{ asset('css/pages_style.css') }}" rel="stylesheet">
 @endpush
 @section('title', $page->title ? $page->title : 'Europol | Ламинат Паркет Ковролин')
+@section('description', $page->description ? $page->description : 'Европейские напольные покрытия для тех, кто выбирает качество
+Паркет. Ламинат. Ковролин. ПВХ/SPC. Плинтусы. Клеи. Всё в 1 месте.
+
++1000 товаров в наличии.
+Полы для дома, бизнеса и жизни — с 2007 в Узбекистане.
+Даем официальную гарантию до 35 лет.')
 
 <section class="blog max-w-screen-2xl mx-auto">
     <div class="container">

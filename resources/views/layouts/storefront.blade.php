@@ -21,12 +21,12 @@
     <meta name="title" content="@yield('title', config('app.name'))">
     <meta
         name="description"
-        content="Европейские напольные покрытия для тех, кто выбирает качество
+        content=@yield('description', "Европейские напольные покрытия для тех, кто выбирает качество
 Паркет. Ламинат. Ковролин. ПВХ/SPC. Плинтусы. Клеи. Всё в 1 месте.
 
 +1000 товаров в наличии.
 Полы для дома, бизнеса и жизни — с 2007 в Узбекистане.
-Даем официальную гарантию до 35 лет."
+Даем официальную гарантию до 35 лет.")
     >
     <meta property="og:site_name" content="Europol"/>
     <meta property="og:title" content="@yield('title', 'Europol | Ламинат Паркет Ковролин')">
