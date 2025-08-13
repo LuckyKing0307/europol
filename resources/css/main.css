@@ -1927,7 +1927,125 @@ article{
     color: #8d867d;
     margin-bottom: 5px;
 }
+/*.certs-wrap{padding:40px;background:#161616;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}*/
+/*.certs-title{color:#e0c490;text-align:center;font-size:32px;margin:0 0 28px}*/
+/*.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}*/
+/*.doc-card{*/
+/*    display:flex;align-items:flex-start;gap:12px;*/
+/*    padding:16px 18px;background:#2a2a2a;border-radius:14px;color:#fff;text-decoration:none;*/
+/*    box-shadow:0 6px 18px rgba(0,0,0,.35);transition:transform .2s ease, box-shadow .2s ease, background .2s ease*/
+/*}*/
+/*.doc-card:hover{background:#e0c490;color:#111;transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.45)}*/
+/*.doc-icon{font-size:20px;flex:0 0 auto;line-height:1.2;opacity:.9;margin-top:2px}*/
+/*!* КЛАМП: строго до 2 строк + троеточие, ничего не вылезает *!*/
+/*.doc-title{*/
+/*    font-weight:600;font-size:14px;line-height:1.35;*/
+/*    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;*/
+/*    overflow:hidden; !* обрезаем лишнее *!*/
+/*    word-break:break-word; !* если длинные куски без пробелов *!*/
+/*    overflow-wrap:anywhere; !* мягкие переносы для длинных слов *!*/
+/*    hyphens:auto;*/
+/*    max-width:100%;*/
+/*    color: white;*/
+/*}*/
+.certs{
+    padding:32px 0;
+    background:#111;
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+.certs__title{
+    margin:0 0 24px;
+    text-align:center;
+    font-size:28px;
+    font-weight:800;
+    color:#e7c46f;
+}
 
+/* Сетка */
+.certs__grid{
+    display:grid;
+    gap:28px;
+    grid-template-columns:repeat(4,1fr);
+    padding:0 12px;
+}
+@media (max-width:1200px){ .certs__grid{ grid-template-columns:repeat(3,1fr);} }
+@media (max-width:900px){  .certs__grid{ grid-template-columns:repeat(2,1fr);} }
+@media (max-width:560px){  .certs__grid{ grid-template-columns:1fr;} }
+
+/* Карточка */
+.cert{
+    background:#1c1c1c;
+    border:1px solid rgba(231,196,111,.6); /* «золотая» рамка */
+    border-radius:14px;
+    box-shadow:0 8px 22px rgba(0,0,0,.35);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+.cert:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 28px rgba(0,0,0,.45);
+}
+
+/* Заголовок */
+.cert__name{
+    margin:14px 14px 6px;
+    text-align:center;
+    color:#e9e9e9;
+    font-size:16px;
+    font-weight:700;
+    line-height:1.35;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; /* максимум две строки */
+    overflow:hidden;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+}
+
+/* Превью: держим вертикальную пропорцию под A4 */
+.cert__preview{
+    position:relative;
+    margin:10px 14px;
+    border-radius:10px;
+    background:#0f0f0f;
+    aspect-ratio:3/4; /* близко к листу */
+    overflow:hidden;
+    outline:1px dashed rgba(231,196,111,.3);
+}
+.cert__pdf{
+    width:100%;
+    height:100%;
+    border:0;
+    pointer-events:none; /* чтобы внутри не скроллилось */
+}
+.cert__placeholder{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    color:#e7c46f; font-weight:800; font-size:22px; letter-spacing:.06em;
+    background:
+        radial-gradient(80% 60% at 50% 0%, rgba(231,196,111,.08), transparent 70%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.2));
+}
+
+/* Низ карточки */
+.cert__actions{
+    display:flex; justify-content:center; align-items:center;
+    gap:12px; padding:12px 14px 16px;
+}
+.cert__download{
+    text-decoration:none;
+    font-weight:700;
+    text-transform:lowercase;
+    color:#f2c15b;
+    border-bottom:1px dashed #f2c15b;
+    padding-bottom:2px;
+    transition:color .15s ease, border-color .15s ease;
+}
+.cert__download:hover{
+    color:#ffd988; border-color:#ffd988;
+}
 .product_data-shipping-icon, .product_data-return-icon {
     font-size: 19px;
     margin-right: 7px;
