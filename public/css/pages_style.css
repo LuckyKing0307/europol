@@ -216,8 +216,11 @@ img {
 	border-radius: 20px;
     border: 2px solid #eadec7;
 }
-.text-sm p{
-    color: white;
+.text-sm *{
+    color: white !important;
+}
+.blog_blog{
+    padding: 20px;
 }
 .blogs-list__article img {
 	width: 100%;
@@ -372,6 +375,7 @@ img {
 }
 
 .blog__img {
+    max-height: 300px;
 	display: block;
 	margin: 0 auto;
 	margin-bottom: 35px;

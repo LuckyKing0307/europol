@@ -18,14 +18,14 @@
                     @foreach (json_decode($page->content_blocks,1) as $block)
                         <div class="flex md:flex-row gap-6 my-10 {{ $block['image_position'] === 'left' ? 'md:flex-row-reverse' : '' }}">
                             @if (!empty($block['image']))
-                                <div class="w-1/2">
+                                <div class="w-1/2 blog_blog">
                                     <img src="{{ asset('storage/' . $block['image']) }}"
                                          alt="{{ $block['title'] ?? '' }}"
                                          class="w-full rounded-xl object-cover">
                                 </div>
                             @endif
 
-                            <div class="w-1/2">
+                            <div class="w-1/2 blog_blog">
                                 @if (!empty($block['title']))
                                     <h2 class="text-xl font-semibold mb-2">{{ $block['title'] }}</h2>
                                 @endif
