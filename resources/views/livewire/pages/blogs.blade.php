@@ -36,8 +36,8 @@
                                     {{ \Illuminate\Support\Str::limit($blog->meta_description, 120) }}
                                 </p>
                                 <span class="blogs-article__date">
-                            {{ \Carbon\Carbon::parse($blog->updated_at)->translatedFormat('d F Y') }}
-                            <p>Читать дальше</p>
+{{--                            {{ \Carbon\Carbon::parse($blog->updated_at)->translatedFormat('d F Y') }}--}}
+                            Читать дальше...
                         </span>
                             </div>
                         </article>
