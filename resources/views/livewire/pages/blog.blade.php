@@ -41,7 +41,7 @@
                     @endforeach
                 @endif
                 <span class="blog__date">
-                    {{ \Carbon\Carbon::parse($page->updated_at)->translatedFormat('d F Y') }}
+{{--                    {{ \Carbon\Carbon::parse($page->updated_at)->translatedFormat('d F Y') }}--}}
                 </span>
 
                 {{-- Здесь можно вставить ссылку на следующую статью, если надо --}}
@@ -68,7 +68,7 @@
                                     {{ \Illuminate\Support\Str::limit($related->meta_description, 120) }}
                                 </p>
                                 <span class="blogs-article__date">
-                            {{ \Carbon\Carbon::parse($related->updated_at)->translatedFormat('d F Y') }}
+{{--                            {{ \Carbon\Carbon::parse($related->updated_at)->translatedFormat('d F Y') }}--}}
                         </span>
                             </div>
                         </article>
