@@ -22,6 +22,15 @@ class Warranty extends Component
                 'content_type' => 'warranty',
             ],
         ]);
-        return view('livewire.pages.warranty');
+
+        $path = public_path('serteficates'); // путь к папке
+        $files = collect(\File::files($path))
+            ->map(fn($file) => $file->getFilename());
+
+        $path = public_path('warranties'); // путь к папке
+        $warranties = collect(\File::files($path))
+            ->map(fn($file) => $file->getFilename());
+
+        return view('livewire.pages.warranty', compact('files', 'warranties'));
     }
 }

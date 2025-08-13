@@ -3,46 +3,84 @@
 @endpush
 
 <section class="warranty max-w-screen-2xl mx-auto">
-    <div class="warranty__content">
-        <div class="container">
-            <div class="warranty__content">
-                <h1 class="warranty__title">Гарантия качества от Europol</h1>
-                <p class="warranty__descr">
-                    Мы уверены в своей продукции и предоставляем официальную гарантию на все напольные покрытия.
-                </p>
-            </div>
-            <img src="{{ asset('img/warranty-1.png') }}" alt="О нас" class="warranty__img"/>
+{{--    <div class="warranty__content">--}}
+{{--        <div class="container">--}}
+{{--            <div class="warranty__content">--}}
+{{--                <h1 class="warranty__title">Гарантия качества от Europol</h1>--}}
+{{--                <p class="warranty__descr">--}}
+{{--                    Мы уверены в своей продукции и предоставляем официальную гарантию на все напольные покрытия.--}}
+{{--                </p>--}}
+{{--            </div>--}}
+{{--            <img src="{{ asset('img/warranty-1.png') }}" alt="О нас" class="warranty__img"/>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="warranty__services warranty-services">--}}
+{{--        <div class="container">--}}
+{{--            <div class="warranty-services__card">--}}
+{{--                <img src="{{ asset('img/warranty-2.png') }}" alt="О нас"/>--}}
+{{--                <div class="warranty-services__txt">--}}
+{{--                    <h3 class="warranty-services__subtitle">Укладка и монтаж</h3>--}}
+{{--                    <p class="warranty-services__descr">Профессиональная укладка всех типов покрытий</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="warranty-services__card">--}}
+{{--                <img src="{{ asset('img/warranty-3.png') }}" alt="О нас"/>--}}
+{{--                <div class="warranty-services__txt">--}}
+{{--                    <h3 class="warranty-services__subtitle">Укладка и монтаж</h3>--}}
+{{--                    <p class="warranty-services__descr">Профессиональная укладка всех типов покрытий</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="warranty-services__card">--}}
+{{--                <img src="{{ asset('img/warranty-4.png') }}" alt="О нас"/>--}}
+{{--                <div class="warranty-services__txt">--}}
+{{--                    <h3 class="warranty-services__subtitle">Укладка и монтаж</h3>--}}
+{{--                    <p class="warranty-services__descr">Профессиональная укладка всех типов покрытий</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="warranty-services__card">--}}
+{{--                <img src="{{ asset('img/warranty-5.png') }}" alt="О нас"/>--}}
+{{--                <div class="warranty-services__txt">--}}
+{{--                    <h3 class="warranty-services__subtitle">Укладка и монтаж</h3>--}}
+{{--                    <p class="warranty-services__descr">Профессиональная укладка всех типов покрытий</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+    <div class="certs">
+        <h2 class="warranty-contact__title" style="color: white;">Наши сертификаты</h2>
+
+        <div class="certs__grid">
+            @foreach($files as $file)
+                @php
+                    $name = pathinfo($file, PATHINFO_FILENAME);
+                    $pretty = str_replace('_', ' ', $name);
+                    $url = asset('serteficates/' . $file);
+                @endphp
+                @if(strpos($url,'.png')==false)
+                    <article class="cert">
+                        <h3 class="cert__name" title="{{ $pretty }}">{{ $pretty }}</h3>
+
+                        <div class="cert__preview">
+                            <img src="{{asset('serteficates/'.$name.'.png')}}" alt="">
+                        </div>
+
+                        <div class="cert__actions">
+                            <a class="cert__download" href="{{ $url }}" download>скачать</a>
+                        </div>
+                    </article>
+                @endif
+            @endforeach
         </div>
     </div>
-    <div class="warranty__services warranty-services">
-        <div class="container">
-            <div class="warranty-services__card">
-                <img src="{{ asset('img/warranty-2.png') }}" alt="О нас"/>
-                <div class="warranty-services__txt">
-                    <h3 class="warranty-services__subtitle">Укладка и монтаж</h3>
-                    <p class="warranty-services__descr">Профессиональная укладка всех типов покрытий</p>
-                </div>
-            </div>
-            <div class="warranty-services__card">
-                <img src="{{ asset('img/warranty-3.png') }}" alt="О нас"/>
-                <div class="warranty-services__txt">
-                    <h3 class="warranty-services__subtitle">Укладка и монтаж</h3>
-                    <p class="warranty-services__descr">Профессиональная укладка всех типов покрытий</p>
-                </div>
-            </div>
-            <div class="warranty-services__card">
-                <img src="{{ asset('img/warranty-4.png') }}" alt="О нас"/>
-                <div class="warranty-services__txt">
-                    <h3 class="warranty-services__subtitle">Укладка и монтаж</h3>
-                    <p class="warranty-services__descr">Профессиональная укладка всех типов покрытий</p>
-                </div>
-            </div>
-            <div class="warranty-services__card">
-                <img src="{{ asset('img/warranty-5.png') }}" alt="О нас"/>
-                <div class="warranty-services__txt">
-                    <h3 class="warranty-services__subtitle">Укладка и монтаж</h3>
-                    <p class="warranty-services__descr">Профессиональная укладка всех типов покрытий</p>
-                </div>
+    <div class="w-full max-w-md hidden_type">
+        <h2 class="warranty-contact__title" style="color: white;">Знаки качества</h2>
+        <div class="swiper category-slider" style="padding-bottom: 30px; overflow: visible;">
+            <div class="swiper-wrapper">
+                @foreach($warranties as $file)
+                        <div class="swiper-slide category_list" style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <img src="{{asset('warranties/'. $file)}}" alt="" style="position: relative; width: 100%; bottom: 0;">
+                        </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -124,7 +162,7 @@
             </div>
         </div>
     </div>
-    <h2 class="warranty-contact__title">Не нашли ответа? Напишите нам — мы поможем!</h2>
+    <h2 class="warranty-contact__title" style="color: white;">Не нашли ответа? Напишите нам — мы поможем!</h2>
     <div class="flex justify-center">
         @livewire('contact-form')
     </div>
@@ -143,5 +181,18 @@
                 answer.style.maxHeight = answer.scrollHeight + 20 + "px";
             }
         });
+    });
+    new Swiper('.category-slider', {
+        slidesPerView: 7,
+        freeMode: true,
+        grabCursor: true,
+
+        spaceBetween: 20,
+        scrollbar: {},
+        breakpoints: {
+            320: {slidesPerView: 2.7, slidesOffsetAfter: 50},
+            640: {slidesPerView: 3, slidesOffsetAfter: 100},
+            1024: {slidesPerView: 7, slidesOffsetAfter: 150}
+        }
     });
 </script>
