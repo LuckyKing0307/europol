@@ -2539,6 +2539,7 @@ article{
         display: flex;
         justify-content: center;
         padding: 10px;
+        text-align: center;
     }
     .category-slider{
         overflow: hidden !important;
