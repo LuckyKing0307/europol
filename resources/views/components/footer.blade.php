@@ -17,7 +17,7 @@
                 <a href="{{route('about.view')}}" class="footer__link">О компании</a>
                 <a href="{{route('work.view')}}" class="footer__link">Проекты</a>
                 <a href="{{route('blogs.view')}}" class="footer__link">Блог</a>
-                <a href="{{route('warranty.view')}}" class="footer__link">Гарантия</a>
+                <a href="{{route('warranty.view')}}" class="footer__link">Сертификаты</a>
             </div>
         </div>
         <!-- Контакты -->
@@ -26,7 +26,7 @@
             <ul class="footer__contacts-list">
                 <li><span class="footer__icon">📍</span> г. Ташкент, Яккасарайский р-н ул. Кичик халка Йули, 88 (Ориентир-Корзинка Аэропорт)</li>
                 <li><span class="footer__icon">📞</span> <a href="tel:+998555100102">+998 (55) 510-01-02</a> </li>
-                <li><span class="footer__icon">✉️</span> info@europol.uz</li>
+                <li><span class="footer__icon">✉️</span> <a href="mailto:info@europol.uz">info@europol.uz</a> </li>
             </ul>
             <div class="footer__socials">
                 <!-- Вставь svg или иконки, если нужны другие, поменяй тут -->

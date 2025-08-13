@@ -146,6 +146,11 @@
 <main id="fullpage">
     {{ $slot }}
 </main>
+<div >
+    <a href="https://t.me/europol_uzbekistan" class="telegram" target="_blank">
+        <img src="{{asset('img/telegram.svg')}}" alt="Telegram">
+    </a>
+</div>
 <div id="customChatButton">
     <img class="chat-avatar" src="{{asset('images/manager.webp')}}" alt="Тимур">
     <div class="chat-info">
