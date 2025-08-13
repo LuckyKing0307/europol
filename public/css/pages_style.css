@@ -170,7 +170,7 @@ img {
 	border-radius: 10px;
 	font-size: 16px;
 	background: url("../img/search.svg") no-repeat right 12px center / 20px 20px;
-    color: white;
+    color: black;
 }
 
 .blogs-tabs__list {
@@ -235,7 +235,7 @@ img {
 }
 
 .blogs-article__title {
-	font-size: 24px;
+	font-size: 18px;
 	font-weight: 700;
 	color: #fff;
 	margin-bottom: 10px;

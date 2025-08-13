@@ -37,6 +37,7 @@
                                 </p>
                                 <span class="blogs-article__date">
                             {{ \Carbon\Carbon::parse($blog->updated_at)->translatedFormat('d F Y') }}
+                            <p>Читать дальше</p>
                         </span>
                             </div>
                         </article>

@@ -13,7 +13,7 @@
             @endif
 
             <div class="blog__content">
-                <div class="text-sm">{!! $page->content !!}</div>
+                <div class="text-xl" style="color: white;">{!! $page->content !!}</div>
             @if (!empty(json_decode($page->content_blocks,1)))
                     @foreach (json_decode($page->content_blocks,1) as $block)
                         <div class="flex md:flex-row gap-6 my-10 {{ $block['image_position'] === 'left' ? 'md:flex-row-reverse' : '' }}">
