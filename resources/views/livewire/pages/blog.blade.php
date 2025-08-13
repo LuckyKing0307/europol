@@ -21,7 +21,7 @@
                                 <div class="w-1/2 blog_blog">
                                     <img src="{{ asset('storage/' . $block['image']) }}"
                                          alt="{{ $block['title'] ?? '' }}"
-                                         class="w-full rounded-xl object-cover">
+                                         class="w-full rounded-xl object-cover" loading="lazy">
                                 </div>
                             @endif
 
