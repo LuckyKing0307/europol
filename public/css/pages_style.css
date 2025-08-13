@@ -204,9 +204,11 @@ img {
 }
 
 .blogs__list {
+    width: 80%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 40px;
+    margin: 0 auto;
 	margin-bottom: 48px;
 }
 
