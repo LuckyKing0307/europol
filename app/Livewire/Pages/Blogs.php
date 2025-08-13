@@ -14,7 +14,7 @@ class Blogs extends Component
 
     #[Url]
     public string $search = '';
-    public string $category = 'ламинат';
+    public string $category = '';
 
     public $queryString = ['category', 'search', 'page'];
 
