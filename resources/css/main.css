@@ -2113,13 +2113,13 @@ article{
 }
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 0 0 rgba(219, 184, 117, 0.7);
     }
     70% {
-        box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 15px rgba(219, 184, 117, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(219, 184, 117, 0);
     }
 }
 .telegram img{
