@@ -2418,7 +2418,9 @@ article{
         color: #717171;
     }
     .telegram{
-        display: none;
+        right: 20px;
+        bottom: 65px;
+        left: auto;
     }
     .rounded-full{
         margin: 0;
