@@ -2110,8 +2110,12 @@ article{
     align-items: center;
     border-radius: 50%;
     z-index: 99999;
-    background: #000;
     animation: pulse 1.5s infinite;
+    border: 2px solid black;
+    background: white;
+}
+.telegram img{
+    width: 100%;
 }
 @keyframes pulse {
     0% {
