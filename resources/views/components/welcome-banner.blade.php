@@ -36,7 +36,7 @@
                     sourceWebm.type = "video/webm";
 
                     const sourceMp4 = document.createElement("source");
-                    sourceMp4.src = "{{ asset('img/pre-view-video.webm') }}";
+                    sourceMp4.src = "{{ asset('img/pre-view-test.mp4') }}";
                     sourceMp4.type = "video/mp4";
 
                     video.appendChild(sourceWebm);
