@@ -2103,6 +2103,7 @@ article{
     left: 20px;
 }
 .telegram {
+    padding: 10px;
     width: 50px;
     height: 50px;
     display: flex;
@@ -2127,10 +2128,6 @@ article{
     100% {
         box-shadow: 0 0 0 0 rgba(219, 184, 117, 0);
     }
-}
-.telegram img{
-    width: 50px;
-    height: 50px;
 }
 .mob_logo{
     display: none;
@@ -2423,11 +2420,13 @@ article{
         font-size: 14px;
         color: #717171;
     }
-    .telegram{
+    .btns_contacts{
         right: 0px;
         bottom: 65px;
+        display: flex;
         width: 25px;
         height: 25px;
+        padding: 0;
         left: auto;
     }
     .rounded-full{
