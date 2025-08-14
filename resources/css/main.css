@@ -2421,13 +2421,17 @@ article{
         color: #717171;
     }
     .btns_contacts{
+        width: 50px;
+        height: 25px;
         right: 0px;
         bottom: 65px;
         display: flex;
-        width: 25px;
-        height: 25px;
         padding: 0;
         left: auto;
+    }
+    .telegram{
+        height: 25px;
+        width: 25px;
     }
     .rounded-full{
         margin: 0;
