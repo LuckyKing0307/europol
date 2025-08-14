@@ -39,7 +39,8 @@
         "meilisearch/meilisearch-php": "^1.13",
         "predis/predis": "^2.2",
         "pusher/pusher-php-server": "^7.2",
-        "sentry/sentry-laravel": "^4.15"
+        "sentry/sentry-laravel": "^4.15",
+        "spatie/laravel-sitemap": "^7.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
