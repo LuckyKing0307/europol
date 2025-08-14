@@ -13,6 +13,6 @@ class CategoriesComponent extends Component
     }
     public function getCollectionsProperty()
     {
-        return Collection::with(['defaultUrl'])->get()->toTree();
+        return Collection::with(['defaultUrl'])->get();
     }
 }
