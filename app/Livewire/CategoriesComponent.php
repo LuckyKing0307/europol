@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 use Lunar\Models\Collection;
 
@@ -13,6 +14,10 @@ class CategoriesComponent extends Component
     }
     public function getCollectionsProperty()
     {
-        return Collection::with(['defaultUrl'])->get();
+        $cacheKey = 'collections_comp';
+        return Cache::remember($cacheKey, now()->addDay(), function () {
+            $coll = Collection::with(['defaultUrl'])->whereNull('parent_id')->get();
+            return $coll;
+        });
     }
 }
