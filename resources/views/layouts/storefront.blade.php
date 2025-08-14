@@ -18,28 +18,11 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
-
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css"></noscript>
-
     <link rel="preload" href="https://unpkg.com/beerslider/dist/BeerSlider.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://unpkg.com/beerslider/dist/BeerSlider.css"></noscript>
-
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css"></noscript>
-
     @stack('page-styles')
     @livewireStyles
-
-    <style>
-        /* Лёгкий «мягкий» лоадер, который НЕ блокирует LCP */
-        #loader { position: fixed; inset: 0; display: grid; place-items: center; background: #0b0b0b; z-index: 50; transition: opacity .3s ease; }
-        #loader.hidden { opacity: 0; pointer-events: none; }
-        .logo-wrapper { width: 180px; max-width: 40vw; }
-        /* Пример: сразу скрыт — покажем только если страница реально долго грузится */
-        html:not(.show-loader) #loader { display: none; }
-    </style>
 </head>
 
 <body class="antialiased text-gray-900">
@@ -60,11 +43,11 @@
 </div>
 
 {{-- Кастомная кнопка AmoCRM --}}
-<div id="customChatButton" style="display:flex;align-items:center;gap:.5rem;position:fixed;right:20px;bottom:20px;z-index:40;cursor:pointer">
-    <img class="chat-avatar" src="{{ asset('images/manager.webp') }}" alt="Тимур" width="56" height="56" loading="lazy" decoding="async" style="border-radius:50%">
+<div id="customChatButton">
+    <img class="chat-avatar" src="{{ asset('images/manager.webp') }}" alt="Тимур" width="56" height="56" loading="lazy" decoding="async">
     <div class="chat-info">
-        <div class="chat-name" style="font-weight:600;">Тимур</div>
-        <div class="chat-role" style="opacity:.7;">Консультант</div>
+        <div class="chat-name">Тимур</div>
+        <div class="chat-role">Консультант</div>
     </div>
 </div>
 

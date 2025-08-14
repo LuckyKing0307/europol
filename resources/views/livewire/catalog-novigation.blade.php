@@ -12,7 +12,7 @@
 {{--                                    {{ $collection->translateAttribute('name') }}--}}
 {{--                                </p>--}}
                                 <img src="{{ $collection->getFirstMediaUrl('images') }}"
-                                     alt="{{ $collection->translate('name') }}" style="width: 100%;height: 100%;">
+                                     alt="{{ $collection->translate('name') }}" loading="lazy" style="width: 100%;height: 100%;">
                             </a>
                             @endif
                         @endforeach
