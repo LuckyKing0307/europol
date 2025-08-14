@@ -13,16 +13,10 @@
     <meta property="og:description" content="Европейские напольные покрытия. 1000+ товаров в наличии. Гарантия до 35 лет." />
 
     <link rel="icon" href="{{ asset('icon.svg') }}" />
-
-    {{-- Подключи всё своё через Vite (желательно перенести Swiper/fullPage/noUiSlider в app.js) --}}
     @vite(['resources/css/app.css','resources/css/app_main.css','resources/css/main.css','resources/js/app.js'])
-
-    {{-- Preconnect к CDN (на случай если оставим CDN для плагинов/шрифтов) --}}
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://unpkg.com" />
-
-    {{-- Если всё же используем CSS плагинов из CDN — подключаем корректно (с фолбэком noscript) --}}
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
 
@@ -104,7 +98,6 @@
             });
         }
         if (document.querySelector('.beer-slider')) {
-            await loadScript('https://unpkg.com/beerslider/dist/BeerSlider.js', {defer:true});
             document.querySelectorAll('.beer-slider').forEach(el => new BeerSlider(el));
         }
     });

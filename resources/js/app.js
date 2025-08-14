@@ -2,15 +2,15 @@
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'nouislider/dist/nouislider.css';
 
 import Swiper from 'swiper/bundle';
-import noUiSlider from 'nouislider';
 import BeerSlider from 'beerslider';
 import Pusher from 'pusher-js';
 import Echo from 'laravel-echo';
 
 window.Swiper = Swiper;
-window.noUiSlider = noUiSlider;
+window.noUiSlider = NoSlider;
 window.BeerSlider = BeerSlider;
 
 window.Pusher = Pusher;
