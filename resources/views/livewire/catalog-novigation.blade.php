@@ -12,7 +12,7 @@
                                             $isFirst = $loop->first;
                                         @endphp
 
-                                        <a class="swiper-slide catalog_list" href="{{ route('collection.view', $collection->defaultUrl->slug) }}">
+                                        <a class="swiper-slide catalog_list" style="padding: 0;" href="{{ route('collection.view', $collection->defaultUrl->slug) }}">
                                             <img
                                                 src="{{ $img }}"
                                                 alt="{{ $collection->translateAttribute('name') }}"
@@ -23,7 +23,7 @@
                                                     loading="lazy"
                                                 @endif
                                                 decoding="async"
-                                                style="width:100%;height:auto;aspect-ratio: 4/3;object-fit:cover;"
+                                                style="width:100%;height:auto;aspect-ratio: 4/4;object-fit:cover;"
                                             >
                                         </a>
                                     @endif
