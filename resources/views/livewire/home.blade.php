@@ -1,7 +1,7 @@
 <div>
     @livewire('components.pop-up')
     <x-welcome-banner />
-    @livewire('categories-component')
+    <livewire:categories-component lazy=""/>
 {{--    @livewire('top-sales')--}}
     <section class="mx-auto max-w-screen-xl content_block">
         <div class="block_title" style="text-align: center;">{{ __('why_choose_us.title') }}</div>
@@ -40,8 +40,8 @@
             </div>
         </div>
     </section>
-    @livewire('before-after-component')
-    @livewire('components.review')
+    <livewire:before-after-component lazy="" />
+    <livewire:components.review lazy="" />
 {{--    <section class="wave-block">--}}
 {{--        <div class="wave-block-content">--}}
 {{--            <section class="mx-auto max-w-screen-2xl flex justify-between">--}}
