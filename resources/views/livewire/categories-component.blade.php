@@ -45,20 +45,23 @@
 {{--        </div>--}}
 {{--    </div>--}}
 </div>
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.Swiper) {
+                new Swiper('.category-slider', {
+                    slidesPerView: 7,
+                    freeMode: true,
+                    grabCursor: true,
+                    spaceBetween: 20,
+                    breakpoints: {
+                        320:  { slidesPerView: 2.7, slidesOffsetAfter: 50 },
+                        640:  { slidesPerView: 3,   slidesOffsetAfter: 100 },
+                        1024: { slidesPerView: 7,   slidesOffsetAfter: 150 },
+                    }
+                });
+            }
+        });
+    </script>
+@endpush
 
-<script>
-    new Swiper('.category-slider', {
-        slidesPerView: 7,
-        freeMode: true,
-        grabCursor: true,
-
-        spaceBetween: 20,
-        scrollbar: {
-        },
-        breakpoints: {
-            320: {slidesPerView: 2.7, slidesOffsetAfter: 50},
-            640: {slidesPerView: 3, slidesOffsetAfter: 100},
-            1024: {slidesPerView: 7, slidesOffsetAfter: 150}
-        }
-    });
-</script>
