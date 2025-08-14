@@ -6,77 +6,68 @@
                 <!-- Обёртка Swiper -->
                 <div class="swiper category-slider" style="padding-bottom: 30px; overflow: visible;">
                     <div class="swiper-wrapper">
-                        @foreach ($this->collections as $collection)
-                            @if ($collection->id >= 53)
-                                @php
-                                    $img = $collection->getFirstMediaUrl('images');
-                                    $isFirst = $loop->first;
-                                @endphp
-
-                                <a class="swiper-slide catalog_list" style="padding: 0;"
-                                   href="{{ route('collection.view', $collection->defaultUrl->slug) }}">
-                                    <img
-                                        src="{{ $img }}"
-                                        alt="{{ $collection->translateAttribute('name') }}"
-                                        @if($isFirst)
-                                            fetchpriority="high"
-                                        loading="eager"
-                                        @else
-                                            loading="lazy"
-                                        @endif
-                                        decoding="async"
-                                        style="width:100%;height:auto;aspect-ratio: 4/4;object-fit:cover;"
-                                    >
-                                </a>
-                                <a class="swiper-slide category_list" style="background: none; border:none;"
-                                   href="{{ route('collection.view', $root->defaultUrl->slug) }}">
-                                    <img src="{{$root->getFirstMediaUrl('images')}}"
-                                         alt="{{$root->translateAttribute('name')}}"
-                                         @if($isFirst)
-                                             fetchpriority="high"
-                                         loading="eager"
-                                         @else
-                                             loading="lazy"
-                                         @endif
-                                         decoding="async"
-                                    >
+                        @foreach ($this->collections as $root)
+                            @if($root->id>=53)
+                                <a class="swiper-slide category_list" style="background: none; border:none;"  href="{{ route('collection.view', $root->defaultUrl->slug) }}">
+{{--                                    <h3 class="category-title">{{ $root->translateAttribute('name') }}</h3>--}}
+                                    <img src="{{$root->getFirstMediaUrl('images')}}" alt="">
                                 </a>
                             @endif
+                                @foreach ($this->collections as $root)
+                                    @if ($root->id >= 53)
+                                        @php
+                                            $img = $root->getFirstMediaUrl('images');
+                                            $isFirst = $loop->first;
+                                        @endphp
+                                        <a class="swiper-slide category_list" style="background: none; border:none;"  href="{{ route('collection.view', $root->defaultUrl->slug) }}">
+                                            <img src="{{$root->getFirstMediaUrl('images')}}" alt="{{$root->translateAttribute('name')}}"
+
+                                                 @if($isFirst)
+                                                     fetchpriority="high"
+                                                 loading="eager"
+                                                 @else
+                                                     loading="lazy"
+                                                @endif
+                                                 decoding="async"
+                                            >
+                                        </a>
+                                    @endif
+                                @endforeach
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {{--    <div class="prices">--}}
-    {{--        <div class="price">--}}
-    {{--            <div class="price_content">--}}
-    {{--                <h4 class="price_title">17 000+</h4>--}}
-    {{--                <p class="price_text">счастливых клиентов по всему Узбекистану</p>--}}
-    {{--            </div>--}}
-    {{--            <div class="price_content">--}}
-    {{--                <h4 class="price_title">110+</h4>--}}
-    {{--                <p class="price_text">Сотрудников производства</p>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--        <div class="price">--}}
-    {{--            <div class="price_content">--}}
-    {{--                <h4 class="price_title">1100m+</h4>--}}
-    {{--                <p class="price_text">Производственная площадь</p>--}}
-    {{--            </div>--}}
-    {{--            <div class="price_content">--}}
-    {{--                <h4 class="price_title">15+</h4>--}}
-    {{--                <p class="price_text">Годы рабочего стажа</p>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--        <div class="grade">--}}
-    {{--            <img src="{{asset('img/cuboc.svg')}}" alt="Кубок">--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
+{{--    <div class="prices">--}}
+{{--        <div class="price">--}}
+{{--            <div class="price_content">--}}
+{{--                <h4 class="price_title">17 000+</h4>--}}
+{{--                <p class="price_text">счастливых клиентов по всему Узбекистану</p>--}}
+{{--            </div>--}}
+{{--            <div class="price_content">--}}
+{{--                <h4 class="price_title">110+</h4>--}}
+{{--                <p class="price_text">Сотрудников производства</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="price">--}}
+{{--            <div class="price_content">--}}
+{{--                <h4 class="price_title">1100m+</h4>--}}
+{{--                <p class="price_text">Производственная площадь</p>--}}
+{{--            </div>--}}
+{{--            <div class="price_content">--}}
+{{--                <h4 class="price_title">15+</h4>--}}
+{{--                <p class="price_text">Годы рабочего стажа</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="grade">--}}
+{{--            <img src="{{asset('img/cuboc.svg')}}" alt="Кубок">--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </div>
 @push('scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             if (window.Swiper) {
                 new Swiper('.category-slider', {
                     slidesPerView: 7,
@@ -84,9 +75,9 @@
                     grabCursor: true,
                     spaceBetween: 20,
                     breakpoints: {
-                        320: {slidesPerView: 2.7, slidesOffsetAfter: 50},
-                        640: {slidesPerView: 3, slidesOffsetAfter: 100},
-                        1024: {slidesPerView: 7, slidesOffsetAfter: 150},
+                        320:  { slidesPerView: 2.7, slidesOffsetAfter: 50 },
+                        640:  { slidesPerView: 3,   slidesOffsetAfter: 100 },
+                        1024: { slidesPerView: 7,   slidesOffsetAfter: 150 },
                     }
                 });
             }
