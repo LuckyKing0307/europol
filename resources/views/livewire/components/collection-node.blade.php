@@ -6,7 +6,7 @@
 >
     <img src="{{ $node['brand'] ? $node['brand']->getFirstMediaUrl('images') : $node->getFirstMediaUrl('images') }}"
          alt="{{ $node['brand'] ? $node['brand']->name : $node->translateAttribute('name') }}"
-         class="w-8 h-8 rounded object-cover" loading="lazy">
+         class="w-8 object-cover" loading="lazy">
 
     <a href="{{ $node['brand'] ? route('collection.view').'?brand='.$node['brand']->id : route('collection.view',$node->defaultUrl?->slug)}}"
        class="text-sm font-medium">{{ $node['brand'] ? $node['brand']->name : $node->translateAttribute('name')}}</a>
