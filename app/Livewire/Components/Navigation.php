@@ -32,6 +32,7 @@ class Navigation extends Component
         return Cache::remember($cacheKey, now()->addDay(), function () {
             $coll = Collection::with(['defaultUrl'])->whereNull('parent_id')->get()->map(function ($collection) {
                 $collection->brands = $collection->getBrands(); // добавляем свойство brands
+                $collection->img = $collection->getFirstMediaUrl('images'); // добавляем свойство brands
                 return $collection;
             });
             return $coll;
