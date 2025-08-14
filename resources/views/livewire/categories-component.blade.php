@@ -10,7 +10,9 @@
                             @if ($root->id >= 53)
                                 @php
                                     $img = $root->img;
-                                    $isFirst = $loop->first;
+                                    if($root->id==53){
+                                        $isFirst = $root;
+                                    }
                                 @endphp
                                 <a class="swiper-slide category_list" style="background: none; border:none;"
                                    href="{{ route('collection.view', $root->defaultUrl->slug) }}">
