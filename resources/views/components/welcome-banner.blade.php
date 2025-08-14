@@ -3,26 +3,52 @@
     <x-collection-sale />
 </section>
 
-
 @push('scripts')
     <script>
-        const catalog = document.querySelector(".pre-loader");
+        document.addEventListener("DOMContentLoaded", () => {
+            const catalog = document.querySelector(".pre-loader");
+            if (!catalog) return;
 
-        const video = document.createElement("video");
-        video.src = "{{ asset('img/pre-view.mp4') }}";
-        video.poster = "{{ asset('img/pre-view.webp') }}";
-        video.autoplay = true;
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true; // для iOS
-        video.classList.add("bg-video");
+            const video = document.createElement("video");
+            video.poster = "{{ asset('img/pre-view.webp') }}"; // моментально загружаемый постер
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.preload = "none"; // не загружаем видео до вызова
+            video.classList.add("bg-video");
 
-        catalog.prepend(video);
-        const header = document.querySelector('header');
+            catalog.prepend(video);
 
-        if (header) {
-            const headerHeight = header.offsetHeight;
-            catalog.style.minHeight = `calc(100vh - ${headerHeight}px)`;
-        }
+            // подгон высоты
+            const header = document.querySelector('header');
+            if (header) {
+                const headerHeight = header.offsetHeight;
+                catalog.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+            }
+
+            // Ленивая загрузка видео
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    // создаём источники для webm и mp4
+                    const sourceWebm = document.createElement("source");
+                    sourceWebm.src = "{{ asset('img/pre-view.webm') }}";
+                    sourceWebm.type = "video/webm";
+
+                    const sourceMp4 = document.createElement("source");
+                    sourceMp4.src = "{{ asset('img/pre-view.mp4') }}";
+                    sourceMp4.type = "video/mp4";
+
+                    video.appendChild(sourceWebm);
+                    video.appendChild(sourceMp4);
+
+                    video.load();
+                    video.play();
+                    observer.disconnect();
+                }
+            }, { rootMargin: "200px" }); // начинаем подгружать чуть раньше
+
+            observer.observe(catalog);
+        });
     </script>
 @endpush
