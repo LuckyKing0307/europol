@@ -28,11 +28,10 @@ class Navigation extends Component
      */
     public function getCollectionsProperty()
     {
-        $cacheKey = 'brand_collections_1';
+        $cacheKey = 'brand_collections';
         return Cache::remember($cacheKey, now()->addDay(), function () {
             $coll = Collection::with(['defaultUrl'])->whereNull('parent_id')->get()->map(function ($collection) {
-                $collection->brands = $collection->getBrands();
-                $collection->img = $collection->getFirstMediaUrl('images');
+                $collection->brands = $collection->getBrands(); // добавляем свойство brands
                 return $collection;
             });
             return $coll;
