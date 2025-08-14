@@ -836,6 +836,94 @@ img {
 .form_req{
     width: 50%;
 }
+.works {
+    padding: 40px 0;
+    background: #0f0f0f;
+    color: #fff;
+}
+
+.works__container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.works__title {
+    font-size: clamp(20px, 2.4vw, 34px);
+    font-weight: 800;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+/* Сетка карточек проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+}
+
+/* Карточка проекта */
+.project-card {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+}
+.projects_photos{
+    display: flex;
+}
+/* Основная картинка */
+.project-main {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.project-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.project-card:hover .project-main img {
+    transform: scale(1.03);
+}
+
+/* Маленькие превью */
+.project-thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+}
+.project-thumbs img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.25s ease;
+}
+.project-thumbs img:hover {
+    transform: scale(1.05);
+}
+
+/* Название проекта */
+.project-title {
+    margin-top: auto;
+    font-size: 27px;
+    color: white;
+    font-weight: 600;
+    padding-top: 6px;
+}
 @media screen and (max-width: 1024px) {
 	.blogs__list {
 		grid-template-columns: repeat(2, 1fr);
