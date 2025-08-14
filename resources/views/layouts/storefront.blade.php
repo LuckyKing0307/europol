@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <title>@yield('title', 'Europol | Ламинат Паркет Ковролин')</title>
-    <meta name="title" content="@yield('title', config('app.name'))" />
-    <meta name="description" content="@yield('description', 'Европейские напольные покрытия. Паркет, ламинат, ковролин, ПВХ/SPC, плинтусы, клеи. 1000+ товаров в наличии. Гарантия до 35 лет. С 2007 в Узбекистане.')" />
+    <meta name="title" content="@yield('title', 'Europol — Ламинат, паркет и ковролин в Ташкенте, Узбекистан')" />
+    <meta name="description" content='@yield("description", "Европейские напольные покрытия. Паркет, ламинат, ковролин, ПВХ/SPC, плинтусы, клеи. 1000+ товаров в наличии. Гарантия до 35 лет. С 2007 в Узбекистане.")' />
 
     <meta property="og:site_name" content="Europol" />
     <meta property="og:title" content="@yield('title', 'Europol | Ламинат Паркет Ковролин')" />
-    <meta property="og:description" content="Европейские напольные покрытия. 1000+ товаров в наличии. Гарантия до 35 лет." />
+    <meta property="og:description" content='@yield("description", "Европейские напольные покрытия. Паркет, ламинат, ковролин, ПВХ/SPC, плинтусы, клеи. 1000+ товаров в наличии. Гарантия до 35 лет. С 2007 в Узбекистане.")' />
 
     <link rel="icon" href="{{ asset('icon.svg') }}" />
     @vite(['resources/css/app.css','resources/css/app_main.css','resources/css/main.css','resources/js/app.js'])
