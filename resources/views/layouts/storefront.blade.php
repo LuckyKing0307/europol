@@ -147,7 +147,7 @@
     {{ $slot }}
 </main>
 <div class="btns_contacts">
-    <a href="https://t.me/europol_uzbekistan" class="telegram" target="_blank">
+    <a href="tel:+998901234567" class="telegram" target="_blank">
         <img src="{{asset('img/contac_phone.png')}}" alt="Telegram">
     </a>
     <a href="https://t.me/europol_uzbekistan" class="telegram" target="_blank">
