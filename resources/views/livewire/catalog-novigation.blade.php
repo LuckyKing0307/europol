@@ -7,12 +7,12 @@
                     <div class="swiper-wrapper">
                         @foreach ($this->collections as $collection)
                             @if($collection->id>=53)
-                            <a class="swiper-slide catalog_list"  href="{{ route('collection.view', $collection->defaultUrl->slug) }}">
-                                <p class="text-sm font-medium">
-                                    {{ $collection->translateAttribute('name') }}
-                                </p>
+                            <a class="swiper-slide catalog_list"  style="padding: 0;" href="{{ route('collection.view', $collection->defaultUrl->slug) }}">
+{{--                                <p class="text-sm font-medium">--}}
+{{--                                    {{ $collection->translateAttribute('name') }}--}}
+{{--                                </p>--}}
                                 <img src="{{ $collection->getFirstMediaUrl('images') }}"
-                                     alt="{{ $collection->translate('name') }}">
+                                     alt="{{ $collection->translate('name') }}" style="width: 100%;height: 100%;">
                             </a>
                             @endif
                         @endforeach
