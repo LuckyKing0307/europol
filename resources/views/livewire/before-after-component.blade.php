@@ -16,9 +16,12 @@
     </div>
 </div>
 @push('scripts')
-    <script src="https://unpkg.com/beerslider/dist/BeerSlider.js"></script>
     <script>
-        new BeerSlider(document.getElementById('floor-compare'), { start: 75 });
+
+        document.addEventListener('swiper-catalogs', function () {
+            new BeerSlider(document.getElementById('floor-compare'), { start: 75 });
+        });
     </script>
+
 @endpush
 
