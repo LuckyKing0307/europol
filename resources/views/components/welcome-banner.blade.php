@@ -10,7 +10,7 @@
 
         const video = document.createElement("video");
         video.src = "{{ asset('img/pre-view.mp4') }}";
-        video.poster = "{{ asset('img/pre-view.png') }}";
+        video.poster = "{{ asset('img/pre-view.webp') }}";
         video.autoplay = true;
         video.muted = true;
         video.loop = true;
