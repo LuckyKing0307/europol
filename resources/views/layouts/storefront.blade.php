@@ -146,7 +146,10 @@
 <main id="fullpage">
     {{ $slot }}
 </main>
-<div >
+<div class="btns_contacts">
+    <a href="https://t.me/europol_uzbekistan" class="telegram" target="_blank">
+        <img src="{{asset('img/contac_phone.png')}}" alt="Telegram">
+    </a>
     <a href="https://t.me/europol_uzbekistan" class="telegram" target="_blank">
         <img src="{{asset('img/telegram.svg')}}" alt="Telegram">
     </a>
