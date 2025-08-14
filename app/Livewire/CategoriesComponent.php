@@ -14,9 +14,12 @@ class CategoriesComponent extends Component
     }
     public function getCollectionsProperty()
     {
-        $cacheKey = 'collections_comp';
+        $cacheKey = 'brand_collections';
         return Cache::remember($cacheKey, now()->addDay(), function () {
-            $coll = Collection::with(['defaultUrl'])->whereNull('parent_id')->get();
+            $coll = Collection::with(['defaultUrl'])->whereNull('parent_id')->get()->map(function ($collection) {
+                $collection->img = $collection->getFirstMediaUrl('images'); // добавляем свойство brands
+                return $collection;
+            });
             return $coll;
         });
     }

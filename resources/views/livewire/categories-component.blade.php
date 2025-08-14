@@ -9,7 +9,7 @@
                         @foreach ($this->collections as $root)
                             @if ($root->id >= 53)
                                 @php
-                                    $img = $root->getFirstMediaUrl('images');
+                                    $img = $root->img;
                                     $isFirst = $loop->first;
                                 @endphp
                                 <a class="swiper-slide category_list" style="background: none; border:none;"
