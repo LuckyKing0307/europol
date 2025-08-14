@@ -25,5 +25,20 @@
             @endforeach
         </ul>
     @endif
+    @if (isset($node['collections']))
+        <ul x-show="open"
+            x-cloak
+            x-transition
+            class="absolute sub_menu_data top-0 space-y-4 bg-white border border-gray-100 shadow-xl p-6"
+        >
+            @foreach ($node['collections'] as $child)
+                <livewire:components.collection-node
+                    :node="$child"
+                    :level="$level + 1"
+                    :key="'node-'.$child->id"
+                />
+            @endforeach
+        </ul>
+    @endif
 </li>
 
