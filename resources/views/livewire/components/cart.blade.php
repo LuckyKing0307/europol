@@ -10,14 +10,14 @@
         <button class="header_btn" x-on:click="linesVisible = !linesVisible">
             <span class="sr-only">Cart</span>
             <span class="place-self-center">
-                <img src="{{ asset('img/card.svg') }}" alt="">
+                <img src="{{ asset('img/card.svg') }}" alt="Корзина">
             </span>
         </button>
 
         <a class="header_btn" href="{{ route('favorites.view') }}">
             <span class="sr-only">Favorites</span>
             <span class="place-self-center">
-                <img src="{{ asset('img/like.svg') }}" alt="">
+                <img src="{{ asset('img/like.svg') }}" alt="Понравившиеся товары">
             </span>
         </a>
     </div>
