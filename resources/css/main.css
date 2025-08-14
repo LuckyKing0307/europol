@@ -2098,6 +2098,7 @@ article{
     padding: 8px 8px;
 }
 .btns_contacts{
+    z-index: 100000;
     position: fixed;
     bottom: 20px;
     left: 20px;
