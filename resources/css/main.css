@@ -2430,6 +2430,7 @@ article{
         left: auto;
     }
     .telegram{
+        padding: 5px;
         height: 25px;
         width: 25px;
     }
