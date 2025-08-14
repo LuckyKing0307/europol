@@ -32,7 +32,7 @@
                 if (entries[0].isIntersecting) {
                     // создаём источники для webm и mp4
                     const sourceWebm = document.createElement("source");
-                    sourceWebm.src = "{{ asset('img/pre-view.webm') }}";
+                    sourceWebm.src = "{{ asset('img/pre-view.webp') }}";
                     sourceWebm.type = "video/webm";
 
                     const sourceMp4 = document.createElement("source");
