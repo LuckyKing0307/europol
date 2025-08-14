@@ -4,7 +4,7 @@
     class="flex items-center gap-2 menu_li_data"  {{-- relative: якорь для absolute меню --}}
     wire:key="node-{{ $node['brand'] ? $node['brand']->id : $node->id}}"
 >
-    <img src="{{ $node['brand'] ? $node['brand']->getFirstMediaUrl('images') : $node->getFirstMediaUrl('images') }}"
+    <img src="{{ $node['brand'] ? $node['img'] : $node->getFirstMediaUrl('images') }}"
          alt="{{ $node['brand'] ? $node['brand']->name : $node->translateAttribute('name') }}"
          class="w-8 object-cover" loading="lazy">
 
