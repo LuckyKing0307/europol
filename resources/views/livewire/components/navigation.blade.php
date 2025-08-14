@@ -65,9 +65,44 @@
                         </button>
                         <ul x-on:click.away="mobileMenu = false" class="p-6 space-y-4 border border-gray-100 shadow-xl mobmenue">
                             <x-header.search class="max-w-sm mr-4"/>
-                            @foreach ($this->collections as $root)
+                            @foreach ($this->collections as $node)
                                 @if($root->id>=53)
-                                    <livewire:components.collection-node :node="$root" :level="0" :key="'node-'.$root->id" lazy=""/>
+                                    <li x-data="{ open: false }"
+                                        @mouseenter="open = true"
+                                        @mouseleave="open = false"
+                                        class="flex items-center gap-2 menu_li_data"  {{-- relative: якорь для absolute меню --}}
+                                        wire:key="node-{{ $node['brand'] ? $node['brand']->id : $node->id}}"
+                                    >
+                                        <img src="{{ $node['brand'] ? $node['img'] : $node->img }}"
+                                             alt="{{ $node['brand'] ? $node['brand']->name : $node->translateAttribute('name') }}"
+                                             class="w-8 object-cover" loading="lazy">
+
+                                        <a href="{{ $node['brand'] ? route('collection.view').'?brand='.$node['brand']->id : route('collection.view',$node->defaultUrl?->slug)}}"
+                                           class="text-sm font-medium">{{ $node['brand'] ? $node['brand']->name : $node->translateAttribute('name')}}</a>
+                                        @if (isset($node->brands))
+                                            <ul x-show="open"
+                                                x-cloak
+                                                x-transition
+                                                class="absolute sub_menu_data top-0 space-y-4 bg-white border border-gray-100 shadow-xl p-6"
+                                            >
+                                                @foreach ($node->brands as $child)
+                                                    <li x-data="{ open: false }"
+                                                        @mouseenter="open = true"
+                                                        @mouseleave="open = false"
+                                                        class="flex items-center gap-2 menu_li_data"  {{-- relative: якорь для absolute меню --}}
+                                                        wire:key="node-{{ $child['brand'] ? $child['brand']->id : $child->id}}"
+                                                    >
+                                                        <img src="{{ $child['brand'] ? $child['img'] : $child->img }}"
+                                                             alt="{{ $child['brand'] ? $child['brand']->name : $child->translateAttribute('name') }}"
+                                                             class="w-8 object-cover" loading="lazy">
+
+                                                        <a href="{{ $child['brand'] ? route('collection.view').'?brand='.$child['brand']->id : route('collection.view',$child->defaultUrl?->slug)}}"
+                                                           class="text-sm font-medium">{{ $child['brand'] ? $child['brand']->name : $child->translateAttribute('name')}}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
                                 @endif
                             @endforeach
                         </ul>
