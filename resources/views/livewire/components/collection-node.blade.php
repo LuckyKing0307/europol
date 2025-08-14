@@ -10,7 +10,6 @@
 
     <a href="{{ $node['brand'] ? route('collection.view').'?brand='.$node['brand']->id : route('collection.view',$node->defaultUrl?->slug)}}"
        class="text-sm font-medium">{{ $node['brand'] ? $node['brand']->name : $node->translateAttribute('name')}}</a>
-    {{var_dump($node->brands)}}
     @if (isset($node->brands))
         <ul x-show="open"
             x-cloak
