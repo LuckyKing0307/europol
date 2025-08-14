@@ -43,6 +43,7 @@
         "spatie/laravel-sitemap": "^7.3"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.16",
         "fakerphp/faker": "^1.23",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0|^8.1",
