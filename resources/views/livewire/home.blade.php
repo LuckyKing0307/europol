@@ -1,7 +1,7 @@
 <div>
     @livewire('components.pop-up')
     <x-welcome-banner />
-    <livewire:categories-component lazy=""/>
+    @livewire('categories-component')
 {{--    @livewire('top-sales')--}}
     <section class="mx-auto max-w-screen-xl content_block">
         <div class="block_title" style="text-align: center;">{{ __('why_choose_us.title') }}</div>
