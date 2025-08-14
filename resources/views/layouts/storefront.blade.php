@@ -89,7 +89,6 @@
 
     const idle = (cb) => (window.requestIdleCallback ? requestIdleCallback(cb, {timeout: 5000}) : setTimeout(cb, 1500));
 
-    // Ленивая инициализация плагинов по наличию DOM
     document.addEventListener('DOMContentLoaded', async () => {
         if (document.querySelector('.range-slider')) {
             await loadScript('https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js', {defer:true});

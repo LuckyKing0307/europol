@@ -1,7 +1,7 @@
 @props(['product','rate'])
 <div class="swiper-slide product p-4">
     <a class="rounded-lg text-center product_medium_img"
-       href="{{ route('product.view', $product->defaultUrl->slug) }}">
+       href="{{ $product->defaultUrl ? route('product.view', $product->defaultUrl->slug) : '' }}">
         @if ($product->thumbnail)
             <img class="object-cover transition-transform duration-300 group-hover:scale-105"
                  src="{{ $product->thumbnail->getUrl('medium')}}"
