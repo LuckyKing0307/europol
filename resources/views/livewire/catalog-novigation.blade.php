@@ -5,18 +5,29 @@
                 <!-- Обёртка Swiper -->
                 <div class="swiper catalog-slider">
                     <div class="swiper-wrapper">
-                        @foreach ($this->collections as $collection)
-                            @if($collection->id>=53)
-                            <a class="swiper-slide catalog_list"  style="padding: 0;" href="{{ route('collection.view', $collection->defaultUrl->slug) }}">
-{{--                                <p class="text-sm font-medium">--}}
-{{--                                    {{ $collection->translateAttribute('name') }}--}}
-{{--                                </p>--}}
-                                <img src="{{ $collection->getFirstMediaUrl('images') }}"
-                                     alt="{{ $collection->translate('name') }}" loading="lazy" style="width: 100%;height: 100%;">
-                            </a>
-                            @endif
-                        @endforeach
+                                @foreach ($this->collections as $collection)
+                                    @if ($collection->id >= 53)
+                                        @php
+                                            $img = $collection->getFirstMediaUrl('images');
+                                            $isFirst = $loop->first;
+                                        @endphp
 
+                                        <a class="swiper-slide catalog_list" href="{{ route('collection.view', $collection->defaultUrl->slug) }}">
+                                            <img
+                                                src="{{ $img }}"
+                                                alt="{{ $collection->translateAttribute('name') }}"
+                                                @if($isFirst)
+                                                    fetchpriority="high"
+                                                    loading="eager"
+                                                @else
+                                                    loading="lazy"
+                                                @endif
+                                                decoding="async"
+                                                style="width:100%;height:auto;aspect-ratio: 4/3;object-fit:cover;"
+                                            >
+                                        </a>
+                                    @endif
+                                @endforeach
 {{--                        <a class="swiper-slide catalog_list"--}}
 {{--                           href="{{ route('collection.view.all') }}">--}}
 {{--                            <img src="{{asset('img/all.svg')}}"--}}
