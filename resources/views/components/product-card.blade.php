@@ -14,7 +14,7 @@
     </a>
     <div class="product_details">
         <a class="price_product"
-           href="{{ route('product.view', $product->defaultUrl->slug) }}">
+           href="{{ $product->defaultUrl ? route('product.view', $product->defaultUrl->slug) : '' }}">
             <span class="sku">SKU : {{$product->external_id}}</span>
             <div class="text-red-600 font-bold text-lg">
                 @if($rate!='')
@@ -29,7 +29,7 @@
         </a>
 
         <a class="rounded-lg text-center"
-           href="{{ route('product.view', $product->defaultUrl->slug) }}">
+           href="{{ $product->defaultUrl ? route('product.view', $product->defaultUrl->slug) : '' }}">
         <div class="product_info">
             @foreach($product->characteristics()->limit(4)->get()  as $product_info)
                 <p class="product_info_text"><img
