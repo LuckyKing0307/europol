@@ -151,7 +151,7 @@
         <img src="{{asset('img/contac_phone.png')}}" alt="Telegram">
     </a>
     <a href="https://t.me/europol_uzbekistan" class="telegram" target="_blank">
-        <img src="{{asset('img/telegram.svg')}}" alt="Telegram">
+        <img src="{{asset('img/telegram.png')}}" alt="Telegram">
     </a>
 </div>
 <div id="customChatButton">
