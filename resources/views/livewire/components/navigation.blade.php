@@ -66,7 +66,7 @@
                         <ul x-on:click.away="mobileMenu = false" class="p-6 space-y-4 border border-gray-100 shadow-xl mobmenue">
                             <x-header.search class="max-w-sm mr-4"/>
                             @foreach ($this->collections as $node)
-                                @if($root->id>=53)
+                                @if($node->id>=53)
                                     <li x-data="{ open: false }"
                                         @mouseenter="open = true"
                                         @mouseleave="open = false"
