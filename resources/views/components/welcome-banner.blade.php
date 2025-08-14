@@ -1,4 +1,4 @@
-<section class="section pre-loader" fetchpriority="high" loading="eager" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" style="background: none;">
+<section class="section pre-loader" loading="eager" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" style="background: none;">
     <div class="video-overlay"></div>
     <x-collection-sale />
 </section>
@@ -12,6 +12,7 @@
             const video = document.createElement("video");
             video.poster = "{{ asset('img/pre-view.webp') }}"; // моментально загружаемый постер
             video.autoplay = true;
+            video.fetchpriority = high;
             video.muted = true;
             video.loop = true;
             video.playsInline = true;
