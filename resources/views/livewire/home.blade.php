@@ -8,7 +8,7 @@
         <div class="information">
             <h3 class="info_block_title" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">ШИРОКИЙ ВЫБОР НАПОЛЬНЫХ ПОКРЫТИЙ</h3>
             <div class="info_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
-                <img loading="lazy" src="{{ asset('img/1.webp') }}" alt="">
+                <img loading="lazy" src="{{ asset('img/1.webp') }}" alt="Официальные бренды">
                 <p class="info_block_text">Продаем только официальные бренды европейских производителей. Более 1000 моделей в наличии. Найдем подходящий пол именно под ваш дизайн интерьера. И Подберем подходящий пол под любой дизайн: классика, сканди, минимализм, арт-деко, модерн.</p>
             </div>
             <h3 class="info_block_title" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">Качество проверенное годами</h3>
@@ -18,11 +18,11 @@
                     — Quick-Step — бельгийский лидер с инновационными замками. <br>
                     — Karelia — финская надежность с северным характером
                 </p>
-                <img loading="lazy" src="{{ asset('img/2.webp') }}" alt="">
+                <img loading="lazy" src="{{ asset('img/2.webp') }}" alt="Полы №1 в Германии">
             </div>
             <h3 class="info_block_title" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">Профессиональная консультация</h3>
             <div class="info_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
-                <img loading="lazy" src="{{ asset('img/3.webp') }}" alt="">
+                <img loading="lazy" src="{{ asset('img/3.webp') }}" alt="Реальная профессиональная помощь">
                 <p class="info_block_text">Это не просто консультация. Это реальная профессиональная помощь на уровне вашего проекта и в точных расчетах, честных рекомендациях.
                     <br><br>
 
@@ -36,7 +36,7 @@
             <div class="info_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
                 <p class="info_block_text">Используем собственную логистику, поэтому вы точно знаете сроки. Бесплатно доставим по г.Ташкент паркет, ламинат, ковролин, линолеум Европейских брендов. Все товары в наличии на складе. Имеется также доставка по Узбекистану.
                 </p>
-                <img loading="lazy" src="{{ asset('img/4.webp') }}" alt="">
+                <img loading="lazy" src="{{ asset('img/4.webp') }}" alt="Логистика">
             </div>
         </div>
     </section>

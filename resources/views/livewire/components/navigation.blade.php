@@ -4,9 +4,9 @@
             <div class="flex" style="min-width: 10%;"></div>
             <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl ">
                 <div class="lang flex header-info">
-                    <div class="working-time"><img src="{{asset('img/clock.svg')}}" alt=""
+                    <div class="working-time"><img src="{{asset('img/clock.svg')}}" alt="Время работы"
                                                    style="margin-left: 10px;margin-right: 5px; width: 18px;">с 9:00 до 22:00 ежедневно</div>
-                    <a href="tel:+998555100102" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt=""
+                    <a href="tel:+998555100102" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt="Номер телефона"
                                                                         style="margin-left: 10px;margin-right: 5px;"></span>+998 55-510-01-02</a>
                 </div>
             </div>
