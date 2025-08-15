@@ -29,10 +29,11 @@
                 <li><span class="footer__icon">✉️</span> <a href="mailto:info@europol.uz">info@europol.uz</a> </li>
             </ul>
             <div class="footer__socials">
-                <!-- Вставь svg или иконки, если нужны другие, поменяй тут -->
                 <a href="https://t.me/europol_uzbekistan" class="footer__social" target="_blank"><img src="{{asset('img/telegram.svg')}}" alt="Telegram"></a>
                 <a href="https://www.instagram.com/europol.uzbekistan/" class="footer__social" target="_blank"><img src="{{asset('img/instagram.svg')}}" alt="Instagram"></a>
                 <a href="https://www.facebook.com/europol.uz" class="footer__social" target="_blank"><img src="{{asset('img/facebook.svg')}}" alt="Facebook"></a>
+                <a href="https://www.youtube.com/@EuropolExclusive" class="footer__social" target="_blank"><img src="{{asset('img/youtube.png')}}" alt="YouTube"></a>
+                <a href="https://www.linkedin.com/in/europol-exclusive-725588371/" class="footer__social" target="_blank"><img src="{{asset('img/linkedin.png')}}" alt="LinkedIn"></a>
             </div>
         </div>
     </div>

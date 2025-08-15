@@ -12,7 +12,7 @@
             const video = document.createElement("video");
             video.poster = "{{ asset('img/pre-view.webp') }}"; // моментально загружаемый постер
             video.autoplay = true;
-            video.fetchpriority = high;
+            video.fetchpriority = 'high';
             video.muted = true;
             video.loop = true;
             video.playsInline = true;
