@@ -4,7 +4,7 @@
     @livewire('categories-component')
 {{--    @livewire('top-sales')--}}
     <section class="mx-auto max-w-screen-xl content_block">
-        <div class="block_title" style="text-align: center;">{{ __('why_choose_us.title') }}</div>
+        <div class="block_title" style="text-align: center;"><h2>{{ __('why_choose_us.title') }}</h2></div>
         <div class="information">
             <h3 class="info_block_title" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">ШИРОКИЙ ВЫБОР НАПОЛЬНЫХ ПОКРЫТИЙ</h3>
             <div class="info_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">

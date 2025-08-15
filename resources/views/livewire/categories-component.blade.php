@@ -1,5 +1,5 @@
 <div class="mx-auto max-w-screen-xl content_block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
-    <div class="block_title">Категории товаров</div>
+    <div class="block_title"><h2>Категории товаров</h2></div>
     <div class="block_content">
         <div class="sm:w-full lg:w-1/2 flex justify-center">
             <div class="w-full max-w-md hidden_type">

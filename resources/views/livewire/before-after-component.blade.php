@@ -1,6 +1,6 @@
 <div class="before-after-block" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
     <div class="mx-auto max-w-screen-xl content_block" style="margin-top: 0;">
-        <div class="block_title">Магия преображения полов</div>
+        <div class="block_title"><h2>Магия преображения полов</h2></div>
         <div class="block_text">Посмотрите, как напольные покрытия меняют восприятие пространства</div>
         <div class="block_content">
             <div id="floor-compare"
