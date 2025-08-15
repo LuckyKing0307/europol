@@ -2001,7 +2001,7 @@ article{
     left: 20px;
 }
 #customChatButton{
-    display:flex;align-items:center;gap:.5rem;position:fixed;right:20px;bottom:20px;z-index:40;cursor:pointer;
+    display:flex;align-items:center;gap:.5rem;position:fixed;z-index:40;cursor:pointer;
 }
 .chat-avatar{
     border-radius:50%
