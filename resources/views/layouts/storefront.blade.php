@@ -85,7 +85,8 @@
 
 <x-footer/>
 
-@livewireScripts
+{{--@livewireScripts(false)--}}
+<script src="{{asset('vendor/livewire/livewire.min.js')}}"></script>
 @stack('scripts')
 <script type="module">
     document.addEventListener('DOMContentLoaded', () => {
