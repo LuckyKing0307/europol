@@ -1,20 +1,18 @@
-<header class="relative border-b border-gray-100" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" style="position: relative; z-index: 100;">
+<header class="relative border-b border-gray-100" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000">
     <div class="sub-header ">
         <div class="max-w-screen-xl mx-auto flex justify-end">
-            <div class="flex" style="min-width: 10%;"></div>
+            <div class="flex min-w-10"></div>
             <div class="flex flex-1 items-center justify-between px-4 max-w-screen-xl ">
                 <div class="lang flex header-info">
-                    <div class="working-time"><img src="{{asset('img/clock.svg')}}" alt="Время работы"
-                                                   style="margin-left: 10px;margin-right: 5px; width: 18px;">с 9:00 до 22:00 ежедневно</div>
-                    <a href="tel:+998555100102" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt="Номер телефона"
-                                                                        style="margin-left: 10px;margin-right: 5px;"></span>+998 55-510-01-02</a>
+                    <div class="working-time"><img src="{{asset('img/clock.svg')}}" alt="Время работы" class="working_time">с 9:00 до 22:00 ежедневно</div>
+                    <a href="tel:+998555100102" class="ml-2"><span><img src="{{asset('img/phone.svg')}}" alt="Номер телефона" class="working_time"></span>+998 55-510-01-02</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="max-w-screen-xl mx-auto flex justify-end">
         <div class="flex items-center" style="max-width: 10%;">
-            <a class="flex items-center flex-shrink-0 logo_item" style="max-width: 100%;"
+            <a class="flex items-center flex-shrink-0 logo_item"
                href="{{ url('/') }}"
                wire:navigate
             >
@@ -76,7 +74,7 @@
                             <div class="">
                                 <div class="flex header-info">
                                     <div class="location"><span><img src="{{asset('img/location.svg')}}"
-                                                                     alt=""></span><span id="tashkent" class="ml-2">Ташкент</span>
+                                                                     alt="Адрес магазина"></span><span id="tashkent" class="ml-2">Ташкент</span>
                                     </div>
                                     <a href="{{route('maps')}}" class="shops">Магазины</a>
                                 </div>
@@ -89,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <a class="flex items-center flex-shrink-0 logo_item mob_logo" style="max-width: 100%;"
+            <a class="flex items-center flex-shrink-0 logo_item mob_logo"
                href="{{ url('/') }}"
                wire:navigate
             >
